@@ -4,13 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Projects – Alia Syafiqah | ICM Portfolio</title>
-  <meta name="description" content="Explore all projects: web development, content management, research, and UI/UX work." />
+  <title>Involvement – Alia Syafiqah | Leadership & Volunteering</title>
+  <meta name="description" content="Leadership roles, volunteering, and event participation throughout university." />
 
   <!-- Open Graph -->
   <meta property="og:type"        content="website" />
-  <meta property="og:title"       content="Projects – Alia Syafiqah" />
-  <meta property="og:description" content="A full showcase of projects including web apps, content modules, and research." />
+  <meta property="og:title"       content="Involvement – Alia Syafiqah" />
+  <meta property="og:description" content="A timeline of leadership, volunteering, and events." />
 
   <link rel="icon" type="image/svg+xml" data-dynamic-favicon />
   <!-- Google Fonts -->
@@ -676,6 +676,7 @@ img { max-width: 100%; display: block; }
   color: var(--clr-text-muted);
   display: -webkit-box;
   -webkit-line-clamp: 2;
+  line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -1462,78 +1463,100 @@ img { max-width: 100%; display: block; }
 }
 
   
-/* ─── PROJECTS GRID ───────────────────────────────────────── */
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 1.5rem;
-}
-
-.project-card {
-  background: var(--clr-surface);
-  border: 1px solid var(--clr-border);
-  border-radius: var(--radius-md);
-  padding: 1.5rem;
+/* ─── INVOLVEMENT GALLERY ──────────────────────────────── */
+.accordion-gallery {
   display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  transition: transform var(--dur-sm), box-shadow var(--dur-sm);
-}
-
-.project-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-md);
-}
-
-.project-card__header {
-  flex: 1;
-}
-
-.project-card__tags {
-  display: flex;
+  gap: 8px;
   flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-bottom: 0.75rem;
+  margin-top: 12px;
 }
-
-.project-card__title {
-  font-size: 1.25rem;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-  color: var(--clr-text);
-}
-
-.project-card__summary {
-  font-size: 0.9rem;
-  color: var(--clr-text-muted);
-  line-height: 1.6;
-}
-
-.project-card__body {
-  border-top: 1px solid var(--clr-border);
-  padding-top: 1rem;
-}
-
-.project-card__role {
-  font-size: 0.85rem;
-  color: var(--clr-text-muted);
-  margin-bottom: 0.75rem;
-}
-
-.project-card__tools {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-
-.project-card__footer {
-  display: flex;
-  gap: 0.75rem;
-}
-
-.tag--tool {
+.accordion-gallery img {
+  width: calc(33.33% - 6px);
+  min-width: 80px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
   background: var(--clr-surface2);
-  font-size: 0.75rem;
+}
+@media (max-width: 680px) {
+  .accordion-gallery img { width: calc(50% - 4px); height: 80px; }
+}
+
+/* ─── ACHIEVEMENT IMG ──────────────────────────────────── */
+.achievement-item__img {
+  width: 52px;
+  height: 52px;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  flex-shrink: 0;
+  background: var(--clr-surface2);
+}
+
+/* ─── CERT CARD IMG ────────────────────────────────────── */
+.cert-card__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+}
+
+  
+/* ─── LIGHTBOX MODAL ─────────────────────────────────────── */
+.lightbox-overlay {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.95);
+  align-items: center;
+  justify-content: center;
+}
+.lightbox-overlay.open { display: flex; }
+
+.lightbox-content {
+  max-width: 90%;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: var(--radius-md);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.6);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.lightbox-close:hover { color: var(--clr-accent); }
+
+.lightbox-prev, .lightbox-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 16px;
+  user-select: none;
+  transition: color 0.2s;
+}
+.lightbox-prev:hover, .lightbox-next:hover { color: var(--clr-accent); }
+.lightbox-prev { left: 20px; }
+.lightbox-next { right: 20px; }
+
+/* Make gallery images clickable */
+.accordion-gallery img {
+  cursor: pointer;
+  transition: transform 0.2s, opacity 0.2s;
+}
+.accordion-gallery img:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
 }
 
   </style>
@@ -1541,9 +1564,9 @@ img { max-width: 100%; display: block; }
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    "name": "Projects",
-    "description": "Portfolio of projects by Alia Syafiqah",
+    "@type": "ItemList",
+    "name": "Involvement & Leadership",
+    "description": "Timeline of leadership, volunteering, and events by Alia Syafiqah",
     "author": {
       "@type": "Person",
       "name": "Alia Syafiqah"
@@ -1564,8 +1587,8 @@ img { max-width: 100%; display: block; }
     <ul class="nav-links">
       <li><a href="index.html#about">About</a></li>
       <li><a href="index.html#skills">Skills</a></li>
-      <li><a href="projects.html" class="active">Projects</a></li>
-      <li><a href="involvement.html">Involvement</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="involvement.html" class="active">Involvement</a></li>
       <li><a href="index.html#contact">Contact</a></li>
     </ul>
 
@@ -1594,36 +1617,24 @@ img { max-width: 100%; display: block; }
   <!-- Page Hero -->
   <div class="page-hero">
     <div class="container">
-      <span class="section-label">Portfolio</span>
-      <h1>All Projects</h1>
-      <p>Every project is a case study. Browse by category, search by keyword, or sort your way.</p>
+      <span class="section-label">Beyond the Classroom</span>
+      <h1>Involvement</h1>
+      <p>Leadership, volunteering, and events — because growth happens outside lectures too.</p>
     </div>
   </div>
 
-  <!-- Filters & Controls -->
-  <div class="container">
-    <!-- Category chips -->
-    <div class="project-filters" role="group" aria-label="Project category filters">
-      <button class="filter-chip active" data-filter="All">All</button>
-      <button class="filter-chip" data-filter="UI/UX">UI/UX</button>
-      <button class="filter-chip" data-filter="Content Management">Content Mgmt</button>
-      <button class="filter-chip" data-filter="Web Dev">Web Dev</button>
-      <button class="filter-chip" data-filter="Research">Research</button>
-      <button class="filter-chip" data-filter="Data/Documentation">Data & Docs</button>
+  <div class="container" style="padding-bottom:var(--space-2xl);">
+
+    <!-- Category Filters -->
+    <div class="involvement-filters" role="group" aria-label="Involvement category filters">
+      <button class="filter-chip active" data-inv-filter="All">All</button>
+      <button class="filter-chip" data-inv-filter="Leadership">Leadership</button>
+      <button class="filter-chip" data-inv-filter="Volunteer">Volunteer</button>
+      <button class="filter-chip" data-inv-filter="Events">Events</button>
     </div>
 
-    <!-- Search + Sort row -->
-    <div class="project-controls">
-      <input type="search" class="search-input" id="projectSearch" placeholder="Search by title, tool, or tag…" aria-label="Search projects" />
-      <select class="sort-select" id="projectSort" aria-label="Sort projects">
-        <option value="newest">Newest First</option>
-        <option value="oldest">Oldest First</option>
-        <option value="az">A → Z</option>
-      </select>
-    </div>
-
-    <!-- Project grid (populated by projects.js) -->
-    <div class="projects-grid" id="projects-grid"></div>
+    <!-- Timeline (populated by JS) -->
+    <div class="timeline" id="invTimeline"></div>
   </div>
 </main>
 
@@ -1647,37 +1658,6 @@ img { max-width: 100%; display: block; }
   <button class="resume-float__btn" id="resumeFloatBtn" aria-label="Toggle resume highlights" aria-expanded="false">📄</button>
 </div>
 
-<!-- ─── CASE STUDY MODAL ────────────────────────────────────── -->
-<div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-label="Project case study">
-  <div class="modal">
-    <button class="modal__close" id="modalClose" aria-label="Close case study">&times;</button>
-    <div class="modal__header" id="modalHeader"></div>
-    <div class="modal__body" id="modalBody"></div>
-  </div>
-</div>
-
-
-<main class="container">
-  
-  <!-- Hero Section -->
-  <section class="hero hero--compact">
-    <div class="hero__content">
-      <p class="eyebrow">PORTFOLIO</p>
-      <h1>Projects</h1>
-      <p class="lead">A collection of my work across web development, mobile apps, UI/UX design, and interactive content creation.</p>
-    </div>
-  </section>
-
-  <!-- Projects Grid -->
-  <section class="section">
-    <div class="section__header">
-      <h2>Featured Work</h2>
-    </div>
-    <div id="projects-grid" class="projects-grid"></div>
-  </section>
-
-</main>
-
 <!-- ─── SCRIPTS ─────────────────────────────────────────────── -->
 <script>
 /**
@@ -1697,7 +1677,7 @@ const PERSON = {
   graduation:  "2026",
   cgpa:        "3.64",
   photoAlt:    "Portrait of Alia Syafiqah",
-  photoUrl:    "picture/ika-2.png",
+  photoUrl:    "assets/photo-placeholder.svg",
   resumeUrl:   "#",
   linkedIn:    "https://www.linkedin.com/in/alia-syafiqah-abdul-aziz-7aaa2b21",
   github:      "https://github.com",
@@ -1726,8 +1706,7 @@ const QUICK_VIEW = {
     { icon: "📊", label: "Tableau" },
     { icon: "⚙️", label: "Supabase" },
     { icon: "🔀", label: "Git & GitHub" },
-    { icon: "📦", label: "CMS Platforms" },
-    { icon: "🤖", label: "AI Tools" }
+    { icon: "📦", label: "CMS Platforms" }
   ],
   strengths: [
     { icon: "🗣️", label: "Clear Communication" },
@@ -1759,35 +1738,9 @@ const SKILLS = {
     { name: "Git Version Control",  level: 2 },
     { name: "Supabase / Backend",   level: 2 },
     { name: "Tableau",              level: 2 },
-    { name: "AI Tools & Prompting", level: 3 },
     { name: "UX Research",          level: 1 }
   ]
 };
-
-// ─── WORK EXPERIENCE ────────────────────────────────────────
-const EXPERIENCE = [
-  {
-    id:       "roche-i2p-intern",
-    title:    "I2P System Support Intern",
-    company:  "Roche Services & Solutions (APAC)",
-    location: "Subang Jaya, Malaysia",
-    period:   "Sep 2025 – Mar 2026",
-    year:     2025,
-    type:     "Internship",
-    responsibilities: [
-      "Managed global user queries within the Invoice to Pay (I2P) ecosystem.",
-      "Ensured data sync between SAP and MyBuy while meeting strict SLA standards.",
-      "Investigated invoice discrepancies and communicated technical issues in layman's terms.",
-      "Resolved system sync issues to prevent payment delays."
-    ],
-    achievements: [
-      "Successfully maintained a clear ticket queue.",
-      "Prevented payment delays by resolving system sync issues as fast as possible.",
-      "Demonstrated strong problem-solving in a fast-paced enterprise environment."
-    ],
-    tools: ["SAP", "MyBuy", "SLA Management", "Cross-functional Communication"]
-  }
-];
 
 // ─── PROJECTS ───────────────────────────────────────────────
 const PROJECTS = [
@@ -1795,191 +1748,178 @@ const PROJECTS = [
     id:       "icm-linkup",
     slug:     "icm-linkup",
     title:    "ICM LinkUp – Alumni Networking Platform",
-    summary:  "A cross-platform alumni network connecting UiTM Information Science graduates with current students via a Flutter mobile app and Vue.js admin portal. (Capstone Project)",
+    summary:  "A cross-platform alumni network connecting UiTM Information Science graduates with current students via a Flutter mobile app and Vue.js admin portal.",
     role:     "Lead Developer & System Designer",
     year:     2025,
-    category: ["Web Dev", "Mobile Dev", "UI/UX"],
+    category: ["Web Dev", "UI/UX"],
     tools:    ["Flutter", "Vue.js", "Supabase", "Google OAuth", "Figma"],
-    problem:  "UiTM's Faculty of Information Science lacked a structured channel for alumni and current students to connect.",
-    process:  "Designed multi-role architecture with Google OAuth, built Flutter mobile app and Vue.js admin portal with Supabase backend.",
+    problem:  "UiTM's Faculty of Information Science lacked a structured channel for alumni and current students to connect, share opportunities, or mentor one another.",
+    process:  "Designed a multi-role architecture (student, alumni, admin) with Google OAuth for seamless sign-in. Built the mobile-facing app in Flutter while the admin portal runs on Vue.js. Supabase powers authentication, real-time data, and storage. Implemented search, filtering, and a request/accept connection flow.",
     deliverables: [
       "Flutter mobile application (iOS & Android)",
-      "Vue.js admin dashboard",
-      "Supabase schema with Row Level Security",
-      "Search & filter system for alumni discovery"
+      "Vue.js admin dashboard with user & content management",
+      "Supabase schema with Row Level Security (RLS)",
+      "Search & filter system for alumni discovery",
+      "Google OAuth integration"
     ],
-    outcome:  "Prototype demoed to faculty stakeholders with positive feedback. Platform supports 50+ dummy user records.",
+    outcome:  "Prototype demoed to faculty stakeholders; received positive feedback. Platform supports 50+ dummy user records for realistic demos. Reduced expected alumni-search time by an estimated 70% vs. manual methods.",
     impact:   "50+ demo users | 3 role types | Real-time sync",
     demoUrl:  "#",
     githubUrl:"#",
-    screenshots: []
+    screenshots: [
+      "assets/placeholder-ss.svg",
+      "assets/placeholder-ss.svg",
+      "assets/placeholder-ss.svg"
+    ]
   },
   {
-    id:       "archive-repository",
-    slug:     "archive-repository",
-    title:    "Archive Repository Website",
-    summary:  "Developed an archive repository system using HTML, CSS, and JavaScript, designed for efficient content organization and management.",
-    role:     "Developer",
+    id:       "delimaflix-modules",
+    slug:     "delimaflix-modules",
+    title:    "DELIMaFLiX – Interactive HTML5 Learning Modules",
+    summary:  "Created engaging, offline-capable HTML5 course modules for Malaysia's Ministry of Education content repository.",
+    role:     "Content Developer & Front-End Developer",
     year:     2024,
-    category: ["Web Dev"],
-    tools:    ["HTML", "CSS", "JavaScript", "VS Code"],
-    problem:  "Needed a systematic way to organize and manage archive content digitally.",
-    process:  "Built a custom repository system from scratch using vanilla web technologies.",
-    deliverables: ["Fully functional archive management interface", "Content organization system"],
-    outcome:  "Efficient content organization and management system completed.",
-    impact:   "Streamlined archive management workflow",
-    demoUrl:  "https://drive.google.com/file/d/15dteQ3_gisRp9yF0zodu-1Cs4xb4KhxS/preview",
+    category: ["Content Management", "Web Dev"],
+    tools:    ["HTML5", "CSS3", "JavaScript", "Canva", "Instructional Design"],
+    problem:  "The government needed self-contained, mobile-responsive learning modules for vocational courses (cosmetology, bakery) that work offline in low-connectivity schools.",
+    process:  "Followed strict government folder-structure and naming conventions. Designed interactive quizzes, drag-and-drop exercises, and multimedia embeds. Ensured full offline functionality with zero external dependencies.",
+    deliverables: [
+      "2 fully interactive HTML5 modules (Cosmetology & Bakery)",
+      "Embedded quizzes with instant feedback",
+      "Mobile-first responsive layouts",
+      "Zero-dependency offline functionality"
+    ],
+    outcome:  "Modules passed government QA review on first submission. Designed for deployment across 100+ schools nationwide.",
+    impact:   "100+ target schools | 0 external dependencies | Full offline support",
+    demoUrl:  "#",
     githubUrl:"#",
-    screenshots: []
+    screenshots: [
+      "assets/placeholder-ss.svg",
+      "assets/placeholder-ss.svg",
+      "assets/placeholder-ss.svg"
+    ]
   },
   {
-    id:       "wordpress-portfolio",
-    slug:     "wordpress-portfolio",
-    title:    "Portfolio Website (WordPress)",
-    summary:  "Built a fully functional portfolio website using WordPress & Elementor, featuring dynamic sections and custom themes.",
-    role:     "Developer & Designer",
+    id:       "portfolio-website",
+    slug:     "portfolio-website",
+    title:    "Personal Portfolio Website",
+    summary:  "A modern, bilingual (EN/MY) responsive portfolio showcasing leadership, projects, certificates, and creative work.",
+    role:     "Solo Developer & Designer",
     year:     2024,
     category: ["Web Dev", "UI/UX"],
-    tools:    ["WordPress", "Elementor", "UI/UX Design"],
-    problem:  "Needed a professional portfolio platform with easy content management.",
-    process:  "Leveraged WordPress and Elementor to create a custom, responsive portfolio.",
-    deliverables: ["Fully functional WordPress site", "Custom Elementor layouts", "Mobile-responsive design"],
-    outcome:  "Professional portfolio website deployed successfully.",
-    impact:   "Easy-to-update portfolio platform",
-    demoUrl:  "https://drive.google.com/file/d/1ohyJGt50dA2beVzR2vwMwUFKrZDIuXaD/preview",
+    tools:    ["HTML", "CSS", "JavaScript", "Figma"],
+    problem:  "Needed a professional online presence that communicated both technical ability and creative personality to recruiters and academic committees.",
+    process:  "Wireframed in Figma, implemented with vanilla HTML/CSS/JS. Added smooth animations, a dark-mode toggle, and bilingual content switching. Optimized for SEO with proper meta tags and structured data.",
+    deliverables: [
+      "Fully responsive single-page portfolio",
+      "Dark / light mode toggle",
+      "Bilingual EN / MY content switch",
+      "SEO-optimized with JSON-LD structured data"
+    ],
+    outcome:  "Portfolio shared with internship recruiters and used for FYP presentation. Received feedback praising clarity and design.",
+    impact:   "Used in 3+ applications | Bilingual | Lighthouse score > 90",
+    demoUrl:  "#",
     githubUrl:"#",
-    screenshots: []
+    screenshots: [
+      "assets/placeholder-ss.svg",
+      "assets/placeholder-ss.svg",
+      "assets/placeholder-ss.svg"
+    ]
   },
   {
-    id:       "club-website-gsites",
-    slug:     "club-website-gsites",
-    title:    "Club Website (Google Sites)",
-    summary:  "Designed a club website for event updates and resource sharing, ensuring mobile-friendly design and usability.",
-    role:     "Web Designer",
+    id:       "printing-landing-page",
+    slug:     "printing-landing-page",
+    title:    "Printing Services Landing Page",
+    summary:  "A corporate-grade landing page for a Malaysian printing company targeting government and B2B clients.",
+    role:     "Freelance Web Developer",
     year:     2024,
     category: ["Web Dev", "Content Management"],
-    tools:    ["Google Sites", "Content Management"],
-    problem:  "Club needed a centralized platform for event updates and resource sharing.",
-    process:  "Built a Google Sites website with focus on usability and mobile responsiveness.",
-    deliverables: ["Mobile-friendly club website", "Event calendar", "Resource library"],
-    outcome:  "Club website successfully deployed with positive user feedback.",
-    impact:   "Improved club communication and resource accessibility",
-    demoUrl:  "https://sites.google.com/view/entclubpundana",
-    githubUrl:"#",
-    screenshots: []
-  },
-  {
-    id:       "ehailing-uitm",
-    slug:     "ehailing-uitm",
-    title:    "E-Hailing System for UiTM",
-    summary:  "Developed an internal e-hailing system with CRUD functionality for students to book campus rides.",
-    role:     "Full-Stack Developer",
-    year:     2024,
-    category: ["Web Dev", "Database"],
-    tools:    ["PHP", "MySQL", "PHPMyAdmin", "CRUD", "UI/UX"],
-    problem:  "UiTM students needed an efficient campus transportation booking system.",
-    process:  "Built full-stack e-hailing platform with PHP backend, MySQL database, and CRUD operations.",
-    deliverables: ["Complete e-hailing web application", "CRUD interface", "Admin dashboard"],
-    outcome:  "Functional campus ride-booking system with full CRUD capabilities.",
-    impact:   "Streamlined campus transportation for students",
-    demoUrl:  "https://www.youtube.com/embed/Dmsq54o6SLo",
-    githubUrl:"#",
-    screenshots: []
-  },
-  {
-    id:       "game-gdevelop",
-    slug:     "game-gdevelop",
-    title:    "Game Development (GDevelop)",
-    summary:  "Created a 2D platformer game featuring interactive storytelling, game physics, and scoring mechanics.",
-    role:     "Game Developer",
-    year:     2024,
-    category: ["Game Dev"],
-    tools:    ["GDevelop", "Game Design", "UI/UX"],
-    problem:  "Wanted to explore game development and interactive storytelling.",
-    process:  "Designed and developed a 2D platformer game with physics, scoring mechanics, and narrative elements.",
-    deliverables: ["Playable 2D platformer game", "Interactive narrative system", "Scoring mechanics"],
-    outcome:  "Fully functional 2D game published on GDevelop platform.",
-    impact:   "Hands-on experience in game development",
-    demoUrl:  "https://gd.games/games/57facdb2-5c75-40a9-9ce9-b768cadc12f3",
-    githubUrl:"#",
-    screenshots: []
-  },
-  {
-    id:       "digital-literacy-courseware",
-    slug:     "digital-literacy-courseware",
-    title:    "Digital Literacy Courseware",
-    summary:  "An interactive courseware targeted towards children aged 11-14 years old to create awareness on digital literacy.",
-    role:     "Courseware Developer & Designer",
-    year:     2024,
-    category: ["Web Dev", "UI/UX", "Content Management"],
-    tools:    ["Canva", "UI/UX", "Interactive Design"],
-    problem:  "Children needed engaging digital literacy education content.",
-    process:  "Created an interactive courseware using Canva with age-appropriate content and activities.",
-    deliverables: ["Interactive digital literacy modules", "Age-appropriate content", "Engaging activities"],
-    outcome:  "Educational courseware successfully deployed for children.",
-    impact:   "Enhanced digital literacy awareness among target age group",
-    demoUrl:  "https://zonmasatahun6.my.canva.site/kliksafe",
-    githubUrl:"#",
-    screenshots: []
-  },
-  {
-    id:       "ecocity-quest",
-    slug:     "ecocity-quest",
-    title:    "Mobile Apps Development (EcoCity-Quest)",
-    summary:  "Currently developing a smart city-themed mobile app using FlutterFlow with RESTful APIs, dynamic JSON content, and responsive UI design.",
-    role:     "Mobile Developer",
-    year:     2024,
-    category: ["Mobile Dev", "UI/UX"],
-    tools:    ["FlutterFlow", "Firebase", "REST API", "JSON", "UI/UX Design"],
-    problem:  "Need for citizen engagement platform for smart city initiatives.",
-    process:  "Developing mobile app with FlutterFlow integrating real-time data through RESTful APIs.",
-    deliverables: ["Real-time data integration", "Location-based services", "Push notifications", "Responsive UI"],
-    outcome:  "In progress - smart city engagement platform under development.",
-    impact:   "Enhanced citizen engagement with city services",
+    tools:    ["HTML", "CSS", "JavaScript", "SEO"],
+    problem:  "A local printing shop needed an online presence that could attract government tenders and corporate clients in a competitive market.",
+    process:  "Researched competitor sites, drafted Malay-language SEO copy, and built a clean, trust-focused layout. Integrated a product gallery, services breakdown, and clear CTAs optimized for conversion.",
+    deliverables: [
+      "Full landing page with 6 sections",
+      "Malay-language SEO-optimized content",
+      "Product gallery with hover interactions",
+      "Mobile-responsive layout"
+    ],
+    outcome:  "Client reported increased inquiry volume within the first month of launch.",
+    impact:   "↑ Inquiries in 30 days | Malay SEO | Gov-sector focused",
     demoUrl:  "#",
     githubUrl:"#",
-    screenshots: []
+    screenshots: [
+      "assets/placeholder-ss.svg",
+      "assets/placeholder-ss.svg",
+      "assets/placeholder-ss.svg"
+    ]
   },
   {
-    id:       "uitm-di-hatiku",
-    slug:     "uitm-di-hatiku",
-    title:    "UiTM Di Hatiku - Assignment Tracker App",
-    summary:  "Developed a mobile app focused on task management for UiTM students using a Kanban-style interface.",
-    role:     "Mobile Developer",
+    id:       "distributed-sim",
+    slug:     "distributed-sim",
+    title:    "Distributed Systems Simulation",
+    summary:  "A visual simulation tool demonstrating distributed computing concepts like replication, partitioning, and failure recovery.",
+    role:     "Developer & Researcher",
     year:     2024,
-    category: ["Mobile Dev", "UI/UX"],
-    tools:    ["FlutterFlow", "Firebase", "Firestore", "Drag & Drop UI"],
-    problem:  "UiTM students needed an efficient way to track assignments and deadlines across multiple subjects.",
-    process:  "Built Kanban-style task management app with Firebase backend for assignment tracking.",
-    deliverables: ["Kanban board interface", "Deadline reminder system", "Subject tagging", "Progress tracking"],
-    outcome:  "Task management app tailored specifically for UiTM student workflows.",
-    impact:   "Helped students stay organized with assignment deadlines",
+    category: ["Research", "Data/Documentation"],
+    tools:    ["Python", "Matplotlib", "Research Methodology"],
+    problem:  "University coursework required a hands-on demonstration of distributed system behaviours that students could interact with visually.",
+    process:  "Built a Python simulation with live-rendered charts showing how nodes replicate data, handle failures, and recover. Documented the process in a detailed research report.",
+    deliverables: [
+      "Python simulation script",
+      "Interactive visualisations (Matplotlib)",
+      "Research report with findings"
+    ],
+    outcome:  "Scored full marks on the assignment. Simulation used as a reference tool by classmates.",
+    impact:   "Full marks | Peer-referenced | Visual learning tool",
     demoUrl:  "#",
     githubUrl:"#",
-    screenshots: []
+    screenshots: [
+      "assets/placeholder-ss.svg",
+      "assets/placeholder-ss.svg",
+      "assets/placeholder-ss.svg"
+    ]
+  },
+  {
+    id:       "mysejahtera-analysis",
+    slug:     "mysejahtera-analysis",
+    title:    "MySejahtera Data Breach – Security Analysis",
+    summary:  "A comprehensive cybersecurity case-study analysing the MySejahtera data breach, with recommendations for prevention.",
+    role:     "Researcher & Presenter",
+    year:     2023,
+    category: ["Research", "Data/Documentation"],
+    tools:    ["Research", "Presentation Design", "Canva"],
+    problem:  "Group assignment required an in-depth forensic analysis of a real-world data breach affecting millions of Malaysian citizens.",
+    process:  "Researched the breach timeline, attack vectors, and affected data types. Collaboratively authored a report and built a presentation with detailed speaker scripts.",
+    deliverables: [
+      "Written case-study report",
+      "Presentation deck with speaker notes",
+      "Prevention & mitigation recommendations"
+    ],
+    outcome:  "Presentation rated as one of the top submissions. Recommendations were discussed in follow-up class sessions.",
+    impact:   "Top-rated presentation | Peer discussion | Real-world case",
+    demoUrl:  "#",
+    githubUrl:"#",
+    screenshots: [
+      "assets/placeholder-ss.svg",
+      "assets/placeholder-ss.svg",
+      "assets/placeholder-ss.svg"
+    ]
   }
 ];
 
 // ─── CERTIFICATES ───────────────────────────────────────────
 const CERTIFICATES = [
-  { title: "Adobe Photoshop Workshop",                        issuer: "UiTM Puncak Perdana",                   year: 2023, imgUrl: "picture/cert/adobe.jpg" },
-  { title: "Information Security Awareness Program",         issuer: "UiTM Puncak Perdana",                   year: 2024, imgUrl: "picture/cert/security.png" },
-  { title: "Drone Handling Assistant (Aiszzy Electronics)",  issuer: "Aiszzy Electronics Sdn. Bhd.",          year: 2024, imgUrl: "picture/cert/aizzy.png" },
-  { title: "Drone Handling Assistant (Pusat Sains Negara)",  issuer: "Pusat Sains Negara",                    year: 2024, imgUrl: "picture/cert/psn.png" },
-  { title: "WordPress Workshop",                             issuer: "UiTM Puncak Perdana",                   year: 2024, imgUrl: "picture/cert/wp.jpg" },
-  { title: "Digital Literacy Awareness Program",             issuer: "Kolej Jasmine, UiTM",                   year: 2024, imgUrl: "picture/cert/digitalliteracy.png" },
-  { title: "eUsahawan Course Completion",                    issuer: "MDEC (Malaysia Digital Economy Corp.)", year: 2024, imgUrl: "picture/cert/eusahawan.png" },
-  { title: "Head of External Relations & Career Dev.",       issuer: "Sekretariat Mahasiswa KPPIM",           year: 2024, imgUrl: "picture/cert/smf.png" },
-  { title: "Secretary 1 – Sekretariat Mahasiswa KPPIM",     issuer: "Sekretariat Mahasiswa KPPIM",           year: 2024, imgUrl: "picture/cert/susmf.png" },
-  { title: "Anugerah Pelajar Kepimpinan Terbaik Keusahawanan", issuer: "Fakulti Sains Maklumat, UiTM",        year: 2025, imgUrl: "picture/cert/sijil-kepimpinan.jpeg" }
+  { title: "Certificate Placeholder A", issuer: "Organisation A", year: 2024, imgUrl: "assets/cert-placeholder.svg" },
+  { title: "Certificate Placeholder B", issuer: "Organisation B", year: 2024, imgUrl: "assets/cert-placeholder.svg" },
+  { title: "Certificate Placeholder C", issuer: "Organisation C", year: 2023, imgUrl: "assets/cert-placeholder.svg" },
+  { title: "Certificate Placeholder D", issuer: "Organisation D", year: 2023, imgUrl: "assets/cert-placeholder.svg" }
 ];
 
 // ─── ACHIEVEMENTS ───────────────────────────────────────────
 const ACHIEVEMENTS = [
-  { title: "Anugerah Pelajar Kepimpinan Terbaik Keusahawanan", year: 2025, detail: "Best Student Leadership Award in Entrepreneurship – ISsNITE 25/2 & AKM, Fakulti Sains Maklumat.", imgUrl: "picture/cert/sijil-kepimpinan.jpeg" },
-  { title: "Dean's Award",                     year: 2023, detail: "Awarded for academic excellence – Session 2, 2022/2023.", imgUrl: "picture/cert/deans.png" },
-  { title: "Best Booth – Open Day 2024",       year: 2024, detail: "Infopreneur Club booth awarded First Place for Best Booth at UiTM Open Day." },
-  { title: "CGPA 3.57 – Bachelor's Degree",    year: 2026, detail: "Maintaining Dean's List standing throughout degree at UiTM." }
+  { title: "Dean's List – Semester X",         year: 2024, detail: "Achieved CGPA ≥ 3.5 for the semester." },
+  { title: "Best Project – [Course Name]",     year: 2024, detail: "Top-ranked project in class of 40 students." },
+  { title: "Hackathon Participant",            year: 2023, detail: "Participated in university-level hackathon (placeholder)." }
 ];
 
 // ─── INVOLVEMENT (Leadership / Volunteer / Events) ─────────
@@ -1989,82 +1929,265 @@ const INVOLVEMENT = [
     title:    "President – Infopreneur Club",
     category: "Leadership",
     year:     2024,
-    period:   "2024 – Present",
-    summary:  "Led a student club focused on entrepreneurship and information technology.",
+    period:   "2024 – 2025",
+    summary:  "Reorganized club structure, led rebranding initiative, and revived member interest under the refreshed Infopreneur Club identity.",
     responsibilities: [
-      "Planned and executed 5+ club events and workshops.",
-      "Coordinated with university administration for funding and venue approvals.",
-      "Mentored 15 active club members on project management."
+      "Reorganized club structure and handled documentation & compliance.",
+      "Led the rebranding from Kelab Keusahawanan KPPIM to Infopreneur Club.",
+      "Rebuilt the committee and introduced new signature programs."
     ],
-    impact:   "Grew membership by 40% year-on-year."
+    impact:   "Successfully revived member interest and grew active participation.",
+    gallery:  ["picture/events/dem.jpg", "picture/events/ig.jpg", "picture/events/pres.jpg"]
   },
   {
-    id:       "secretary-role",
-    title:    "Secretary – [Student Organisation]",
+    id:       "secretary-smkppim",
+    title:    "Secretary I – Sekretariat Mahasiswa KPPIM",
     category: "Leadership",
-    year:     2023,
-    period:   "2023 – 2024",
-    summary:  "Managed documentation, meeting schedules, and communication for the organisation.",
+    year:     2024,
+    period:   "Oct 2024 – Feb 2025",
+    summary:  "Managed documentation and streamlined communication for the student secretariat.",
     responsibilities: [
-      "Maintained meeting minutes and action-item tracking.",
-      "Coordinated internal and external communications.",
-      "Prepared event logistics reports."
+      "Managed documentation and streamlined internal communication.",
+      "Contributed to smoother administrative processes.",
+      "Improved information flow within the organisation."
     ],
-    impact:   "Improved meeting efficiency by streamlining documentation."
+    impact:   "Streamlined secretariat documentation and communication processes.",
+    gallery:  ["picture/events/smf.jpg", "picture/events/meeting.jpg"]
   },
   {
-    id:       "volunteer-campus-event",
-    title:    "Volunteer – Campus Open Day",
+    id:       "deputy-director-dem",
+    title:    "Deputy Director – Dewan Eksekutif Mahasiswa KPPIM",
+    category: "Leadership",
+    year:     2024,
+    period:   "2024 – 2025",
+    summary:  "Supervised event committees and drove strategic initiatives across the student executive council.",
+    responsibilities: [
+      "Supervised event committees and drove strategic initiatives.",
+      "Coordinated successful events across departments.",
+      "Fostered collaboration among committees."
+    ],
+    impact:   "Helped coordinate multiple successful faculty-level events.",
+    gallery:  ["picture/events/iv.jpg", "picture/events/press.jpg"]
+  },
+  {
+    id:       "head-external-relations",
+    title:    "Head of External Relations & Career Dev. Committee",
+    category: "Leadership",
+    year:     2024,
+    period:   "March – Aug 2024",
+    summary:  "Shared updates on career opportunities, job fairs, and external programs for students.",
+    responsibilities: [
+      "Shared updates and announcements on career opportunities & job fairs.",
+      "Coordinated with external organisations for student programs.",
+      "Kept students informed about career-related events and resources."
+    ],
+    impact:   "Improved student awareness of career opportunities within and outside campus.",
+    gallery:  []
+  },
+  {
+    id:       "open-day-2024",
+    title:    "Leader – Open Day 2024 (Infopreneur Club Booth)",
+    category: "Events",
+    year:     2024,
+    period:   "16 Dec 2024",
+    summary:  "Led a team of 10, managed merchandise sales and new member recruitment. Booth awarded First Place for Best Booth.",
+    responsibilities: [
+      "Led a team of 10 for booth operations.",
+      "Engaged with prospective students and recruited new members.",
+      "Managed merchandise sales and booth logistics."
+    ],
+    impact:   "Booth awarded First Place for Best Booth at Open Day 2024.",
+    gallery:  ["picture/events/HBP 2024/HAMPER TEMPAT PERTAMA BOOTH TERCANTIK.jpg", "picture/events/HBP 2024/boothmadam.jpg", "picture/events/HBP 2024/visitor.jpg"]
+  },
+  {
+    id:       "watikah-ceremony",
+    title:    "Appointee – SMKPPIM Appointment Ceremony",
+    category: "Events",
+    year:     2025,
+    period:   "19 April 2025",
+    summary:  "Received official appointment as Setiausaha Kerja 1 for SMKPPIM at UiTM Kampus Puncak Perdana.",
+    responsibilities: [
+      "Attended official appointment ceremony for new student secretariat.",
+      "Participated in Meet & Greet session with Student Affairs Division."
+    ],
+    impact:   "Committed to carrying out responsibilities with integrity and dedication.",
+    gallery:  ["picture/events/watikah.jpg"]
+  },
+  {
+    id:       "magim-2025",
+    title:    "Crew & Observer – MAGIM Mac 2025",
+    category: "Events",
+    year:     2025,
+    period:   "7–10 April 2025",
+    summary:  "Final MAGIM — served as event crew and observer for the Meet and Greet Information Management program.",
+    responsibilities: [
+      "Served as event crew and observer throughout the program.",
+      "Supported smooth handover to incoming secretariat."
+    ],
+    impact:   "Proud to see juniors running the program smoothly.",
+    gallery:  ["picture/events/magimlast1.jpg", "picture/events/magimlast2.jpg"]
+  },
+  {
+    id:       "tsue-meet-greet",
+    title:    "Student Representative – Meet & Greet with TSUE Delegates",
+    category: "Events",
+    year:     2025,
+    period:   "5 Feb 2025",
+    summary:  "Represented UiTM students with disabilities (OKU) in a meet & greet with Tashkent State University of Economics delegates from Uzbekistan.",
+    responsibilities: [
+      "Represented OKU students from UiTM in the bilateral session.",
+      "Engaged in discussions on disability empowerment initiatives.",
+      "Interacted with TSUE university rector."
+    ],
+    impact:   "Meaningful cross-cultural exchange on disability empowerment.",
+    gallery:  ["picture/events/uzbek1.jpg", "picture/events/uzbek2.jpg", "picture/events/uzbek3.png"]
+  },
+  {
+    id:       "interfac-2024",
+    title:    "Registration Bureau – INTERFAC UCS 2024",
+    category: "Events",
+    year:     2024,
+    period:   "30 Nov – 8 Dec 2024",
+    summary:  "Assisted in organizing faculty-level sports events. Managed student registration and coordinated logistics.",
+    responsibilities: [
+      "Managed student registration for faculty sports events.",
+      "Coordinated logistics for athletes and team managers."
+    ],
+    impact:   "Ensured smooth registration and logistics for INTERFAC UCS 2024.",
+    gallery:  ["picture/events/interfac1.jpg", "picture/events/interfac2.jpg"]
+  },
+  {
+    id:       "drone-volunteer",
+    title:    "Volunteer – Drone Handling Workshop",
     category: "Volunteer",
     year:     2024,
-    period:   "March 2024",
-    summary:  "Volunteered as a booth coordinator during the university's annual open day for prospective students.",
+    period:   "28–29 May & 1 Jun 2024",
+    summary:  "Volunteered at Pusat Sains Negara. Learned drone handling and assisted visitors including children with 3D pens.",
     responsibilities: [
-      "Set up and managed an information booth.",
-      "Guided 200+ prospective students and families.",
-      "Coordinated with the events committee on scheduling."
+      "Learned drone handling techniques at the National Science Centre.",
+      "Assisted visitors, especially children, with 3D pen activities.",
+      "Supported workshop operations as an external volunteer."
     ],
-    impact:   "Positive feedback from event organisers; booth rated highly by visitors."
+    impact:   "Earned two certificates from Aiszzy Electronics and Pusat Sains Negara.",
+    gallery:  ["picture/events/volunteer.jpg", "picture/events/volunteer2.jpg", "picture/events/volunteer3.jpg"]
   },
   {
-    id:       "event-participant",
-    title:    "Participant – Information Science Week",
+    id:       "kraftopia-2024",
+    title:    "Deputy Director – Kraftopia 2024 Field Trip",
+    category: "Events",
+    year:     2024,
+    period:   "28 Jun 2024",
+    summary:  "Assisted the Program Director in coordinating activities for the field trip to KL Handicraft Museum.",
+    responsibilities: [
+      "Assisted Program Director in event coordination.",
+      "Ensured smooth execution of activities throughout the field trip."
+    ],
+    impact:   "Successfully coordinated a smooth and educational field trip experience.",
+    gallery:  ["picture/events/Kraftangan Trip/gigih.jpg", "picture/events/Kraftangan Trip/ramai.jpg", "picture/events/Kraftangan Trip/visit.jpg"]
+  },
+  {
+    id:       "supro-champion",
+    title:    "Multimedia Bureau – SUPRO Champion 2023 & 2024",
+    category: "Events",
+    year:     2024,
+    period:   "Dec 2023 & Nov 2024",
+    summary:  "Designed promotional materials including posters, montages, slides, and digital backdrops for inter-program sports events.",
+    responsibilities: [
+      "Designed posters, event photography, and montages.",
+      "Created slides and digital backdrops for event branding.",
+      "Enhanced overall visual identity of the sports events."
+    ],
+    impact:   "Boosted event branding and visual engagement across two years.",
+    gallery:  ["picture/events/supro (2).png", "picture/events/supro.png", "picture/events/supro3.png"]
+  },
+  {
+    id:       "zumba-neon",
+    title:    "Emcee – Zumba ft. Running Man Neon Challenge 2024",
+    category: "Events",
+    year:     2024,
+    period:   "25 Oct 2024",
+    summary:  "Unexpectedly took on the emcee role less than an hour before the event. Successfully engaged the audience.",
+    responsibilities: [
+      "Took on last-minute emcee role for the event.",
+      "Engaged audience and maintained a lively atmosphere.",
+      "Supported Program Bureau operations."
+    ],
+    impact:   "Demonstrated adaptability and public speaking confidence under pressure.",
+    gallery:  ["picture/events/ZUMA FT Runningman Neon Challenge/pilih.JPG", "picture/events/ZUMA FT Runningman Neon Challenge/zumba (2).jpg", "picture/events/ZUMA FT Runningman Neon Challenge/zumba.jpg"]
+  },
+  {
+    id:       "iks-trip-2024",
+    title:    "Logistics & Safety Bureau – IKS Trip 2024",
+    category: "Events",
+    year:     2024,
+    period:   "8 Jun 2024",
+    summary:  "Managed transportation and safety for 40 participants including children on an industrial visit to Sabak Bernam.",
+    responsibilities: [
+      "Managed transportation and safety for 40 participants.",
+      "Ensured smooth logistics and emergency preparedness.",
+      "Coordinated with accompanying staff throughout the trip."
+    ],
+    impact:   "Ensured safe and smooth industrial visit for all participants.",
+    gallery:  ["picture/events/LAWATAN INDUSTRI KECIL DAN SEDERHANG/iks.jpg", "picture/events/LAWATAN INDUSTRI KECIL DAN SEDERHANA/trio.JPG", "picture/events/LAWATAN INDUSTRI KECIL DAN SEDERHANA/lurve.JPG"]
+  },
+  {
+    id:       "magim-oct-2024",
+    title:    "Head of Relations Bureau – MAGIM Oct 2024",
+    category: "Events",
+    year:     2024,
+    period:   "7–11 Oct 2024",
+    summary:  "Facilitated VIP arrangements including official invitation letters and email communications for the MAGIM program.",
+    responsibilities: [
+      "Prepared official invitation letters for VIP guests.",
+      "Handled email communications and welcoming process.",
+      "Maintained professional communication throughout the event."
+    ],
+    impact:   "Ensured smooth and professional VIP handling for the program.",
+    gallery:  ["picture/events/tugas magim.jpg"]
+  },
+  {
+    id:       "magim-march-2024",
+    title:    "Program & Protocol Bureau – MAGIM March 2024",
+    category: "Events",
+    year:     2024,
+    period:   "18–21 March 2024",
+    summary:  "Wrote emcee scripts and oversaw program flow for the 100% online MAGIM during ODL period.",
+    responsibilities: [
+      "Wrote scripts for emcees and monitored time slots.",
+      "Ensured all speakers adhered to the schedule.",
+      "Oversaw seamless online program execution."
+    ],
+    impact:   "Maintained professional and smooth flow for the fully online program.",
+    gallery:  ["picture/events/onlinemagim.jpg", "picture/events/onlinemagim2.jpg", "picture/events/onlinemagim3.jpg"]
+  },
+  {
+    id:       "kppim-carnival-2023",
+    title:    "Multimedia Bureau – KPPIM Entrepreneurship Carnival 2023",
     category: "Events",
     year:     2023,
-    period:   "October 2023",
-    summary:  "Actively participated in academic and cultural events during the faculty's annual Information Science Week.",
+    period:   "13–14 Dec 2023",
+    summary:  "First major event in degree journey. Managed sales and conducted interactive games at the booth.",
     responsibilities: [
-      "Entered a poster-design competition.",
-      "Attended industry guest-speaker sessions.",
-      "Helped with event decoration and logistics."
+      "Managed booth sales and merchandise.",
+      "Conducted interactive games to attract visitors.",
+      "Learned valuable entrepreneurship skills hands-on."
     ],
-    impact:   "Poster design received an honourable mention."
+    impact:   "Gained foundational event management and entrepreneurship experience.",
+    gallery:  ["picture/events/HBP \u00d7 KARNIVAL KEUSAHAWAN 2023/ajk.jpg", "picture/events/HBP \u00d7 KARNIVAL KEUSAHAWAN 2023/jual.jpg", "picture/events/HBP \u00d7 KARNIVAL KEUSAHAWAN 2023/wdr.jpg"]
   },
   {
-    id:       "leadership-placeholder",
-    title:    "Leadership Role – [Placeholder]",
-    category: "Leadership",
+    id:       "mpj-2024",
+    title:    "Secretary – Malam Penyucian Jiwa KPPIM 2024",
+    category: "Events",
     year:     2024,
-    period:   "2024",
-    summary:  "Placeholder for an additional leadership role. Replace with real details.",
+    period:   "21 Jun 2024",
+    summary:  "Organized a Yassin recitation session for students preparing for final exams. Managed official documentation.",
     responsibilities: [
-      "Responsibility placeholder 1.",
-      "Responsibility placeholder 2."
+      "Organized Yassin recitation session for exam-period students.",
+      "Managed official documentation and correspondence."
     ],
-    impact:   "Impact placeholder."
-  },
-  {
-    id:       "volunteer-placeholder",
-    title:    "Volunteer – [Placeholder Activity]",
-    category: "Volunteer",
-    year:     2023,
-    period:   "2023",
-    summary:  "Placeholder for a volunteer activity. Replace with real details.",
-    responsibilities: [
-      "Responsibility placeholder 1.",
-      "Responsibility placeholder 2."
-    ],
-    impact:   "Impact placeholder."
+    impact:   "Provided a spiritual and supportive environment for students before exams.",
+    gallery:  ["picture/events/mpj.jpg"]
   }
 ];
 
@@ -2094,7 +2217,7 @@ const RESUME_HIGHLIGHTS = {
     cgpa:       PERSON.cgpa
   },
   keyProjects: PROJECTS.slice(0, 3).map(p => ({ title: p.title, year: p.year })),
-  keySkills:   ["HTML/CSS/JS", "JavaScript", "Supabase", "Flutter", "AI Tools", "Content Management"]
+  keySkills:   ["HTML/CSS/JS", "JavaScript", "Supabase", "Flutter", "Tableau", "Content Management"]
 };
 
 // ─── EXPORT (works in browser via script tag) ──────────────
@@ -2480,174 +2603,207 @@ const RESUME_HIGHLIGHTS = {
 })(); // end IIFE
 
 </script>
-<script>
-/**
- * ============================================================
- *  projects.js — Projects page logic
- *  Depends on: data.js (PROJECTS array)
- * ============================================================
- */
 
+<!-- Involvement page logic -->
+<script>
 (function () {
   "use strict";
 
-  // ── Cached DOM references ─────────────────────────────────
-  const grid         = document.getElementById("projects-grid");
-  const searchInput  = document.getElementById("projectSearch");
-  const sortSelect   = document.getElementById("projectSort");
-  const filterChips  = document.querySelectorAll(".filter-chip");
 
-  // Modal elements
-  const modalOverlay = document.getElementById("modalOverlay");
-  const modalClose   = document.getElementById("modalClose");
-  const modalHeader  = document.getElementById("modalHeader");
-  const modalBody    = document.getElementById("modalBody");
+  var lightboxState = {
+    modal: null,
+    modalImg: null,
+    images: [],
+    currentIndex: 0,
+    initialized: false
+  };
 
-  // ── State ─────────────────────────────────────────────────
-  let activeCategory = "All";   // current filter chip
-  let searchTerm     = "";      // current search string
-  let sortOrder      = "newest"; // newest | oldest | az
+  function initLightbox() {
+    if (lightboxState.initialized) return;
+    
+    lightboxState.modal = document.getElementById("lightbox-modal");
+    lightboxState.modalImg = document.getElementById("lightbox-img");
+    var close = document.querySelector(".lightbox-close");
+    var prev = document.querySelector(".lightbox-prev");
+    var next = document.querySelector(".lightbox-next");
+    
+    if (!lightboxState.modal) return;
 
-  // ── 1. INITIAL RENDER ─────────────────────────────────────
-  renderCards();
-
-  // ── 2. EVENT LISTENERS ────────────────────────────────────
-
-  // Filter chips
-  filterChips.forEach((chip) => {
-    chip.addEventListener("click", () => {
-      filterChips.forEach((c) => c.classList.remove("active"));
-      chip.classList.add("active");
-      activeCategory = chip.dataset.filter;
-      renderCards();
-    });
-  });
-
-  // Search input
-  if (searchInput) {
-    searchInput.addEventListener("input", (e) => {
-      searchTerm = e.target.value.trim().toLowerCase();
-      renderCards();
-    });
-  }
-
-  // Sort dropdown
-  if (sortSelect) {
-    sortSelect.addEventListener("change", (e) => {
-      sortOrder = e.target.value;
-      renderCards();
-    });
-  }
-
-  // Modal close (button + overlay click + Escape)
-  if (modalClose) modalClose.addEventListener("click", closeModal);
-  if (modalOverlay) {
-    modalOverlay.addEventListener("click", (e) => {
-      if (e.target === modalOverlay) closeModal();
-    });
-  }
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && modalOverlay && modalOverlay.classList.contains("open")) {
-      closeModal();
-    }
-  });
-
-  // ── 3. DEEP LINK — open modal from URL hash ──────────────
-  (function checkDeepLink() {
-    const params = new URLSearchParams(window.location.hash.replace("#", ""));
-    const slug   = params.get("project");
-    if (slug) {
-      const project = PROJECTS.find((p) => p.slug === slug);
-      if (project) openModal(project);
-    }
-  })();
-
-  // ── 4. RENDER PROJECT CARDS ───────────────────────────────
-  function renderCards() {
-    if (!grid) return;
-
-    let filtered = [...PROJECTS];
-
-    // Filter by category
-    if (activeCategory !== "All") {
-      filtered = filtered.filter((p) => p.category.includes(activeCategory));
+    function closeLightbox() {
+      lightboxState.modal.classList.remove("open");
+      document.body.style.overflow = "";
     }
 
-    // Filter by search
-    if (searchTerm) {
-      filtered = filtered.filter((p) => {
-        const haystack = [
-          p.title,
-          ...p.tools,
-          ...p.category,
-          p.summary
-        ].join(" ").toLowerCase();
-        return haystack.includes(searchTerm);
+    function showImage(index) {
+      if (lightboxState.images.length === 0) return;
+      if (index < 0) index = lightboxState.images.length - 1;
+      if (index >= lightboxState.images.length) index = 0;
+      lightboxState.currentIndex = index;
+      lightboxState.modalImg.src = lightboxState.images[index].src;
+      lightboxState.modalImg.alt = lightboxState.images[index].alt;
+    }
+
+    close.addEventListener("click", closeLightbox);
+    lightboxState.modal.addEventListener("click", function(e) {
+      if (e.target === lightboxState.modal) closeLightbox();
+    });
+    prev.addEventListener("click", function() { showImage(lightboxState.currentIndex - 1); });
+    next.addEventListener("click", function() { showImage(lightboxState.currentIndex + 1); });
+    
+    document.addEventListener("keydown", function(e) {
+      if (!lightboxState.modal.classList.contains("open")) return;
+      if (e.key === "Escape") closeLightbox();
+      if (e.key === "ArrowLeft") showImage(lightboxState.currentIndex - 1);
+      if (e.key === "ArrowRight") showImage(lightboxState.currentIndex + 1);
+    });
+
+    lightboxState.initialized = true;
+  }
+
+  function bindLightbox() {
+    console.log("bindLightbox() called");
+    initLightbox();
+    
+    // Collect all currently visible gallery images
+    lightboxState.images = Array.from(document.querySelectorAll(".accordion-gallery img"));
+    console.log("Found " + lightboxState.images.length + " gallery images");
+    
+    // Bind click to each image
+    lightboxState.images.forEach(function(img, idx) {
+      // Remove old listener by cloning
+      var newImg = img.cloneNode(true);
+      img.parentNode.replaceChild(newImg, img);
+      
+      newImg.addEventListener("click", function() {
+        console.log("Gallery image clicked! Index: " + idx);
+        lightboxState.images = Array.from(document.querySelectorAll(".accordion-gallery img"));
+        lightboxState.currentIndex = idx;
+        lightboxState.modal.classList.add("open");
+        lightboxState.modalImg.src = newImg.src;
+        lightboxState.modalImg.alt = newImg.alt;
+        document.body.style.overflow = "hidden";
       });
+    });
+  }
+
+
+  const timeline      = document.getElementById("invTimeline");
+  const filterChips   = document.querySelectorAll("[data-inv-filter]");
+  let activeCategory  = "All";
+
+  // ── Render on load ──────────────────────────────────────
+  renderTimeline();
+    bindLightbox();
+
+  // ── Filter chip events ──────────────────────────────────
+  filterChips.forEach(function (chip) {
+    chip.addEventListener("click", function () {
+      filterChips.forEach(function (c) { c.classList.remove("active"); });
+      chip.classList.add("active");
+      activeCategory = chip.dataset.invFilter;
+      renderTimeline();
+      setTimeout(function() { bindLightbox(); }, 100);
+    });
+  });
+
+  // ── Render Timeline ─────────────────────────────────────
+  function renderTimeline() {
+    if (!timeline || typeof INVOLVEMENT === "undefined") return;
+    timeline.innerHTML = "";
+
+    // Filter
+    var items = INVOLVEMENT;
+    if (activeCategory !== "All") {
+      items = items.filter(function (item) { return item.category === activeCategory; });
     }
 
-    // Sort
-    filtered.sort((a, b) => {
-      switch (sortOrder) {
-        case "oldest": return a.year - b.year;
-        case "az":     return a.title.localeCompare(b.title);
-        default:       return b.year - a.year; // newest
-      }
+    // Group by year (descending)
+    var years = {};
+    items.forEach(function (item) {
+      if (!years[item.year]) years[item.year] = [];
+      years[item.year].push(item);
     });
 
-    // Render
-    grid.innerHTML = "";
+    var sortedYears = Object.keys(years).sort(function (a, b) { return b - a; });
 
-    if (!filtered.length) {
-      grid.innerHTML = `<p style="color:var(--clr-text-muted);grid-column:1/-1;text-align:center;padding:var(--space-xl) 0;">
-        No projects match your filters. Try adjusting your search or category.</p>`;
-      return;
-    }
+    sortedYears.forEach(function (year) {
+      // Year marker
+      timeline.innerHTML += '<div class="timeline-year">' + year + '</div>';
 
-    filtered.forEach((p) => {
-      const card = document.createElement("article");
-      card.className = "project-card";
-      card.setAttribute("data-slug", p.slug);
+      // Items for this year
+      years[year].forEach(function (item) {
+        var catClass = item.category.toLowerCase();
+        var badgeClass = "cat-badge--" + catClass;
 
-      card.innerHTML = `
-        <div class="project-card__img">📁</div>
-        <div class="project-card__body">
-          <div class="project-card__tags">
-            ${p.category.map((c) => `<span class="tag">${c}</span>`).join("")}
-          </div>
-          <h3 class="project-card__title">${p.title}</h3>
-          <p class="project-card__summary">${p.summary}</p>
-          <div class="project-card__meta">
-            <span><strong>Role:</strong> ${p.role}</span>
-            <span><strong>Year:</strong> ${p.year}</span>
-          </div>
-          <div class="project-card__tools">
-            ${p.tools.map((t) => `<span class="tool-chip">${t}</span>`).join("")}
-          </div>
-          <button class="btn btn-primary btn-sm" data-open="${p.slug}">Case Study →</button>
-        </div>`;
-
-      grid.appendChild(card);
-
-      // Cards render immediately (no reveal needed)
+        timeline.innerHTML += '\
+          <div class="accordion-item" id="inv-' + item.id + '">\
+            <button class="accordion-trigger" aria-expanded="false">\
+              <span class="cat-badge ' + badgeClass + '">' + item.category + '</span>\
+              <span class="accordion-trigger__title">' + item.title + '</span>\
+              <span class="accordion-trigger__period">' + item.period + '</span>\
+              <span class="accordion-trigger__icon">▼</span>\
+            </button>\
+            <div class="accordion-body">\
+              <div class="accordion-body__inner">\
+                <p>' + item.summary + '</p>\
+                <ul>' + item.responsibilities.map(function (r) { return '<li>' + r + '</li>'; }).join('') + '</ul>\
+                <span class="impact-badge">💡 ' + item.impact + '</span>\
+                ' + (item.gallery && item.gallery.length > 0 ? '<div class="accordion-gallery">' + item.gallery.map(function(img) { return '<img src="' + img + '" alt="' + item.title + '" loading="lazy">'; }).join('') + '</div>' : '') + '\
+              </div>\
+            </div>\
+          </div>';
+      });
     });
 
-    // Re-observe new .reveal elements
+    // Re-trigger reveal observer
     triggerReveal();
 
-    // Bind "Case Study" buttons
-    grid.querySelectorAll(".btn[data-open]").forEach((btn) => {
-      btn.addEventListener("click", () => {
-        const project = PROJECTS.find((p) => p.slug === btn.dataset.open);
-        if (project) openModal(project);
+    // Bind accordion toggles
+    bindAccordions();
+  }
+
+  // ── Bind Accordion Expand/Collapse ──────────────────────
+  function bindAccordions() {
+    document.querySelectorAll(".accordion-trigger").forEach(function (trigger) {
+      // Remove old listeners by cloning (simple approach)
+      var fresh = trigger.cloneNode(true);
+      trigger.parentNode.replaceChild(fresh, trigger);
+
+      fresh.addEventListener("click", function () {
+        var item   = fresh.closest(".accordion-item");
+        var body   = item.querySelector(".accordion-body");
+        var isOpen = item.classList.contains("open");
+
+        // Close all others
+        document.querySelectorAll(".accordion-item").forEach(function (el) {
+          if (el !== item) {
+            el.classList.remove("open");
+            var b = el.querySelector(".accordion-body");
+            if (b) b.style.maxHeight = "0";
+            el.querySelector(".accordion-trigger").setAttribute("aria-expanded", "false");
+          }
+        });
+
+        // Toggle current
+        if (isOpen) {
+          item.classList.remove("open");
+          body.style.maxHeight = "0";
+          fresh.setAttribute("aria-expanded", "false");
+        } else {
+          item.classList.add("open");
+          body.style.maxHeight = body.scrollHeight + "px";
+          fresh.setAttribute("aria-expanded", "true");
+          // Bind lightbox to newly visible gallery images
+          setTimeout(function() { bindLightbox(); }, 50);
+        }
       });
     });
   }
 
-  // ── 5. TRIGGER REVEAL on dynamically added elements ───────
+  // ── Trigger Reveal (IntersectionObserver) ──────────────
   function triggerReveal() {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
         if (entry.isIntersecting) {
           entry.target.classList.add("visible");
           observer.unobserve(entry.target);
@@ -2655,176 +2811,34 @@ const RESUME_HIGHLIGHTS = {
       });
     }, { threshold: 0.12 });
 
-    document.querySelectorAll(".reveal:not(.visible)").forEach((el) => {
+    document.querySelectorAll(".reveal:not(.visible)").forEach(function (el) {
       observer.observe(el);
     });
   }
 
-  // ── 6. MODAL — open / close ───────────────────────────────
-  function openModal(project) {
-    if (!modalOverlay) return;
+  // ── Footer + Favicon ────────────────────────────────────
+  if (typeof PERSON !== "undefined") {
+    var f = document.getElementById("footerText");
+    if (f) f.innerHTML = '&copy; ' + new Date().getFullYear() + ' ' + PERSON.name + ' &middot; Built with vanilla HTML, CSS &amp; JS';
 
-    // Update URL hash for deep linking
-    const newHash = `#project=${project.slug}`;
-    history.replaceState(null, "", window.location.pathname + newHash);
-
-    // Header
-    modalHeader.innerHTML = `
-      <div style="display:flex;flex-wrap:wrap;gap:.3rem;">
-        ${project.category.map((c) => `<span class="tag">${c}</span>`).join("")}
-      </div>
-      <h2 class="modal__title">${project.title}</h2>
-      <p class="modal__meta">${project.role} &middot; ${project.year} &middot; Tools: ${project.tools.join(", ")}</p>`;
-
-    // Screenshot carousel
-    modalBody.innerHTML = buildCarousel(project.screenshots) + `
-      <div class="case-section">
-        <h4>🔍 Problem</h4>
-        <p>${project.problem}</p>
-      </div>
-      <div class="case-section">
-        <h4>⚙️ Process</h4>
-        <p>${project.process}</p>
-      </div>
-      <div class="case-section">
-        <h4>📦 Deliverables</h4>
-        <ul>${project.deliverables.map((d) => `<li>${d}</li>`).join("")}</ul>
-      </div>
-      <div class="case-section">
-        <h4>🎯 Outcome & Impact</h4>
-        <p>${project.outcome}</p>
-        <p style="margin-top:.5rem;font-weight:600;color:var(--clr-accent);">${project.impact}</p>
-      </div>
-      <div class="modal__links">
-        <a href="${project.demoUrl}" target="_blank" rel="noopener" class="btn btn-primary btn-sm">🚀 Demo</a>
-        <a href="${project.githubUrl}" target="_blank" rel="noopener" class="btn btn-outline btn-sm">🐙 GitHub</a>
-        <button class="modal__copy-link" id="copyLinkBtn" aria-label="Copy project link">🔗 Copy Link</button>
-      </div>`;
-
-    // Bind copy-link button
-    const copyBtn = document.getElementById("copyLinkBtn");
-    if (copyBtn) {
-      copyBtn.addEventListener("click", () => {
-        navigator.clipboard.writeText(window.location.href).then(() => {
-          copyBtn.textContent = "✓ Copied!";
-          copyBtn.classList.add("copied");
-          setTimeout(() => {
-            copyBtn.textContent = "🔗 Copy Link";
-            copyBtn.classList.remove("copied");
-          }, 1800);
-        });
-      });
+    var favicon = document.querySelector("[data-dynamic-favicon]");
+    if (favicon) {
+      var svg = "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23e8503a'/><text x='16' y='22' text-anchor='middle' font-family='sans-serif' font-size='18' font-weight='700' fill='white'>" + PERSON.initials + "</text></svg>";
+      favicon.href = "data:image/svg+xml," + svg;
     }
-
-    // Init carousel after render
-    requestAnimationFrame(() => initCarousel());
-
-    // Show modal
-    modalOverlay.classList.add("open");
-
-    // Focus first focusable element inside modal
-    const firstFocusable = modalOverlay.querySelector("button, [href], input, [tabindex]");
-    if (firstFocusable) firstFocusable.focus();
   }
 
-  function closeModal() {
-    if (!modalOverlay) return;
-    modalOverlay.classList.remove("open");
-    // Remove hash
-    history.replaceState(null, "", window.location.pathname);
-  }
-
-  // ── 7. SCREENSHOT CAROUSEL ────────────────────────────────
-  function buildCarousel(screenshots) {
-    if (!screenshots || !screenshots.length) return "";
-
-    const slides = screenshots.map((img, i) =>
-      `<div class="carousel__slide" aria-label="Screenshot ${i + 1}">Screenshot ${i + 1} – Placeholder</div>`
-    ).join("");
-
-    const dots = screenshots.map((_, i) =>
-      `<button class="carousel__dot${i === 0 ? " active" : ""}" aria-label="Go to slide ${i + 1}" data-dot="${i}"></button>`
-    ).join("");
-
-    return `
-      <div class="carousel" id="caseCarousel">
-        <div class="carousel__track" id="carouselTrack">${slides}</div>
-        <button class="carousel__btn carousel__btn--prev" aria-label="Previous slide" id="carouselPrev">&#8249;</button>
-        <button class="carousel__btn carousel__btn--next" aria-label="Next slide" id="carouselNext">&#8250;</button>
-        <div class="carousel__dots" id="carouselDots">${dots}</div>
-      </div>`;
-  }
-
-  function initCarousel() {
-    const track = document.getElementById("carouselTrack");
-    const prev  = document.getElementById("carouselPrev");
-    const next  = document.getElementById("carouselNext");
-    const dots  = document.querySelectorAll(".carousel__dot");
-    if (!track) return;
-
-    let current = 0;
-    const total = track.children.length;
-
-    function goTo(index) {
-      current = (index + total) % total;
-      track.style.transform = `translateX(-${current * 100}%)`;
-      dots.forEach((d, i) => d.classList.toggle("active", i === current));
-    }
-
-    prev && prev.addEventListener("click", () => goTo(current - 1));
-    next && next.addEventListener("click", () => goTo(current + 1));
-    dots.forEach((dot, i) => dot.addEventListener("click", () => goTo(i)));
-  }
-
-})(); // end IIFE
-
-</script>
-
-<!-- Footer + favicon -->
-<script>
-(function() {
-  if (typeof PERSON === "undefined") return;
-  const f = document.getElementById("footerText");
-  if (f) f.innerHTML = `&copy; ${new Date().getFullYear()} ${PERSON.name} &middot; Built with vanilla HTML, CSS &amp; JS`;
-
-  const favicon = document.querySelector("[data-dynamic-favicon]");
-  if (favicon) {
-    const svg = `<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23e8503a'/><text x='16' y='22' text-anchor='middle' font-family='sans-serif' font-size='18' font-weight='700' fill='white'>${PERSON.initials}</text></svg>`;
-    favicon.href = `data:image/svg+xml,${svg}`;
-  }
 })();
 </script>
 </body>
 </html>
+  <!-- Image Lightbox Modal -->
+  <div id="lightbox-modal" class="lightbox-overlay">
+    <span class="lightbox-close">&times;</span>
+    <img class="lightbox-content" id="lightbox-img" alt="">
+    <span class="lightbox-prev">&#10094;</span>
+    <span class="lightbox-next">&#10095;</span>
+  </div>
 
-  // ── Render Full Projects Grid (projects.html only) ──────
-  (function initProjectsPage() {
-    const grid = document.getElementById("projects-grid");
-    if (!grid || typeof PROJECTS === "undefined") return;
 
-    PROJECTS.forEach(function(p) {
-      const card = document.createElement("article");
-      card.className = "project-card";
-      
-      const tags = p.category.map(c => '<span class="tag">' + c + '</span>').join("");
-      const tools = p.tools.map(t => '<span class="tag tag--tool">' + t + '</span>').join("");
-      
-      card.innerHTML = `
-        <div class="project-card__header">
-          <div class="project-card__tags">${tags}</div>
-          <h3 class="project-card__title">${p.title}</h3>
-          <p class="project-card__summary">${p.summary}</p>
-        </div>
-        <div class="project-card__body">
-          <p class="project-card__role">${p.role} · ${p.year}</p>
-          <div class="project-card__tools">${tools}</div>
-        </div>
-        <div class="project-card__footer">
-          ${p.demoUrl && p.demoUrl !== '#' ? '<a href="' + p.demoUrl + '" target="_blank" rel="noopener" class="btn btn--secondary btn--sm">View Demo</a>' : ''}
-          ${p.githubUrl && p.githubUrl !== '#' ? '<a href="' + p.githubUrl + '" target="_blank" rel="noopener" class="btn btn--secondary btn--sm">GitHub</a>' : ''}
-        </div>
-      `;
-      
-      grid.appendChild(card);
-    });
-  })();
+  // ── Lightbox for Gallery Images ─────────────────────────
