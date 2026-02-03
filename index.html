@@ -626,21 +626,57 @@
         }
         
         .award-card {
-            background: var(--bg-light);
-            padding: 32px;
+            background: var(--white);
             border-radius: 12px;
-            text-align: center;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
             transition: all 0.3s ease;
+            cursor: pointer;
         }
         
         .award-card:hover {
-            transform: scale(1.03);
-            box-shadow: var(--shadow-md);
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
         }
         
-        .award-icon {
-            font-size: 3rem;
-            margin-bottom: 16px;
+        .award-image {
+            width: 100%;
+            height: 220px;
+            background: var(--bg-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .award-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .award-card:hover .award-image img {
+            transform: scale(1.05);
+        }
+        
+        .award-badge {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: #ffd700;
+            color: var(--primary);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 700;
+            z-index: 1;
+        }
+        
+        .award-content {
+            padding: 24px;
+            text-align: center;
         }
         
         .award-card h4 {
@@ -652,6 +688,82 @@
         .award-card p {
             font-size: 14px;
             color: var(--text-light);
+        }
+        
+        /* Lightbox Modal */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .lightbox.active {
+            display: flex;
+        }
+        
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+            position: relative;
+            animation: fadeInUp 0.3s ease;
+        }
+        
+        .lightbox-content img {
+            width: 100%;
+            height: auto;
+            max-height: 90vh;
+            object-fit: contain;
+            border-radius: 8px;
+            box-shadow: 0 0 50px rgba(255, 255, 255, 0.1);
+        }
+        
+        .lightbox-close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            background: var(--accent);
+            color: var(--white);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 24px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .lightbox-close:hover {
+            background: var(--accent-light);
+            transform: rotate(90deg);
+        }
+        
+        .award-click-hint {
+            position: absolute;
+            bottom: 12px;
+            right: 12px;
+            background: rgba(0, 0, 0, 0.7);
+            color: var(--white);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 11px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+        
+        .award-card:hover .award-click-hint {
+            opacity: 1;
         }
         
         /* Contact */
@@ -824,7 +936,7 @@
                 </p>
                 <div class="cta-buttons">
                     <a href="#contact" class="btn btn-primary">Let's Connect</a>
-                    <a href="https://neul000.github.io/digital-portfolio/" class="btn btn-secondary" target="_blank">Download Resume</a>
+                    <a href="picture/resumelatest.pdf" class="btn btn-secondary" target="_blank">Download Resume</a>
                 </div>
             </div>
             <div class="header-image">
@@ -1093,19 +1205,37 @@
             </div>
             <div class="awards-grid">
                 <div class="award-card">
-                    <div class="award-icon">🏆</div>
-                    <h4>Best Student Leadership Award</h4>
-                    <p>Anugerah Pelajar Kepimpinan Terbaik Keusahawanan • 2025</p>
+                    <div class="award-image">
+                        <div class="award-badge">🏆 MAJOR AWARD</div>
+                        <div class="award-click-hint">Click to enlarge</div>
+                        <img src="picture/cert/sijil-kepimpinan.jpeg" alt="Best Student Leadership Award">
+                    </div>
+                    <div class="award-content">
+                        <h4>Best Student Leadership Award</h4>
+                        <p>Anugerah Pelajar Kepimpinan Terbaik Keusahawanan • 2025</p>
+                    </div>
                 </div>
                 <div class="award-card">
-                    <div class="award-icon">🎓</div>
-                    <h4>Dean's List Award</h4>
-                    <p>Academic Excellence • CGPA 3.64 • 2023</p>
+                    <div class="award-image">
+                        <div class="award-badge">🏆 ACADEMIC</div>
+                        <div class="award-click-hint">Click to enlarge</div>
+                        <img src="picture/cert/deans.png" alt="Dean's List Award">
+                    </div>
+                    <div class="award-content">
+                        <h4>Dean's List Award</h4>
+                        <p>Academic Excellence • CGPA 3.64 • 2023</p>
+                    </div>
                 </div>
                 <div class="award-card">
-                    <div class="award-icon">🥇</div>
-                    <h4>Best Booth Design</h4>
-                    <p>First Place • Open Day 2024</p>
+                    <div class="award-image">
+                        <div class="award-badge">🏆 1ST PLACE</div>
+                        <div class="award-click-hint">Click to enlarge</div>
+                        <img src="picture/events/HBP 2024/HAMPER TEMPAT PERTAMA BOOTH TERCANTIK.jpg" alt="Best Booth Award">
+                    </div>
+                    <div class="award-content">
+                        <h4>Best Booth Design</h4>
+                        <p>First Place • Open Day 2024</p>
+                    </div>
                 </div>
             </div>
             <div class="view-all-btn">
@@ -1124,7 +1254,7 @@
                     <h3>Get In Touch</h3>
                     <div class="contact-item">
                         <strong>📧 Email</strong>
-                        <a href="mailto:aliasyafiqah133@gmail.com">aliasyafiqah133@gmail.com</a>
+                        <a href="/cdn-cgi/l/email-protection#dcbdb0b5bdafa5bdbab5adbdb4edefef9cbbb1bdb5b0f2bfb3b1"><span class="__cf_email__" data-cfemail="f1909d98908288909798809099c0c2c2b1969c90989ddf929e9c">[email&#160;protected]</span></a>
                     </div>
                     <div class="contact-item">
                         <strong>📱 Phone</strong>
@@ -1146,7 +1276,7 @@
                 
                 <div class="contact-form">
                     <h3>Quick Message</h3>
-                    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                    <form action="https://formspree.io/f/meezwyyq" method="POST">
                         <div class="form-group">
                             <label for="name">Name</label>
                             <input type="text" id="name" name="name" required>
@@ -1175,8 +1305,50 @@
         <p>&copy; 2026 Alia Syafiqah. Blending technical precision with creative storytelling.</p>
         <p style="margin-top: 8px; font-size: 14px;">Available for full-time opportunities starting April 2026</p>
     </footer>
+    
+    <!-- Lightbox Modal -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-content">
+            <button class="lightbox-close" onclick="closeLightbox()">×</button>
+            <img id="lightbox-img" src="" alt="Certificate">
+        </div>
+    </div>
 
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        // Lightbox functionality
+        function openLightbox(imgSrc) {
+            document.getElementById('lightbox').classList.add('active');
+            document.getElementById('lightbox-img').src = imgSrc;
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Close lightbox on background click
+        document.getElementById('lightbox').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeLightbox();
+            }
+        });
+        
+        // Close lightbox on ESC key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            }
+        });
+        
+        // Add click handlers to all award images
+        document.querySelectorAll('.award-image img').forEach(img => {
+            img.parentElement.style.cursor = 'pointer';
+            img.parentElement.addEventListener('click', function() {
+                openLightbox(img.src);
+            });
+        });
+        
         // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
