@@ -1,2844 +1,627 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>Involvement – Alia Syafiqah | Leadership & Volunteering</title>
-  <meta name="description" content="Leadership roles, volunteering, and event participation throughout university." />
-
-  <!-- Open Graph -->
-  <meta property="og:type"        content="website" />
-  <meta property="og:title"       content="Involvement – Alia Syafiqah" />
-  <meta property="og:description" content="A timeline of leadership, volunteering, and events." />
-
-  <link rel="icon" type="image/svg+xml" data-dynamic-favicon />
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-
-  <style>
-/* ============================================================
-   style.css — Master Stylesheet
-   Design Direction: Editorial / refined minimalism with warm
-   accent pops. Typography-driven hierarchy. Generous whitespace.
-   ============================================================ */
-
-/* ─── RESET & BOX MODEL ────────────────────────────────────── */
-*, *::before, *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-/* ─── CSS VARIABLES ────────────────────────────────────────── */
-:root {
-  /* Colours – Light */
-  --clr-bg:        #f8f7f4;
-  --clr-surface:   #ffffff;
-  --clr-surface2:  #eeead5;
-  --clr-border:    #e2ddd6;
-  --clr-text:      #1e1c18;
-  --clr-text-muted:#6b6660;
-  --clr-accent:    #e8503a;       /* warm coral */
-  --clr-accent2:   #2c6e49;       /* deep green */
-  --clr-accent-lt: #fdecea;       /* accent tint */
-  --clr-green-lt:  #e6f2ec;
-  --clr-tag-bg:    #eeead5;
-
-  /* Spacing scale */
-  --space-xs:   0.25rem;
-  --space-sm:   0.5rem;
-  --space-md:   1rem;
-  --space-lg:   1.75rem;
-  --space-xl:   3rem;
-  --space-2xl:  5rem;
-
-  /* Radius */
-  --radius-sm:  6px;
-  --radius-md:  12px;
-  --radius-lg:  20px;
-  --radius-pill: 999px;
-
-  /* Typography */
-  --font-display: 'Playfair Display', Georgia, serif;
-  --font-body:    'DM Sans', 'Segoe UI', system-ui, sans-serif;
-  --font-mono:    'JetBrains Mono', 'Fira Code', monospace;
-
-  /* Shadows */
-  --shadow-sm:  0 1px  3px rgba(0,0,0,.06);
-  --shadow-md:  0 4px 12px rgba(0,0,0,.08);
-  --shadow-lg:  0 8px 32px rgba(0,0,0,.12);
-
-  /* Transitions */
-  --ease:       cubic-bezier(.4, 0, .2, 1);
-  --dur-fast:   180ms;
-  --dur-med:    320ms;
-  --dur-slow:   500ms;
-
-  /* Layout */
-  --max-w:      1120px;
-  --nav-h:      68px;
-}
-
-/* ─── DARK MODE ────────────────────────────────────────────── */
-[data-theme="dark"] {
-  --clr-bg:        #1a1917;
-  --clr-surface:   #24221f;
-  --clr-surface2:  #2e2c29;
-  --clr-border:    #3a3835;
-  --clr-text:      #ede9e2;
-  --clr-text-muted:#9a9590;
-  --clr-accent:    #ff6b56;
-  --clr-accent-lt: #2a1e1c;
-  --clr-accent2:   #4ade80;
-  --clr-green-lt:  #1a2e22;
-  --clr-tag-bg:    #2e2c29;
-}
-
-/* ─── TYPOGRAPHY ───────────────────────────────────────────── */
-/* Google Fonts loaded via <link> in HTML for reliability */
-
-html {
-  font-size: 16px;
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: var(--font-body);
-  background: var(--clr-bg);
-  color: var(--clr-text);
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-  transition: background var(--dur-med) var(--ease),
-              color var(--dur-med) var(--ease);
-}
-
-h1, h2, h3, h4 {
-  font-family: var(--font-display);
-  line-height: 1.2;
-  color: var(--clr-text);
-}
-
-h1 { font-size: clamp(2.4rem, 6vw, 3.8rem); font-weight: 700; }
-h2 { font-size: clamp(1.8rem, 4vw, 2.4rem); font-weight: 600; }
-h3 { font-size: 1.3rem; font-weight: 600; }
-h4 { font-size: 1.05rem; font-weight: 600; font-family: var(--font-body); }
-
-p { max-width: 68ch; }
-
-a { color: var(--clr-accent); text-decoration: none; }
-a:hover { text-decoration: underline; }
-
-img { max-width: 100%; display: block; }
-
-/* ─── SKIP LINK (accessibility) ────────────────────────────── */
-.skip-link {
-  position: absolute;
-  top: -100%;
-  left: var(--space-md);
-  background: var(--clr-accent);
-  color: #fff;
-  padding: .6rem 1.2rem;
-  border-radius: var(--radius-sm);
-  font-weight: 600;
-  z-index: 9999;
-  transition: top var(--dur-fast);
-}
-.skip-link:focus { top: var(--space-md); text-decoration: none; }
-
-/* ─── UTILITY CLASSES ──────────────────────────────────────── */
-.container {
-  width: 90%;
-  max-width: var(--max-w);
-  margin-inline: auto;
-}
-
-.sr-only {
-  position: absolute;
-  width: 1px; height: 1px;
-  padding: 0; margin: -1px;
-  overflow: hidden;
-  clip: rect(0,0,0,0);
-  white-space: nowrap;
-  border: 0;
-}
-
-.section-label {
-  display: inline-block;
-  font-size: .75rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: .12em;
-  color: var(--clr-accent);
-  margin-bottom: var(--space-sm);
-}
-
-.section-title {
-  margin-bottom: var(--space-lg);
-}
-
-/* fade-in on scroll */
-.reveal {
-  opacity: 0;
-  transform: translateY(24px);
-  transition: opacity var(--dur-slow) var(--ease),
-              transform var(--dur-slow) var(--ease);
-}
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* ─── BUTTONS ──────────────────────────────────────────────── */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  gap: .5rem;
-  padding: .7rem 1.5rem;
-  border-radius: var(--radius-pill);
-  font-family: var(--font-body);
-  font-size: .95rem;
-  font-weight: 600;
-  cursor: pointer;
-  border: 2px solid transparent;
-  transition: all var(--dur-fast) var(--ease);
-  text-decoration: none;
-  user-select: none;
-}
-.btn:hover { text-decoration: none; }
-
-.btn-primary {
-  background: var(--clr-accent);
-  color: #fff;
-}
-.btn-primary:hover {
-  background: #d44332;
-  transform: translateY(-1px);
-  box-shadow: var(--shadow-md);
-}
-
-.btn-outline {
-  border-color: var(--clr-text);
-  color: var(--clr-text);
-  background: transparent;
-}
-.btn-outline:hover {
-  background: var(--clr-text);
-  color: var(--clr-bg);
-  transform: translateY(-1px);
-}
-
-.btn-sm {
-  padding: .4rem 1rem;
-  font-size: .82rem;
-}
-
-/* ─── NAVBAR ───────────────────────────────────────────────── */
-.navbar {
-  position: sticky;
-  top: 0;
-  height: var(--nav-h);
-  background: var(--clr-surface);
-  border-bottom: 1px solid var(--clr-border);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  z-index: 100;
-  transition: background var(--dur-med) var(--ease),
-              border-color var(--dur-med) var(--ease);
-}
-
-.nav-brand {
-  font-family: var(--font-display);
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: var(--clr-text);
-  text-decoration: none;
-}
-
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-  list-style: none;
-}
-.nav-links a {
-  color: var(--clr-text-muted);
-  font-size: .88rem;
-  font-weight: 500;
-  transition: color var(--dur-fast);
-  text-decoration: none;
-  position: relative;
-}
-.nav-links a::after {
-  content: '';
-  position: absolute;
-  bottom: -4px; left: 0;
-  width: 0; height: 2px;
-  background: var(--clr-accent);
-  border-radius: var(--radius-pill);
-  transition: width var(--dur-med) var(--ease);
-}
-.nav-links a:hover,
-.nav-links a.active {
-  color: var(--clr-accent);
-}
-.nav-links a:hover::after,
-.nav-links a.active::after {
-  width: 100%;
-}
-
-.nav-actions {
-  display: flex;
-  align-items: center;
-  gap: .75rem;
-}
-
-/* Dark mode toggle button */
-.theme-toggle {
-  background: none;
-  border: 2px solid var(--clr-border);
-  border-radius: var(--radius-md);
-  width: 40px; height: 40px;
-  display: flex; align-items: center; justify-content: center;
-  cursor: pointer;
-  font-size: 1.1rem;
-  transition: border-color var(--dur-fast), transform var(--dur-fast);
-  color: var(--clr-text);
-}
-.theme-toggle:hover {
-  border-color: var(--clr-accent);
-  transform: rotate(15deg);
-}
-
-/* Mobile hamburger */
-.hamburger {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 6px;
-}
-.hamburger span {
-  display: block;
-  width: 24px; height: 2px;
-  background: var(--clr-text);
-  border-radius: var(--radius-pill);
-  transition: all var(--dur-med) var(--ease);
-}
-
-/* Mobile nav overlay */
-.mobile-nav {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: var(--clr-surface);
-  z-index: 99;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 1.8rem;
-}
-.mobile-nav.open { display: flex; }
-.mobile-nav a {
-  font-family: var(--font-display);
-  font-size: 1.6rem;
-  color: var(--clr-text);
-  text-decoration: none;
-  transition: color var(--dur-fast);
-}
-.mobile-nav a:hover { color: var(--clr-accent); }
-.mobile-close {
-  position: absolute;
-  top: 1.2rem; right: 1.5rem;
-  background: none; border: none;
-  font-size: 1.8rem;
-  cursor: pointer;
-  color: var(--clr-text);
-}
-
-/* ─── HERO ─────────────────────────────────────────────────── */
-.hero {
-  min-height: calc(100vh - var(--nav-h));
-  display: flex;
-  align-items: center;
-  padding: var(--space-2xl) 0;
-}
-
-.hero__inner {
-  display: grid;
-  grid-template-columns: 1fr 300px;
-  gap: var(--space-xl);
-  align-items: center;
-}
-
-.hero__text .section-label { margin-bottom: var(--space-md); }
-
-.hero__role {
-  font-size: clamp(1rem, 2.2vw, 1.15rem);
-  color: var(--clr-text-muted);
-  margin-bottom: var(--space-md);
-  font-weight: 500;
-}
-
-.hero__value {
-  list-style: none;
-  margin: var(--space-md) 0 var(--space-lg);
-}
-.hero__value li {
-  padding: .45rem 0;
-  font-size: .95rem;
-  color: var(--clr-text-muted);
-  display: flex;
-  align-items: flex-start;
-  gap: .6rem;
-}
-.hero__value li::before {
-  content: '';
-  flex-shrink: 0;
-  width: 8px; height: 8px;
-  border-radius: 50%;
-  background: var(--clr-accent);
-  margin-top: 7px;
-}
-
-.hero__ctas {
-  display: flex;
-  flex-wrap: wrap;
-  gap: .75rem;
-}
-
-/* Hero photo placeholder */
-.hero__photo {
-  width: 260px; height: 260px;
-  border-radius: var(--radius-lg);
-  background: var(--clr-border);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  justify-self: center;
-  font-size: 5rem;
-  color: var(--clr-text-muted);
-  position: relative;
-  overflow: hidden;
-}
-.hero__photo img {
-  width: 100%; height: 100%;
-  object-fit: cover;
-}
-.hero__photo--frame {
-  position: absolute;
-  inset: -8px;
-  border: 3px solid var(--clr-accent);
-  border-radius: calc(var(--radius-lg) + 8px);
-  pointer-events: none;
-}
-
-/* ─── EMPLOYER QUICK VIEW ──────────────────────────────────── */
-.quick-view {
-  padding: var(--space-xl) 0;
-}
-
-.quick-view__grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-md);
-}
-
-.quick-card {
-  background: var(--clr-surface);
-  border: 1px solid var(--clr-border);
-  border-radius: var(--radius-lg);
-  padding: var(--space-lg);
-  transition: box-shadow var(--dur-med) var(--ease),
-              transform var(--dur-med) var(--ease);
-}
-.quick-card:hover {
-  box-shadow: var(--shadow-md);
-  transform: translateY(-3px);
-}
-
-.quick-card__title {
-  font-size: .7rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: .1em;
-  color: var(--clr-accent);
-  margin-bottom: var(--space-md);
-}
-
-.quick-card__list {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: .55rem;
-}
-.quick-card__list li {
-  font-size: .88rem;
-  color: var(--clr-text-muted);
-  display: flex;
-  align-items: center;
-  gap: .5rem;
-}
-.quick-card__list .icon { font-size: 1rem; }
-
-/* ─── ABOUT ────────────────────────────────────────────────── */
-.about {
-  padding: var(--space-2xl) 0;
-  border-top: 1px solid var(--clr-border);
-}
-
-.about__inner {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-xl);
-  align-items: start;
-}
-
-.about__bio {
-  font-size: 1.02rem;
-  color: var(--clr-text-muted);
-  line-height: 1.8;
-  white-space: pre-line;
-}
-
-.about__details {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-md);
-}
-
-.detail-row {
-  display: flex;
-  justify-content: space-between;
-  padding: .75rem 0;
-  border-bottom: 1px solid var(--clr-border);
-  font-size: .9rem;
-}
-.detail-row__label { color: var(--clr-text-muted); font-weight: 500; }
-.detail-row__value { color: var(--clr-text); font-weight: 600; }
-
-/* ─── SKILLS MATRIX ────────────────────────────────────────── */
-.skills {
-  padding: var(--space-2xl) 0;
-  border-top: 1px solid var(--clr-border);
-}
-
-.skill-tabs {
-  display: flex;
-  gap: .5rem;
-  margin-bottom: var(--space-lg);
-}
-
-.skill-tab {
-  padding: .5rem 1.2rem;
-  border-radius: var(--radius-pill);
-  border: 2px solid var(--clr-border);
-  background: transparent;
-  color: var(--clr-text-muted);
-  font-family: var(--font-body);
-  font-size: .85rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all var(--dur-fast) var(--ease);
-}
-.skill-tab:hover { border-color: var(--clr-accent); color: var(--clr-accent); }
-.skill-tab.active {
-  background: var(--clr-accent);
-  border-color: var(--clr-accent);
-  color: #fff;
-}
-
-.skill-panel { display: none; }
-.skill-panel.active { display: block; }
-
-.skill-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: var(--space-md);
-}
-
-.skill-card {
-  background: var(--clr-surface);
-  border: 1px solid var(--clr-border);
-  border-radius: var(--radius-md);
-  padding: var(--space-md) var(--space-md) .9rem;
-}
-
-.skill-card__header {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  margin-bottom: .5rem;
-}
-.skill-card__name { font-size: .9rem; font-weight: 600; }
-.skill-card__level {
-  font-size: .72rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: .06em;
-  padding: .2rem .55rem;
-  border-radius: var(--radius-pill);
-}
-.skill-card__level--beginner {
-  background: var(--clr-green-lt);
-  color: var(--clr-accent2);
-}
-.skill-card__level--intermediate {
-  background: #fff3cd;
-  color: #856404;
-}
-.skill-card__level--advanced {
-  background: var(--clr-accent-lt);
-  color: var(--clr-accent);
-}
-[data-theme="dark"] .skill-card__level--intermediate {
-  background: #3a3020;
-  color: #e6c85a;
-}
-
-/* Accessible meter bar */
-.skill-meter {
-  height: 6px;
-  background: var(--clr-border);
-  border-radius: var(--radius-pill);
-  overflow: hidden;
-}
-.skill-meter__fill {
-  height: 100%;
-  border-radius: var(--radius-pill);
-  transition: width .6s var(--ease);
-}
-.skill-meter__fill--1 { width: 33%; background: var(--clr-accent2); }
-.skill-meter__fill--2 { width: 66%; background: #e6a817; }
-.skill-meter__fill--3 { width: 100%; background: var(--clr-accent); }
-
-/* ─── FEATURED PROJECTS (homepage preview) ─────────────────── */
-.featured {
-  padding: var(--space-2xl) 0;
-  border-top: 1px solid var(--clr-border);
-}
-
-.featured__grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: var(--space-md);
-  margin-bottom: var(--space-lg);
-}
-
-.project-preview {
-  background: var(--clr-surface);
-  border: 1px solid var(--clr-border);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  transition: box-shadow var(--dur-med) var(--ease),
-              transform var(--dur-med) var(--ease);
-}
-.project-preview:hover {
-  box-shadow: var(--shadow-md);
-  transform: translateY(-3px);
-}
-
-.project-preview__img {
-  height: 160px;
-  background: var(--clr-surface2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2.5rem;
-  color: var(--clr-text-muted);
-}
-
-.project-preview__body {
-  padding: var(--space-md);
-}
-.project-preview__tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: .35rem;
-  margin-bottom: .5rem;
-}
-.tag {
-  font-size: .7rem;
-  font-weight: 600;
-  padding: .2rem .6rem;
-  border-radius: var(--radius-pill);
-  background: var(--clr-tag-bg);
-  color: var(--clr-text-muted);
-}
-.project-preview__title { margin-bottom: .35rem; font-size: 1.05rem; }
-.project-preview__summary {
-  font-size: .83rem;
-  color: var(--clr-text-muted);
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-
-.featured__cta { text-align: center; }
-
-/* ─── PROOF & CREDIBILITY ──────────────────────────────────── */
-.proof {
-  padding: var(--space-2xl) 0;
-  border-top: 1px solid var(--clr-border);
-}
-
-.proof__grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-xl);
-}
-
-.proof__certs {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-sm);
-}
-
-.cert-card {
-  background: var(--clr-surface);
-  border: 1px solid var(--clr-border);
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  transition: transform var(--dur-fast);
-}
-.cert-card:hover { transform: scale(1.02); }
-
-.cert-card__img {
-  height: 100px;
-  background: var(--clr-surface2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2rem;
-}
-
-.cert-card__info {
-  padding: .6rem .75rem;
-}
-.cert-card__title { font-size: .78rem; font-weight: 600; }
-.cert-card__issuer { font-size: .7rem; color: var(--clr-text-muted); }
-
-/* Achievements list */
-.achievement-item {
-  padding: var(--space-sm) 0;
-  border-bottom: 1px solid var(--clr-border);
-  display: flex;
-  gap: var(--space-md);
-}
-.achievement-item:last-child { border-bottom: none; }
-.achievement-item__year {
-  font-size: .75rem;
-  font-weight: 700;
-  color: var(--clr-accent);
-  min-width: 38px;
-}
-.achievement-item__title { font-size: .9rem; font-weight: 600; }
-.achievement-item__detail { font-size: .8rem; color: var(--clr-text-muted); }
-
-/* ─── TESTIMONIALS ─────────────────────────────────────────── */
-.testimonials {
-  padding: var(--space-2xl) 0;
-  border-top: 1px solid var(--clr-border);
-}
-.testimonials__note {
-  font-size: .75rem;
-  color: var(--clr-text-muted);
-  font-style: italic;
-  margin-bottom: var(--space-lg);
-}
-
-.testimonial-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-md);
-}
-
-.testimonial-card {
-  background: var(--clr-surface);
-  border: 1px solid var(--clr-border);
-  border-radius: var(--radius-lg);
-  padding: var(--space-lg);
-  position: relative;
-}
-.testimonial-card::before {
-  content: '"';
-  font-family: var(--font-display);
-  font-size: 4rem;
-  color: var(--clr-accent);
-  opacity: .18;
-  position: absolute;
-  top: 8px; left: 16px;
-  line-height: 1;
-}
-
-.testimonial-card__quote {
-  font-size: .9rem;
-  color: var(--clr-text-muted);
-  line-height: 1.7;
-  margin-bottom: var(--space-md);
-  font-style: italic;
-}
-.testimonial-card__author {
-  display: flex;
-  align-items: center;
-  gap: .6rem;
-}
-.testimonial-card__avatar {
-  width: 36px; height: 36px;
-  border-radius: 50%;
-  background: var(--clr-border);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 1rem;
-}
-.testimonial-card__name { font-size: .82rem; font-weight: 600; }
-.testimonial-card__role { font-size: .72rem; color: var(--clr-text-muted); }
-
-/* ─── CONTACT ──────────────────────────────────────────────── */
-.contact {
-  padding: var(--space-2xl) 0;
-  border-top: 1px solid var(--clr-border);
-}
-
-.contact__grid {
-  display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: var(--space-xl);
-}
-
-.contact-cards {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-sm);
-}
-
-.contact-card {
-  display: flex;
-  align-items: center;
-  gap: .75rem;
-  padding: .9rem 1rem;
-  background: var(--clr-surface);
-  border: 1px solid var(--clr-border);
-  border-radius: var(--radius-md);
-  text-decoration: none;
-  color: var(--clr-text);
-  transition: border-color var(--dur-fast), transform var(--dur-fast);
-}
-.contact-card:hover { border-color: var(--clr-accent); transform: translateX(4px); text-decoration: none; }
-
-.contact-card__icon {
-  font-size: 1.3rem;
-  width: 38px; height: 38px;
-  border-radius: var(--radius-sm);
-  background: var(--clr-accent-lt);
-  display: flex; align-items: center; justify-content: center;
-}
-.contact-card__label { font-size: .78rem; color: var(--clr-text-muted); }
-.contact-card__value { font-size: .88rem; font-weight: 600; }
-
-/* Copy button inside contact card */
-.copy-btn {
-  margin-left: auto;
-  background: none;
-  border: 1px solid var(--clr-border);
-  border-radius: var(--radius-sm);
-  padding: .3rem .55rem;
-  font-size: .7rem;
-  font-weight: 600;
-  color: var(--clr-text-muted);
-  cursor: pointer;
-  transition: all var(--dur-fast);
-}
-.copy-btn:hover { border-color: var(--clr-accent); color: var(--clr-accent); }
-.copy-btn.copied { background: var(--clr-accent); color: #fff; border-color: var(--clr-accent); }
-
-/* Contact form */
-.contact-form { display: flex; flex-direction: column; gap: .75rem; }
-
-.form-group { display: flex; flex-direction: column; gap: .3rem; }
-.form-group label {
-  font-size: .78rem;
-  font-weight: 600;
-  color: var(--clr-text-muted);
-}
-.form-group input,
-.form-group textarea {
-  font-family: var(--font-body);
-  font-size: .9rem;
-  padding: .7rem .85rem;
-  border: 1.5px solid var(--clr-border);
-  border-radius: var(--radius-md);
-  background: var(--clr-surface);
-  color: var(--clr-text);
-  transition: border-color var(--dur-fast);
-  outline: none;
-}
-.form-group input:focus,
-.form-group textarea:focus {
-  border-color: var(--clr-accent);
-  box-shadow: 0 0 0 3px var(--clr-accent-lt);
-}
-.form-group textarea { resize: vertical; min-height: 100px; }
-
-.form-msg {
-  font-size: .82rem;
-  color: var(--clr-accent2);
-  font-weight: 600;
-  min-height: 1.2em;
-  display: none;
-}
-.form-msg.show { display: block; }
-
-/* ─── FOOTER ───────────────────────────────────────────────── */
-.footer {
-  margin-top: var(--space-2xl);
-  padding: var(--space-lg) 0;
-  border-top: 1px solid var(--clr-border);
-  text-align: center;
-  font-size: .78rem;
-  color: var(--clr-text-muted);
-}
-
-/* ─── RESUME HIGHLIGHTS FLOATING BUTTON & PANEL ────────────── */
-.resume-float {
-  position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  z-index: 50;
-}
-
-.resume-float__btn {
-  width: 52px; height: 52px;
-  border-radius: 50%;
-  background: var(--clr-accent);
-  color: #fff;
-  border: none;
-  font-size: 1.4rem;
-  cursor: pointer;
-  box-shadow: var(--shadow-lg);
-  transition: transform var(--dur-fast), box-shadow var(--dur-fast);
-  display: flex; align-items: center; justify-content: center;
-}
-.resume-float__btn:hover { transform: scale(1.08); box-shadow: var(--shadow-lg); }
-
-.resume-panel {
-  position: absolute;
-  bottom: 62px; right: 0;
-  width: 300px;
-  background: var(--clr-surface);
-  border: 1px solid var(--clr-border);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-lg);
-  padding: var(--space-md);
-  display: none;
-  opacity: 0;
-  transform: translateY(12px) scale(.96);
-  transition: opacity var(--dur-med) var(--ease),
-              transform var(--dur-med) var(--ease);
-}
-.resume-panel.open {
-  display: block;
-  opacity: 1;
-  transform: translateY(0) scale(1);
-}
-
-.resume-panel h4 {
-  font-size: .8rem;
-  text-transform: uppercase;
-  letter-spacing: .08em;
-  color: var(--clr-accent);
-  margin: var(--space-sm) 0 .3rem;
-  font-family: var(--font-body);
-}
-.resume-panel h4:first-child { margin-top: 0; }
-
-.resume-panel ul { list-style: none; }
-.resume-panel ul li {
-  font-size: .78rem;
-  color: var(--clr-text-muted);
-  padding: .18rem 0;
-  padding-left: .8rem;
-  position: relative;
-}
-.resume-panel ul li::before {
-  content: '›';
-  position: absolute;
-  left: 0;
-  color: var(--clr-accent);
-  font-weight: 700;
-}
-
-.resume-panel .edu-block {
-  font-size: .78rem;
-  color: var(--clr-text-muted);
-  line-height: 1.55;
-}
-.resume-panel .edu-block strong { color: var(--clr-text); }
-
-/* ─── PROJECTS PAGE ────────────────────────────────────────── */
-.page-hero {
-  padding: var(--space-xl) 0 var(--space-lg);
-  text-align: center;
-}
-.page-hero p {
-  margin: .5rem auto 0;
-  color: var(--clr-text-muted);
-  max-width: 520px;
-}
-
-.project-filters {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: .6rem;
-  margin-bottom: var(--space-lg);
-}
-
-.filter-chip {
-  padding: .38rem .9rem;
-  border-radius: var(--radius-pill);
-  border: 1.5px solid var(--clr-border);
-  background: transparent;
-  color: var(--clr-text-muted);
-  font-family: var(--font-body);
-  font-size: .8rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all var(--dur-fast) var(--ease);
-}
-.filter-chip:hover { border-color: var(--clr-accent); color: var(--clr-accent); }
-.filter-chip.active {
-  background: var(--clr-accent);
-  border-color: var(--clr-accent);
-  color: #fff;
-}
-
-.project-controls {
-  display: flex;
-  flex-wrap: wrap;
-  gap: .6rem;
-  align-items: center;
-  margin-bottom: var(--space-md);
-}
-
-.search-input {
-  flex: 1;
-  min-width: 200px;
-  padding: .55rem .85rem;
-  border: 1.5px solid var(--clr-border);
-  border-radius: var(--radius-pill);
-  background: var(--clr-surface);
-  color: var(--clr-text);
-  font-family: var(--font-body);
-  font-size: .85rem;
-  outline: none;
-  transition: border-color var(--dur-fast);
-}
-.search-input:focus { border-color: var(--clr-accent); }
-
-.sort-select {
-  padding: .55rem .85rem;
-  border: 1.5px solid var(--clr-border);
-  border-radius: var(--radius-pill);
-  background: var(--clr-surface);
-  color: var(--clr-text);
-  font-family: var(--font-body);
-  font-size: .85rem;
-  cursor: pointer;
-  outline: none;
-  transition: border-color var(--dur-fast);
-}
-.sort-select:focus { border-color: var(--clr-accent); }
-
-/* Full project cards (projects page) */
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: var(--space-md);
-}
-
-.project-card {
-  background: var(--clr-surface);
-  border: 1px solid var(--clr-border);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  transition: box-shadow var(--dur-med) var(--ease),
-              transform var(--dur-med) var(--ease);
-  display: flex;
-  flex-direction: column;
-}
-.project-card:hover {
-  box-shadow: var(--shadow-md);
-  transform: translateY(-3px);
-}
-
-.project-card__img {
-  height: 150px;
-  background: var(--clr-surface2);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 2.2rem;
-  color: var(--clr-text-muted);
-}
-
-.project-card__body {
-  padding: var(--space-md);
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-}
-.project-card__tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: .3rem;
-  margin-bottom: .5rem;
-}
-.project-card__title { font-size: 1.05rem; margin-bottom: .3rem; }
-.project-card__summary {
-  font-size: .82rem;
-  color: var(--clr-text-muted);
-  margin-bottom: .45rem;
-  flex: 1;
-}
-.project-card__meta {
-  font-size: .72rem;
-  color: var(--clr-text-muted);
-  margin-bottom: .6rem;
-  display: flex;
-  gap: 1rem;
-}
-.project-card__meta span strong { color: var(--clr-text); font-weight: 600; }
-
-.project-card__tools {
-  display: flex;
-  flex-wrap: wrap;
-  gap: .25rem;
-  margin-bottom: .6rem;
-}
-.tool-chip {
-  font-size: .66rem;
-  font-weight: 600;
-  padding: .15rem .45rem;
-  border-radius: var(--radius-pill);
-  background: var(--clr-surface2);
-  color: var(--clr-text-muted);
-  font-family: var(--font-mono);
-}
-
-/* ─── MODAL (case study) ───────────────────────────────────── */
-.modal-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,.55);
-  z-index: 200;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  padding: var(--space-md);
-  backdrop-filter: blur(4px);
-}
-.modal-overlay.open { display: flex; }
-
-.modal {
-  background: var(--clr-surface);
-  border-radius: var(--radius-lg);
-  width: 100%;
-  max-width: 720px;
-  max-height: 88vh;
-  overflow-y: auto;
-  position: relative;
-  box-shadow: var(--shadow-lg);
-  animation: modal-in var(--dur-med) var(--ease);
-}
-@keyframes modal-in {
-  from { opacity: 0; transform: translateY(24px) scale(.97); }
-  to   { opacity: 1; transform: translateY(0) scale(1); }
-}
-
-.modal__close {
-  position: absolute;
-  top: .75rem; right: .85rem;
-  background: none; border: none;
-  font-size: 1.6rem;
-  cursor: pointer;
-  color: var(--clr-text-muted);
-  z-index: 2;
-  line-height: 1;
-  transition: color var(--dur-fast);
-}
-.modal__close:hover { color: var(--clr-accent); }
-
-.modal__header {
-  padding: var(--space-lg) var(--space-lg) var(--space-md);
-}
-.modal__header .tag { margin-right: .25rem; }
-.modal__title { margin: .5rem 0 .3rem; }
-.modal__meta {
-  font-size: .78rem;
-  color: var(--clr-text-muted);
-}
-
-/* Screenshot carousel */
-.carousel {
-  position: relative;
-  background: var(--clr-surface2);
-  overflow: hidden;
-}
-.carousel__track {
-  display: flex;
-  transition: transform var(--dur-med) var(--ease);
-}
-.carousel__slide {
-  min-width: 100%;
-  height: 240px;
-  background: var(--clr-border);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 1rem;
-  color: var(--clr-text-muted);
-  font-weight: 500;
-}
-.carousel__btn {
-  position: absolute;
-  top: 50%; transform: translateY(-50%);
-  background: rgba(255,255,255,.75);
-  border: none;
-  width: 36px; height: 36px;
-  border-radius: 50%;
-  font-size: 1.1rem;
-  cursor: pointer;
-  display: flex; align-items: center; justify-content: center;
-  transition: background var(--dur-fast);
-  color: var(--clr-text);
-}
-.carousel__btn:hover { background: rgba(255,255,255,1); }
-.carousel__btn--prev { left: .5rem; }
-.carousel__btn--next { right: .5rem; }
-.carousel__dots {
-  text-align: center;
-  padding: .6rem 0 .2rem;
-  display: flex; justify-content: center; gap: .4rem;
-}
-.carousel__dot {
-  width: 8px; height: 8px;
-  border-radius: 50%;
-  background: var(--clr-border);
-  border: none;
-  cursor: pointer;
-  transition: background var(--dur-fast);
-}
-.carousel__dot.active { background: var(--clr-accent); }
-
-/* Modal body sections */
-.modal__body {
-  padding: 0 var(--space-lg) var(--space-lg);
-}
-
-.case-section {
-  margin-bottom: var(--space-lg);
-}
-.case-section h4 {
-  font-size: .72rem;
-  text-transform: uppercase;
-  letter-spacing: .1em;
-  color: var(--clr-accent);
-  font-weight: 700;
-  margin-bottom: .5rem;
-  display: flex;
-  align-items: center;
-  gap: .4rem;
-}
-.case-section p,
-.case-section li {
-  font-size: .88rem;
-  color: var(--clr-text-muted);
-  line-height: 1.65;
-}
-.case-section ul {
-  padding-left: 1.2rem;
-  margin-top: .3rem;
-}
-
-.modal__links {
-  display: flex;
-  gap: .6rem;
-  flex-wrap: wrap;
-  align-items: center;
-  margin-top: var(--space-md);
-}
-
-.modal__copy-link {
-  margin-left: auto;
-  background: none;
-  border: 1.5px solid var(--clr-border);
-  border-radius: var(--radius-pill);
-  padding: .35rem .75rem;
-  font-family: var(--font-body);
-  font-size: .72rem;
-  font-weight: 600;
-  color: var(--clr-text-muted);
-  cursor: pointer;
-  transition: all var(--dur-fast);
-}
-.modal__copy-link:hover { border-color: var(--clr-accent); color: var(--clr-accent); }
-.modal__copy-link.copied { background: var(--clr-accent); color: #fff; border-color: var(--clr-accent); }
-
-/* ─── INVOLVEMENT PAGE ─────────────────────────────────────── */
-.involvement-filters {
-  display: flex;
-  flex-wrap: wrap;
-  gap: .5rem;
-  margin-bottom: var(--space-lg);
-}
-
-/* Timeline */
-.timeline {
-  position: relative;
-  padding-left: 2.5rem;
-}
-.timeline::before {
-  content: '';
-  position: absolute;
-  left: 11px;
-  top: 0; bottom: 0;
-  width: 2px;
-  background: var(--clr-border);
-  border-radius: var(--radius-pill);
-}
-
-.timeline-year {
-  font-family: var(--font-display);
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: var(--clr-text);
-  margin: var(--space-lg) 0 var(--space-sm);
-  position: relative;
-}
-.timeline-year::before {
-  content: '';
-  position: absolute;
-  left: -2.5rem;
-  top: 50%; transform: translateY(-50%);
-  width: 14px; height: 14px;
-  border-radius: 50%;
-  background: var(--clr-accent);
-  border: 3px solid var(--clr-bg);
-  box-shadow: 0 0 0 2px var(--clr-accent);
-}
-
-/* Accordion */
-.accordion-item {
-  background: var(--clr-surface);
-  border: 1px solid var(--clr-border);
-  border-radius: var(--radius-md);
-  margin-bottom: .5rem;
-  overflow: hidden;
-  transition: box-shadow var(--dur-fast);
-}
-.accordion-item:hover { box-shadow: var(--shadow-sm); }
-
-.accordion-trigger {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  gap: .75rem;
-  padding: .85rem 1rem;
-  background: none;
-  border: none;
-  cursor: pointer;
-  text-align: left;
-  color: var(--clr-text);
-  font-family: var(--font-body);
-  transition: background var(--dur-fast);
-}
-.accordion-trigger:hover { background: var(--clr-surface2); }
-
-.accordion-trigger .cat-badge {
-  font-size: .62rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: .06em;
-  padding: .18rem .5rem;
-  border-radius: var(--radius-pill);
-}
-.cat-badge--leadership { background: var(--clr-accent-lt); color: var(--clr-accent); }
-.cat-badge--volunteer  { background: var(--clr-green-lt);  color: var(--clr-accent2); }
-.cat-badge--events     { background: #e8eeff; color: #3a5fa0; }
-[data-theme="dark"] .cat-badge--events { background: #1e2740; color: #7a9fd4; }
-
-.accordion-trigger__title { font-size: .9rem; font-weight: 600; flex: 1; }
-.accordion-trigger__period { font-size: .72rem; color: var(--clr-text-muted); white-space: nowrap; }
-.accordion-trigger__icon {
-  font-size: .85rem;
-  color: var(--clr-text-muted);
-  transition: transform var(--dur-med) var(--ease);
-}
-.accordion-item.open .accordion-trigger__icon { transform: rotate(180deg); }
-
-.accordion-body {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height var(--dur-slow) var(--ease);
-}
-.accordion-body__inner {
-  padding: 0 1rem 1rem;
-}
-.accordion-body p {
-  font-size: .84rem;
-  color: var(--clr-text-muted);
-  margin-bottom: .5rem;
-}
-.accordion-body ul {
-  list-style: none;
-  margin-bottom: .5rem;
-}
-.accordion-body ul li {
-  font-size: .82rem;
-  color: var(--clr-text-muted);
-  padding: .2rem 0 .2rem .9rem;
-  position: relative;
-}
-.accordion-body ul li::before {
-  content: '›';
-  position: absolute;
-  left: .2rem;
-  color: var(--clr-accent);
-  font-weight: 700;
-}
-.accordion-body .impact-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: .35rem;
-  font-size: .75rem;
-  font-weight: 600;
-  color: var(--clr-accent);
-  background: var(--clr-accent-lt);
-  padding: .25rem .6rem;
-  border-radius: var(--radius-pill);
-  margin-top: .25rem;
-}
-
-/* ─── RESPONSIVE ───────────────────────────────────────────── */
-@media (max-width: 900px) {
-  .hero__inner { grid-template-columns: 1fr; text-align: center; }
-  .hero__photo { justify-self: center; }
-  .hero__value li { justify-content: center; }
-  .hero__ctas { justify-content: center; }
-
-  .quick-view__grid { grid-template-columns: 1fr; }
-  .about__inner { grid-template-columns: 1fr; }
-  .proof__grid  { grid-template-columns: 1fr; }
-  .contact__grid { grid-template-columns: 1fr; }
-  .testimonial-grid { grid-template-columns: 1fr; }
-}
-
-@media (max-width: 680px) {
-  .nav-links { display: none; }
-  .hamburger { display: flex; }
-
-  .proof__certs { grid-template-columns: 1fr 1fr; }
-
-  .projects-grid,
-  .featured__grid { grid-template-columns: 1fr; }
-
-  .resume-panel { width: 260px; right: 0; }
-
-  .modal { max-height: 92vh; }
-}
-
-/* ─── FOCUS STYLES (accessibility) ─────────────────────────── */
-:focus-visible {
-  outline: 2.5px solid var(--clr-accent);
-  outline-offset: 2px;
-}
-
-/* ─── PRINT UTILITY ────────────────────────────────────────── */
-@media print {
-  .navbar, .resume-float, .hamburger, .mobile-nav,
-  .theme-toggle, .modal-overlay { display: none !important; }
-}
-
-  
-/* ─── INVOLVEMENT GALLERY ──────────────────────────────── */
-.accordion-gallery {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-  margin-top: 12px;
-}
-.accordion-gallery img {
-  width: calc(33.33% - 6px);
-  min-width: 80px;
-  height: 100px;
-  object-fit: cover;
-  border-radius: var(--radius-sm);
-  background: var(--clr-surface2);
-}
-@media (max-width: 680px) {
-  .accordion-gallery img { width: calc(50% - 4px); height: 80px; }
-}
-
-/* ─── ACHIEVEMENT IMG ──────────────────────────────────── */
-.achievement-item__img {
-  width: 52px;
-  height: 52px;
-  object-fit: cover;
-  border-radius: var(--radius-sm);
-  flex-shrink: 0;
-  background: var(--clr-surface2);
-}
-
-/* ─── CERT CARD IMG ────────────────────────────────────── */
-.cert-card__img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: var(--radius-sm);
-}
-
-  
-/* ─── LIGHTBOX MODAL ─────────────────────────────────────── */
-.lightbox-overlay {
-  display: none;
-  position: fixed;
-  z-index: 9999;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.95);
-  align-items: center;
-  justify-content: center;
-}
-.lightbox-overlay.open { display: flex; }
-
-.lightbox-content {
-  max-width: 90%;
-  max-height: 90vh;
-  object-fit: contain;
-  border-radius: var(--radius-md);
-  box-shadow: 0 8px 32px rgba(0,0,0,0.6);
-}
-
-.lightbox-close {
-  position: absolute;
-  top: 20px;
-  right: 30px;
-  color: #fff;
-  font-size: 40px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: color 0.2s;
-}
-.lightbox-close:hover { color: var(--clr-accent); }
-
-.lightbox-prev, .lightbox-next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  color: #fff;
-  font-size: 40px;
-  font-weight: bold;
-  cursor: pointer;
-  padding: 16px;
-  user-select: none;
-  transition: color 0.2s;
-}
-.lightbox-prev:hover, .lightbox-next:hover { color: var(--clr-accent); }
-.lightbox-prev { left: 20px; }
-.lightbox-next { right: 20px; }
-
-/* Make gallery images clickable */
-.accordion-gallery img {
-  cursor: pointer;
-  transition: transform 0.2s, opacity 0.2s;
-}
-.accordion-gallery img:hover {
-  transform: scale(1.05);
-  opacity: 0.9;
-}
-
-  </style>
-<!-- JSON-LD -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ItemList",
-    "name": "Involvement & Leadership",
-    "description": "Timeline of leadership, volunteering, and events by Alia Syafiqah",
-    "author": {
-      "@type": "Person",
-      "name": "Alia Syafiqah"
-    }
-  }
-  </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Involvement | Alia Syafiqah</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #1a2332;
+            --accent: #ff6b6b;
+            --accent-light: #ff8787;
+            --text-dark: #2c3e50;
+            --text-light: #64748b;
+            --bg-light: #f8fafc;
+            --white: #ffffff;
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.08);
+            --shadow-md: 0 4px 20px rgba(0,0,0,0.12);
+            --shadow-lg: 0 8px 40px rgba(0,0,0,0.16);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'DM Sans', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background: var(--white);
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 900;
+            line-height: 1.2;
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: var(--white);
+            box-shadow: var(--shadow-sm);
+            z-index: 999;
+            padding: 16px 0;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+        
+        .nav-links a.active {
+            color: var(--accent);
+            font-weight: 700;
+        }
+        
+        /* Page Header */
+        .page-header {
+            background: var(--primary);
+            color: var(--white);
+            padding: 120px 20px 60px;
+            margin-top: 60px;
+            text-align: center;
+        }
+        
+        .page-header h1 {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            margin-bottom: 16px;
+        }
+        
+        .page-header p {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        /* Main Content */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px 80px;
+        }
+        
+        section {
+            margin-bottom: 80px;
+        }
+        
+        .section-title {
+            font-size: clamp(2rem, 4vw, 2.5rem);
+            color: var(--primary);
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        
+        /* Leadership Cards */
+        .leadership-grid {
+            display: grid;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+        
+        .leadership-card {
+            background: var(--bg-light);
+            padding: 40px;
+            border-radius: 16px;
+            border-left: 6px solid var(--accent);
+        }
+        
+        .leadership-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+        
+        .leadership-card h3 {
+            font-size: 1.8rem;
+            color: var(--primary);
+        }
+        
+        .leadership-meta {
+            color: var(--text-light);
+            font-size: 15px;
+            font-weight: 500;
+        }
+        
+        .leadership-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-top: 20px;
+        }
+        
+        .leadership-gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        
+        .leadership-content ul {
+            list-style: none;
+            margin: 20px 0;
+        }
+        
+        .leadership-content li {
+            padding-left: 24px;
+            position: relative;
+            margin-bottom: 12px;
+            color: var(--text-light);
+        }
+        
+        .leadership-content li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+        
+        /* Events Grid */
+        .events-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 32px;
+        }
+        
+        .event-card {
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+        }
+        
+        .event-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .event-image {
+            width: 100%;
+            height: 220px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--white);
+            position: relative;
+        }
+        
+        .event-badge {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: var(--accent);
+            color: var(--white);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 700;
+        }
+        
+        .event-badge.award {
+            background: #ffd700;
+            color: var(--primary);
+        }
+        
+        .event-content {
+            padding: 24px;
+        }
+        
+        .event-card h4 {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+            color: var(--primary);
+        }
+        
+        .event-meta {
+            font-size: 13px;
+            color: var(--text-light);
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+        
+        .event-card p {
+            font-size: 14px;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+        
+        /* Stats Section */
+        .impact-stats {
+            background: var(--primary);
+            color: var(--white);
+            padding: 60px 40px;
+            border-radius: 16px;
+            text-align: center;
+            margin-top: 60px;
+        }
+        
+        .impact-stats h3 {
+            font-size: 2rem;
+            margin-bottom: 40px;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+        }
+        
+        .stat-item {
+            padding: 20px;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--accent-light);
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 8px;
+        }
+        
+        .stat-label {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: var(--white);
+            text-align: center;
+            padding: 40px 20px;
+        }
+        
+        footer p {
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .events-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .leadership-header {
+                flex-direction: column;
+            }
+        }
+    </style>
 </head>
 <body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">Alia Syafiqah</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="involvement.html" class="active">Involvement</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
 
-<!-- ─── SKIP LINK ──────────────────────────────────────────── -->
-<a href="#main" class="skip-link">Skip to main content</a>
-
-<!-- ─── NAVBAR ─────────────────────────────────────────────── -->
-<nav class="navbar" role="navigation" aria-label="Main navigation">
-  <div style="display:flex;align-items:center;justify-content:space-between;width:90%;max-width:var(--max-w);margin-inline:auto;">
-    <a href="index.html" class="nav-brand">YN</a>
-
-    <ul class="nav-links">
-      <li><a href="index.html#about">About</a></li>
-      <li><a href="index.html#skills">Skills</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="involvement.html" class="active">Involvement</a></li>
-      <li><a href="index.html#contact">Contact</a></li>
-    </ul>
-
-    <div class="nav-actions">
-      <button class="theme-toggle" id="themeToggle" aria-label="Switch to dark mode">🌙</button>
-      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </div>
-</nav>
-
-<!-- Mobile nav -->
-<div class="mobile-nav" id="mobileNav" role="dialog" aria-label="Mobile navigation">
-  <button class="mobile-close" id="mobileNavClose" aria-label="Close menu">&times;</button>
-  <a href="index.html#about">About</a>
-  <a href="index.html#skills">Skills</a>
-  <a href="projects.html">Projects</a>
-  <a href="involvement.html">Involvement</a>
-  <a href="index.html#contact">Contact</a>
-</div>
-
-<!-- ─── MAIN ───────────────────────────────────────────────── -->
-<main id="main">
-
-  <!-- Page Hero -->
-  <div class="page-hero">
-    <div class="container">
-      <span class="section-label">Beyond the Classroom</span>
-      <h1>Involvement</h1>
-      <p>Leadership, volunteering, and events — because growth happens outside lectures too.</p>
-    </div>
-  </div>
-
-  <div class="container" style="padding-bottom:var(--space-2xl);">
-
-    <!-- Category Filters -->
-    <div class="involvement-filters" role="group" aria-label="Involvement category filters">
-      <button class="filter-chip active" data-inv-filter="All">All</button>
-      <button class="filter-chip" data-inv-filter="Leadership">Leadership</button>
-      <button class="filter-chip" data-inv-filter="Volunteer">Volunteer</button>
-      <button class="filter-chip" data-inv-filter="Events">Events</button>
+    <!-- Page Header -->
+    <div class="page-header">
+        <h1>Leadership & Involvement</h1>
+        <p>3 leadership roles • 14 major events • Proven impact</p>
     </div>
 
-    <!-- Timeline (populated by JS) -->
-    <div class="timeline" id="invTimeline"></div>
-  </div>
-</main>
+    <!-- Main Content -->
+    <main>
+        <!-- Leadership Roles -->
+        <section id="leadership">
+            <h2 class="section-title">Leadership Positions</h2>
+            
+            <div class="leadership-grid">
+                <!-- Leadership 1: President -->
+                <div class="leadership-card">
+                    <div class="leadership-header">
+                        <div>
+                            <h3>President - Infopreneur Club</h3>
+                            <div class="leadership-meta">Kelab Keusahawanan KPPIM • UiTM Puncak Perdana • 2024-2025</div>
+                        </div>
+                    </div>
+                    <div class="leadership-content">
+                        <p><strong>Content Creation Impact:</strong></p>
+                        <ul>
+                            <li>Led complete club rebranding (new name, logo, visual identity system)</li>
+                            <li>Created all promotional materials and social media content strategy</li>
+                            <li>Designed marketing collateral for 10+ events throughout the year</li>
+                            <li>Developed content calendar and managed team of content creators</li>
+                            <li>Won "Best Booth - Open Day 2024" (First Place) for visual presentation excellence</li>
+                        </ul>
+                        <p><strong>Leadership Results:</strong> Revived dormant club to active status, increased event participation through effective visual marketing, built sustainable content creation system for future committees.</p>
+                    </div>
+                    <div class="leadership-gallery">
+                        <img src="picture/events/dem.jpg" alt="Club leadership">
+                        <img src="picture/events/ig.jpg" alt="Event organization">
+                        <img src="picture/events/pres.jpg" alt="Presentation">
+                    </div>
+                </div>
 
-<!-- ─── FOOTER ──────────────────────────────────────────────── -->
-<footer class="footer">
-  <div class="container">
-    <p id="footerText"></p>
-  </div>
-</footer>
+                <!-- Leadership 2: Secretary -->
+                <div class="leadership-card">
+                    <div class="leadership-header">
+                        <div>
+                            <h3>Secretary I - Sekretariat Mahasiswa KPPIM</h3>
+                            <div class="leadership-meta">UiTM Puncak Perdana • 2024-2025</div>
+                        </div>
+                    </div>
+                    <div class="leadership-content">
+                        <p><strong>Responsibilities:</strong></p>
+                        <ul>
+                            <li>Created visual documentation and presentation materials for faculty</li>
+                            <li>Designed official documents and meeting materials</li>
+                            <li>Developed visual systems for faculty communications</li>
+                            <li>Managed information flow through clear visual formats</li>
+                            <li>Coordinated with multiple committees for unified branding</li>
+                        </ul>
+                    </div>
+                    <div class="leadership-gallery">
+                        <img src="picture/events/smf.jpg" alt="Secretary work">
+                        <img src="picture/events/meeting.jpg" alt="Meeting coordination">
+                    </div>
+                </div>
 
-<!-- ─── RESUME HIGHLIGHTS FLOAT ─────────────────────────────── -->
-<div class="resume-float" id="resumeFloat">
-  <div class="resume-panel" id="resumePanel" role="dialog" aria-label="Resume Highlights">
-    <h4>📚 Education</h4>
-    <div class="edu-block" id="rh-edu"></div>
-    <h4>⭐ Key Projects</h4>
-    <ul id="rh-projects"></ul>
-    <h4>🛠️ Key Skills</h4>
-    <ul id="rh-skills"></ul>
-  </div>
-  <button class="resume-float__btn" id="resumeFloatBtn" aria-label="Toggle resume highlights" aria-expanded="false">📄</button>
-</div>
-
-<!-- ─── SCRIPTS ─────────────────────────────────────────────── -->
-<script>
-/**
- * ============================================================
- *  data.js — Single source of truth for all portfolio content
- *  Edit THIS file to update any text, links, or project details.
- * ============================================================
- */
-
-// ─── PERSONAL INFO ──────────────────────────────────────────
-const PERSON = {
-  name:        "Alia Syafiqah",
-  initials:    "AS",
-  role:        "Information Science Graduate | Aspiring Frontend Developer",
-  degree:      "Bachelor of Information Science (Hons)",
-  university:  "Universiti Teknologi MARA (UiTM)",
-  graduation:  "2026",
-  cgpa:        "3.64",
-  photoAlt:    "Portrait of Alia Syafiqah",
-  photoUrl:    "assets/photo-placeholder.svg",
-  resumeUrl:   "#",
-  linkedIn:    "https://www.linkedin.com/in/alia-syafiqah-abdul-aziz-7aaa2b21",
-  github:      "https://github.com",
-  email:       "aliasyafiqah133@gmail.com",
-  location:    "Malaysia",
-  bio: `Tech-focused graduate with a solid foundation in HTML, CSS, and JavaScript,
-and experience building projects with Supabase. Currently an intern at Roche
-in I2P System Support, where I focus on maintaining data accuracy between SAP
-and MyBuy. I enjoy problem-solving in fast-paced environments — whether it's
-troubleshooting system sync issues to meet SLA deadlines or translating
-technical details for users to ensure smooth operations.`
-};
-
-// ─── EMPLOYER QUICK-VIEW CARDS ──────────────────────────────
-const QUICK_VIEW = {
-  specializations: [
-    { icon: "📝", label: "Content Strategy" },
-    { icon: "🗺️", label: "Information Architecture" },
-    { icon: "🏷️", label: "Metadata & Taxonomy" },
-    { icon: "✍️", label: "UX Writing" },
-    { icon: "💻", label: "Front-End Development" }
-  ],
-  tools: [
-    { icon: "🎨", label: "Figma" },
-    { icon: "🖌️", label: "Canva" },
-    { icon: "📊", label: "Tableau" },
-    { icon: "⚙️", label: "Supabase" },
-    { icon: "🔀", label: "Git & GitHub" },
-    { icon: "📦", label: "CMS Platforms" }
-  ],
-  strengths: [
-    { icon: "🗣️", label: "Clear Communication" },
-    { icon: "🔧", label: "Problem Solving" },
-    { icon: "🤝", label: "Stakeholder Handling" },
-    { icon: "🔍", label: "Detail-Oriented" }
-  ]
-};
-
-// ─── SKILLS ─────────────────────────────────────────────────
-// level: 1 = Beginner | 2 = Intermediate | 3 = Advanced
-const SKILLS = {
-  soft: [
-    { name: "Communication",        level: 3 },
-    { name: "Project Management",   level: 2 },
-    { name: "Team Collaboration",   level: 3 },
-    { name: "Critical Thinking",    level: 2 },
-    { name: "Presentation",         level: 3 },
-    { name: "Time Management",      level: 2 }
-  ],
-  technical: [
-    { name: "HTML / CSS",           level: 3 },
-    { name: "JavaScript",           level: 2 },
-    { name: "Vue.js",               level: 2 },
-    { name: "Flutter / Dart",       level: 2 },
-    { name: "SQL / Databases",      level: 2 },
-    { name: "Figma / UI Design",    level: 2 },
-    { name: "Content Management",   level: 3 },
-    { name: "Git Version Control",  level: 2 },
-    { name: "Supabase / Backend",   level: 2 },
-    { name: "Tableau",              level: 2 },
-    { name: "UX Research",          level: 1 }
-  ]
-};
-
-// ─── PROJECTS ───────────────────────────────────────────────
-const PROJECTS = [
-  {
-    id:       "icm-linkup",
-    slug:     "icm-linkup",
-    title:    "ICM LinkUp – Alumni Networking Platform",
-    summary:  "A cross-platform alumni network connecting UiTM Information Science graduates with current students via a Flutter mobile app and Vue.js admin portal.",
-    role:     "Lead Developer & System Designer",
-    year:     2025,
-    category: ["Web Dev", "UI/UX"],
-    tools:    ["Flutter", "Vue.js", "Supabase", "Google OAuth", "Figma"],
-    problem:  "UiTM's Faculty of Information Science lacked a structured channel for alumni and current students to connect, share opportunities, or mentor one another.",
-    process:  "Designed a multi-role architecture (student, alumni, admin) with Google OAuth for seamless sign-in. Built the mobile-facing app in Flutter while the admin portal runs on Vue.js. Supabase powers authentication, real-time data, and storage. Implemented search, filtering, and a request/accept connection flow.",
-    deliverables: [
-      "Flutter mobile application (iOS & Android)",
-      "Vue.js admin dashboard with user & content management",
-      "Supabase schema with Row Level Security (RLS)",
-      "Search & filter system for alumni discovery",
-      "Google OAuth integration"
-    ],
-    outcome:  "Prototype demoed to faculty stakeholders; received positive feedback. Platform supports 50+ dummy user records for realistic demos. Reduced expected alumni-search time by an estimated 70% vs. manual methods.",
-    impact:   "50+ demo users | 3 role types | Real-time sync",
-    demoUrl:  "#",
-    githubUrl:"#",
-    screenshots: [
-      "assets/placeholder-ss.svg",
-      "assets/placeholder-ss.svg",
-      "assets/placeholder-ss.svg"
-    ]
-  },
-  {
-    id:       "delimaflix-modules",
-    slug:     "delimaflix-modules",
-    title:    "DELIMaFLiX – Interactive HTML5 Learning Modules",
-    summary:  "Created engaging, offline-capable HTML5 course modules for Malaysia's Ministry of Education content repository.",
-    role:     "Content Developer & Front-End Developer",
-    year:     2024,
-    category: ["Content Management", "Web Dev"],
-    tools:    ["HTML5", "CSS3", "JavaScript", "Canva", "Instructional Design"],
-    problem:  "The government needed self-contained, mobile-responsive learning modules for vocational courses (cosmetology, bakery) that work offline in low-connectivity schools.",
-    process:  "Followed strict government folder-structure and naming conventions. Designed interactive quizzes, drag-and-drop exercises, and multimedia embeds. Ensured full offline functionality with zero external dependencies.",
-    deliverables: [
-      "2 fully interactive HTML5 modules (Cosmetology & Bakery)",
-      "Embedded quizzes with instant feedback",
-      "Mobile-first responsive layouts",
-      "Zero-dependency offline functionality"
-    ],
-    outcome:  "Modules passed government QA review on first submission. Designed for deployment across 100+ schools nationwide.",
-    impact:   "100+ target schools | 0 external dependencies | Full offline support",
-    demoUrl:  "#",
-    githubUrl:"#",
-    screenshots: [
-      "assets/placeholder-ss.svg",
-      "assets/placeholder-ss.svg",
-      "assets/placeholder-ss.svg"
-    ]
-  },
-  {
-    id:       "portfolio-website",
-    slug:     "portfolio-website",
-    title:    "Personal Portfolio Website",
-    summary:  "A modern, bilingual (EN/MY) responsive portfolio showcasing leadership, projects, certificates, and creative work.",
-    role:     "Solo Developer & Designer",
-    year:     2024,
-    category: ["Web Dev", "UI/UX"],
-    tools:    ["HTML", "CSS", "JavaScript", "Figma"],
-    problem:  "Needed a professional online presence that communicated both technical ability and creative personality to recruiters and academic committees.",
-    process:  "Wireframed in Figma, implemented with vanilla HTML/CSS/JS. Added smooth animations, a dark-mode toggle, and bilingual content switching. Optimized for SEO with proper meta tags and structured data.",
-    deliverables: [
-      "Fully responsive single-page portfolio",
-      "Dark / light mode toggle",
-      "Bilingual EN / MY content switch",
-      "SEO-optimized with JSON-LD structured data"
-    ],
-    outcome:  "Portfolio shared with internship recruiters and used for FYP presentation. Received feedback praising clarity and design.",
-    impact:   "Used in 3+ applications | Bilingual | Lighthouse score > 90",
-    demoUrl:  "#",
-    githubUrl:"#",
-    screenshots: [
-      "assets/placeholder-ss.svg",
-      "assets/placeholder-ss.svg",
-      "assets/placeholder-ss.svg"
-    ]
-  },
-  {
-    id:       "printing-landing-page",
-    slug:     "printing-landing-page",
-    title:    "Printing Services Landing Page",
-    summary:  "A corporate-grade landing page for a Malaysian printing company targeting government and B2B clients.",
-    role:     "Freelance Web Developer",
-    year:     2024,
-    category: ["Web Dev", "Content Management"],
-    tools:    ["HTML", "CSS", "JavaScript", "SEO"],
-    problem:  "A local printing shop needed an online presence that could attract government tenders and corporate clients in a competitive market.",
-    process:  "Researched competitor sites, drafted Malay-language SEO copy, and built a clean, trust-focused layout. Integrated a product gallery, services breakdown, and clear CTAs optimized for conversion.",
-    deliverables: [
-      "Full landing page with 6 sections",
-      "Malay-language SEO-optimized content",
-      "Product gallery with hover interactions",
-      "Mobile-responsive layout"
-    ],
-    outcome:  "Client reported increased inquiry volume within the first month of launch.",
-    impact:   "↑ Inquiries in 30 days | Malay SEO | Gov-sector focused",
-    demoUrl:  "#",
-    githubUrl:"#",
-    screenshots: [
-      "assets/placeholder-ss.svg",
-      "assets/placeholder-ss.svg",
-      "assets/placeholder-ss.svg"
-    ]
-  },
-  {
-    id:       "distributed-sim",
-    slug:     "distributed-sim",
-    title:    "Distributed Systems Simulation",
-    summary:  "A visual simulation tool demonstrating distributed computing concepts like replication, partitioning, and failure recovery.",
-    role:     "Developer & Researcher",
-    year:     2024,
-    category: ["Research", "Data/Documentation"],
-    tools:    ["Python", "Matplotlib", "Research Methodology"],
-    problem:  "University coursework required a hands-on demonstration of distributed system behaviours that students could interact with visually.",
-    process:  "Built a Python simulation with live-rendered charts showing how nodes replicate data, handle failures, and recover. Documented the process in a detailed research report.",
-    deliverables: [
-      "Python simulation script",
-      "Interactive visualisations (Matplotlib)",
-      "Research report with findings"
-    ],
-    outcome:  "Scored full marks on the assignment. Simulation used as a reference tool by classmates.",
-    impact:   "Full marks | Peer-referenced | Visual learning tool",
-    demoUrl:  "#",
-    githubUrl:"#",
-    screenshots: [
-      "assets/placeholder-ss.svg",
-      "assets/placeholder-ss.svg",
-      "assets/placeholder-ss.svg"
-    ]
-  },
-  {
-    id:       "mysejahtera-analysis",
-    slug:     "mysejahtera-analysis",
-    title:    "MySejahtera Data Breach – Security Analysis",
-    summary:  "A comprehensive cybersecurity case-study analysing the MySejahtera data breach, with recommendations for prevention.",
-    role:     "Researcher & Presenter",
-    year:     2023,
-    category: ["Research", "Data/Documentation"],
-    tools:    ["Research", "Presentation Design", "Canva"],
-    problem:  "Group assignment required an in-depth forensic analysis of a real-world data breach affecting millions of Malaysian citizens.",
-    process:  "Researched the breach timeline, attack vectors, and affected data types. Collaboratively authored a report and built a presentation with detailed speaker scripts.",
-    deliverables: [
-      "Written case-study report",
-      "Presentation deck with speaker notes",
-      "Prevention & mitigation recommendations"
-    ],
-    outcome:  "Presentation rated as one of the top submissions. Recommendations were discussed in follow-up class sessions.",
-    impact:   "Top-rated presentation | Peer discussion | Real-world case",
-    demoUrl:  "#",
-    githubUrl:"#",
-    screenshots: [
-      "assets/placeholder-ss.svg",
-      "assets/placeholder-ss.svg",
-      "assets/placeholder-ss.svg"
-    ]
-  }
-];
-
-// ─── CERTIFICATES ───────────────────────────────────────────
-const CERTIFICATES = [
-  { title: "Certificate Placeholder A", issuer: "Organisation A", year: 2024, imgUrl: "assets/cert-placeholder.svg" },
-  { title: "Certificate Placeholder B", issuer: "Organisation B", year: 2024, imgUrl: "assets/cert-placeholder.svg" },
-  { title: "Certificate Placeholder C", issuer: "Organisation C", year: 2023, imgUrl: "assets/cert-placeholder.svg" },
-  { title: "Certificate Placeholder D", issuer: "Organisation D", year: 2023, imgUrl: "assets/cert-placeholder.svg" }
-];
-
-// ─── ACHIEVEMENTS ───────────────────────────────────────────
-const ACHIEVEMENTS = [
-  { title: "Dean's List – Semester X",         year: 2024, detail: "Achieved CGPA ≥ 3.5 for the semester." },
-  { title: "Best Project – [Course Name]",     year: 2024, detail: "Top-ranked project in class of 40 students." },
-  { title: "Hackathon Participant",            year: 2023, detail: "Participated in university-level hackathon (placeholder)." }
-];
-
-// ─── INVOLVEMENT (Leadership / Volunteer / Events) ─────────
-const INVOLVEMENT = [
-  {
-    id:       "infopreneur-president",
-    title:    "President – Infopreneur Club",
-    category: "Leadership",
-    year:     2024,
-    period:   "2024 – 2025",
-    summary:  "Reorganized club structure, led rebranding initiative, and revived member interest under the refreshed Infopreneur Club identity.",
-    responsibilities: [
-      "Reorganized club structure and handled documentation & compliance.",
-      "Led the rebranding from Kelab Keusahawanan KPPIM to Infopreneur Club.",
-      "Rebuilt the committee and introduced new signature programs."
-    ],
-    impact:   "Successfully revived member interest and grew active participation.",
-    gallery:  ["picture/events/dem.jpg", "picture/events/ig.jpg", "picture/events/pres.jpg"]
-  },
-  {
-    id:       "secretary-smkppim",
-    title:    "Secretary I – Sekretariat Mahasiswa KPPIM",
-    category: "Leadership",
-    year:     2024,
-    period:   "Oct 2024 – Feb 2025",
-    summary:  "Managed documentation and streamlined communication for the student secretariat.",
-    responsibilities: [
-      "Managed documentation and streamlined internal communication.",
-      "Contributed to smoother administrative processes.",
-      "Improved information flow within the organisation."
-    ],
-    impact:   "Streamlined secretariat documentation and communication processes.",
-    gallery:  ["picture/events/smf.jpg", "picture/events/meeting.jpg"]
-  },
-  {
-    id:       "deputy-director-dem",
-    title:    "Deputy Director – Dewan Eksekutif Mahasiswa KPPIM",
-    category: "Leadership",
-    year:     2024,
-    period:   "2024 – 2025",
-    summary:  "Supervised event committees and drove strategic initiatives across the student executive council.",
-    responsibilities: [
-      "Supervised event committees and drove strategic initiatives.",
-      "Coordinated successful events across departments.",
-      "Fostered collaboration among committees."
-    ],
-    impact:   "Helped coordinate multiple successful faculty-level events.",
-    gallery:  ["picture/events/iv.jpg", "picture/events/press.jpg"]
-  },
-  {
-    id:       "head-external-relations",
-    title:    "Head of External Relations & Career Dev. Committee",
-    category: "Leadership",
-    year:     2024,
-    period:   "March – Aug 2024",
-    summary:  "Shared updates on career opportunities, job fairs, and external programs for students.",
-    responsibilities: [
-      "Shared updates and announcements on career opportunities & job fairs.",
-      "Coordinated with external organisations for student programs.",
-      "Kept students informed about career-related events and resources."
-    ],
-    impact:   "Improved student awareness of career opportunities within and outside campus.",
-    gallery:  []
-  },
-  {
-    id:       "open-day-2024",
-    title:    "Leader – Open Day 2024 (Infopreneur Club Booth)",
-    category: "Events",
-    year:     2024,
-    period:   "16 Dec 2024",
-    summary:  "Led a team of 10, managed merchandise sales and new member recruitment. Booth awarded First Place for Best Booth.",
-    responsibilities: [
-      "Led a team of 10 for booth operations.",
-      "Engaged with prospective students and recruited new members.",
-      "Managed merchandise sales and booth logistics."
-    ],
-    impact:   "Booth awarded First Place for Best Booth at Open Day 2024.",
-    gallery:  ["picture/events/HBP 2024/HAMPER TEMPAT PERTAMA BOOTH TERCANTIK.jpg", "picture/events/HBP 2024/boothmadam.jpg", "picture/events/HBP 2024/visitor.jpg"]
-  },
-  {
-    id:       "watikah-ceremony",
-    title:    "Appointee – SMKPPIM Appointment Ceremony",
-    category: "Events",
-    year:     2025,
-    period:   "19 April 2025",
-    summary:  "Received official appointment as Setiausaha Kerja 1 for SMKPPIM at UiTM Kampus Puncak Perdana.",
-    responsibilities: [
-      "Attended official appointment ceremony for new student secretariat.",
-      "Participated in Meet & Greet session with Student Affairs Division."
-    ],
-    impact:   "Committed to carrying out responsibilities with integrity and dedication.",
-    gallery:  ["picture/events/watikah.jpg"]
-  },
-  {
-    id:       "magim-2025",
-    title:    "Crew & Observer – MAGIM Mac 2025",
-    category: "Events",
-    year:     2025,
-    period:   "7–10 April 2025",
-    summary:  "Final MAGIM — served as event crew and observer for the Meet and Greet Information Management program.",
-    responsibilities: [
-      "Served as event crew and observer throughout the program.",
-      "Supported smooth handover to incoming secretariat."
-    ],
-    impact:   "Proud to see juniors running the program smoothly.",
-    gallery:  ["picture/events/magimlast1.jpg", "picture/events/magimlast2.jpg"]
-  },
-  {
-    id:       "tsue-meet-greet",
-    title:    "Student Representative – Meet & Greet with TSUE Delegates",
-    category: "Events",
-    year:     2025,
-    period:   "5 Feb 2025",
-    summary:  "Represented UiTM students with disabilities (OKU) in a meet & greet with Tashkent State University of Economics delegates from Uzbekistan.",
-    responsibilities: [
-      "Represented OKU students from UiTM in the bilateral session.",
-      "Engaged in discussions on disability empowerment initiatives.",
-      "Interacted with TSUE university rector."
-    ],
-    impact:   "Meaningful cross-cultural exchange on disability empowerment.",
-    gallery:  ["picture/events/uzbek1.jpg", "picture/events/uzbek2.jpg", "picture/events/uzbek3.png"]
-  },
-  {
-    id:       "interfac-2024",
-    title:    "Registration Bureau – INTERFAC UCS 2024",
-    category: "Events",
-    year:     2024,
-    period:   "30 Nov – 8 Dec 2024",
-    summary:  "Assisted in organizing faculty-level sports events. Managed student registration and coordinated logistics.",
-    responsibilities: [
-      "Managed student registration for faculty sports events.",
-      "Coordinated logistics for athletes and team managers."
-    ],
-    impact:   "Ensured smooth registration and logistics for INTERFAC UCS 2024.",
-    gallery:  ["picture/events/interfac1.jpg", "picture/events/interfac2.jpg"]
-  },
-  {
-    id:       "drone-volunteer",
-    title:    "Volunteer – Drone Handling Workshop",
-    category: "Volunteer",
-    year:     2024,
-    period:   "28–29 May & 1 Jun 2024",
-    summary:  "Volunteered at Pusat Sains Negara. Learned drone handling and assisted visitors including children with 3D pens.",
-    responsibilities: [
-      "Learned drone handling techniques at the National Science Centre.",
-      "Assisted visitors, especially children, with 3D pen activities.",
-      "Supported workshop operations as an external volunteer."
-    ],
-    impact:   "Earned two certificates from Aiszzy Electronics and Pusat Sains Negara.",
-    gallery:  ["picture/events/volunteer.jpg", "picture/events/volunteer2.jpg", "picture/events/volunteer3.jpg"]
-  },
-  {
-    id:       "kraftopia-2024",
-    title:    "Deputy Director – Kraftopia 2024 Field Trip",
-    category: "Events",
-    year:     2024,
-    period:   "28 Jun 2024",
-    summary:  "Assisted the Program Director in coordinating activities for the field trip to KL Handicraft Museum.",
-    responsibilities: [
-      "Assisted Program Director in event coordination.",
-      "Ensured smooth execution of activities throughout the field trip."
-    ],
-    impact:   "Successfully coordinated a smooth and educational field trip experience.",
-    gallery:  ["picture/events/Kraftangan Trip/gigih.jpg", "picture/events/Kraftangan Trip/ramai.jpg", "picture/events/Kraftangan Trip/visit.jpg"]
-  },
-  {
-    id:       "supro-champion",
-    title:    "Multimedia Bureau – SUPRO Champion 2023 & 2024",
-    category: "Events",
-    year:     2024,
-    period:   "Dec 2023 & Nov 2024",
-    summary:  "Designed promotional materials including posters, montages, slides, and digital backdrops for inter-program sports events.",
-    responsibilities: [
-      "Designed posters, event photography, and montages.",
-      "Created slides and digital backdrops for event branding.",
-      "Enhanced overall visual identity of the sports events."
-    ],
-    impact:   "Boosted event branding and visual engagement across two years.",
-    gallery:  ["picture/events/supro (2).png", "picture/events/supro.png", "picture/events/supro3.png"]
-  },
-  {
-    id:       "zumba-neon",
-    title:    "Emcee – Zumba ft. Running Man Neon Challenge 2024",
-    category: "Events",
-    year:     2024,
-    period:   "25 Oct 2024",
-    summary:  "Unexpectedly took on the emcee role less than an hour before the event. Successfully engaged the audience.",
-    responsibilities: [
-      "Took on last-minute emcee role for the event.",
-      "Engaged audience and maintained a lively atmosphere.",
-      "Supported Program Bureau operations."
-    ],
-    impact:   "Demonstrated adaptability and public speaking confidence under pressure.",
-    gallery:  ["picture/events/ZUMA FT Runningman Neon Challenge/pilih.JPG", "picture/events/ZUMA FT Runningman Neon Challenge/zumba (2).jpg", "picture/events/ZUMA FT Runningman Neon Challenge/zumba.jpg"]
-  },
-  {
-    id:       "iks-trip-2024",
-    title:    "Logistics & Safety Bureau – IKS Trip 2024",
-    category: "Events",
-    year:     2024,
-    period:   "8 Jun 2024",
-    summary:  "Managed transportation and safety for 40 participants including children on an industrial visit to Sabak Bernam.",
-    responsibilities: [
-      "Managed transportation and safety for 40 participants.",
-      "Ensured smooth logistics and emergency preparedness.",
-      "Coordinated with accompanying staff throughout the trip."
-    ],
-    impact:   "Ensured safe and smooth industrial visit for all participants.",
-    gallery:  ["picture/events/LAWATAN INDUSTRI KECIL DAN SEDERHANG/iks.jpg", "picture/events/LAWATAN INDUSTRI KECIL DAN SEDERHANA/trio.JPG", "picture/events/LAWATAN INDUSTRI KECIL DAN SEDERHANA/lurve.JPG"]
-  },
-  {
-    id:       "magim-oct-2024",
-    title:    "Head of Relations Bureau – MAGIM Oct 2024",
-    category: "Events",
-    year:     2024,
-    period:   "7–11 Oct 2024",
-    summary:  "Facilitated VIP arrangements including official invitation letters and email communications for the MAGIM program.",
-    responsibilities: [
-      "Prepared official invitation letters for VIP guests.",
-      "Handled email communications and welcoming process.",
-      "Maintained professional communication throughout the event."
-    ],
-    impact:   "Ensured smooth and professional VIP handling for the program.",
-    gallery:  ["picture/events/tugas magim.jpg"]
-  },
-  {
-    id:       "magim-march-2024",
-    title:    "Program & Protocol Bureau – MAGIM March 2024",
-    category: "Events",
-    year:     2024,
-    period:   "18–21 March 2024",
-    summary:  "Wrote emcee scripts and oversaw program flow for the 100% online MAGIM during ODL period.",
-    responsibilities: [
-      "Wrote scripts for emcees and monitored time slots.",
-      "Ensured all speakers adhered to the schedule.",
-      "Oversaw seamless online program execution."
-    ],
-    impact:   "Maintained professional and smooth flow for the fully online program.",
-    gallery:  ["picture/events/onlinemagim.jpg", "picture/events/onlinemagim2.jpg", "picture/events/onlinemagim3.jpg"]
-  },
-  {
-    id:       "kppim-carnival-2023",
-    title:    "Multimedia Bureau – KPPIM Entrepreneurship Carnival 2023",
-    category: "Events",
-    year:     2023,
-    period:   "13–14 Dec 2023",
-    summary:  "First major event in degree journey. Managed sales and conducted interactive games at the booth.",
-    responsibilities: [
-      "Managed booth sales and merchandise.",
-      "Conducted interactive games to attract visitors.",
-      "Learned valuable entrepreneurship skills hands-on."
-    ],
-    impact:   "Gained foundational event management and entrepreneurship experience.",
-    gallery:  ["picture/events/HBP \u00d7 KARNIVAL KEUSAHAWAN 2023/ajk.jpg", "picture/events/HBP \u00d7 KARNIVAL KEUSAHAWAN 2023/jual.jpg", "picture/events/HBP \u00d7 KARNIVAL KEUSAHAWAN 2023/wdr.jpg"]
-  },
-  {
-    id:       "mpj-2024",
-    title:    "Secretary – Malam Penyucian Jiwa KPPIM 2024",
-    category: "Events",
-    year:     2024,
-    period:   "21 Jun 2024",
-    summary:  "Organized a Yassin recitation session for students preparing for final exams. Managed official documentation.",
-    responsibilities: [
-      "Organized Yassin recitation session for exam-period students.",
-      "Managed official documentation and correspondence."
-    ],
-    impact:   "Provided a spiritual and supportive environment for students before exams.",
-    gallery:  ["picture/events/mpj.jpg"]
-  }
-];
-
-// ─── TESTIMONIALS (sample / placeholder) ────────────────────
-const TESTIMONIALS = [
-  {
-    name:   "Dr. Sample Lecturer",
-    role:   "Lecturer, Faculty of Information Science",
-    quote:  "A dedicated student who consistently delivers high-quality work. Strong communication skills and a keen eye for detail make her a standout contributor.",
-    avatar: "assets/avatar-placeholder.svg"
-  },
-  {
-    name:   "Sample Club Advisor",
-    role:   "Faculty Advisor, Infopreneur Club",
-    quote:  "Showed excellent leadership in organising club activities. Always proactive and willing to go the extra mile for the team.",
-    avatar: "assets/avatar-placeholder.svg"
-  }
-];
-
-// ─── RESUME HIGHLIGHTS (floating panel data) ────────────────
-const RESUME_HIGHLIGHTS = {
-  education: {
-    degree:     PERSON.degree,
-    field:      PERSON.role,
-    university: PERSON.university,
-    graduation: PERSON.graduation,
-    cgpa:       PERSON.cgpa
-  },
-  keyProjects: PROJECTS.slice(0, 3).map(p => ({ title: p.title, year: p.year })),
-  keySkills:   ["HTML/CSS/JS", "JavaScript", "Supabase", "Flutter", "Tableau", "Content Management"]
-};
-
-// ─── EXPORT (works in browser via script tag) ──────────────
-// All variables are global when loaded via <script> in HTML.
-// If you ever switch to modules, wrap in: export { ... };
-
-</script>
-<script>
-/**
- * ============================================================
- *  main.js — Shared site-wide behaviours
- *  Runs on every page. Reads data from data.js globals.
- * ============================================================
- */
-
-(function () {
-  "use strict";
-
-  // ── DOM shortcuts ─────────────────────────────────────────
-  const doc  = document;
-  const body = doc.body;
-
-  // ── 1. DARK MODE TOGGLE ───────────────────────────────────
-  (function initDarkMode() {
-    const html   = doc.documentElement;
-    const btn    = doc.getElementById("themeToggle");
-    if (!btn) return;
-
-    // Restore saved preference (or system default)
-    const saved = localStorage.getItem("portfolio-theme");
-    if (saved) {
-      html.setAttribute("data-theme", saved);
-    } else {
-      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-      html.setAttribute("data-theme", prefersDark ? "dark" : "light");
-    }
-    updateIcon();
-
-    btn.addEventListener("click", () => {
-      const current = html.getAttribute("data-theme");
-      const next    = current === "dark" ? "light" : "dark";
-      html.setAttribute("data-theme", next);
-      localStorage.setItem("portfolio-theme", next);
-      updateIcon();
-    });
-
-    function updateIcon() {
-      btn.textContent = html.getAttribute("data-theme") === "dark" ? "☀️" : "🌙";
-      btn.setAttribute("aria-label", html.getAttribute("data-theme") === "dark"
-        ? "Switch to light mode" : "Switch to dark mode");
-    }
-  })();
-
-  // ── 2. SCROLL-REVEAL (IntersectionObserver) ───────────────
-  (function initReveal() {
-    const items = doc.querySelectorAll(".reveal");
-    if (!items.length) return;
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-          observer.unobserve(entry.target);   // fire once only
-        }
-      });
-    }, { threshold: 0.15 });
-
-    items.forEach((el) => observer.observe(el));
-  })();
-
-  // ── 3. MOBILE NAV ─────────────────────────────────────────
-  (function initMobileNav() {
-    const hamburger = doc.getElementById("hamburger");
-    const mobileNav = doc.getElementById("mobileNav");
-    const closeBtn  = doc.getElementById("mobileNavClose");
-    if (!hamburger || !mobileNav) return;
-
-    hamburger.addEventListener("click", open);
-    closeBtn &&  closeBtn.addEventListener("click", close);
-
-    // Close on link click
-    mobileNav.querySelectorAll("a").forEach((a) => {
-      a.addEventListener("click", close);
-    });
-
-    // Close on Escape
-    doc.addEventListener("keydown", (e) => {
-      if (e.key === "Escape" && mobileNav.classList.contains("open")) close();
-    });
-
-    function open()  { mobileNav.classList.add("open");  hamburger.setAttribute("aria-expanded", "true"); }
-    function close() { mobileNav.classList.remove("open"); hamburger.setAttribute("aria-expanded", "false"); }
-  })();
-
-  // ── 4. RESUME HIGHLIGHTS FLOATING PANEL ──────────────────
-  (function initResumeFloat() {
-    const btn   = doc.getElementById("resumeFloatBtn");
-    const panel = doc.getElementById("resumePanel");
-    if (!btn || !panel) return;
-
-    // Populate panel from data.js
-    if (typeof RESUME_HIGHLIGHTS !== "undefined") {
-      const edu = RESUME_HIGHLIGHTS.education;
-      doc.getElementById("rh-edu").innerHTML =
-        `<strong>${edu.degree}</strong><br>${edu.field}<br>${edu.university}<br>Graduating ${edu.graduation} · CGPA ${edu.cgpa}`;
-
-      const projList = doc.getElementById("rh-projects");
-      RESUME_HIGHLIGHTS.keyProjects.forEach((p) => {
-        projList.innerHTML += `<li>${p.title} <span style="color:var(--clr-text-muted);font-weight:400">(${p.year})</span></li>`;
-      });
-
-      const skillList = doc.getElementById("rh-skills");
-      RESUME_HIGHLIGHTS.keySkills.forEach((s) => {
-        skillList.innerHTML += `<li>${s}</li>`;
-      });
-    }
-
-    let open = false;
-    btn.addEventListener("click", toggle);
-
-    // Close on outside click
-    doc.addEventListener("click", (e) => {
-      if (open && !btn.contains(e.target) && !panel.contains(e.target)) close();
-    });
-
-    // Close on Escape
-    doc.addEventListener("keydown", (e) => {
-      if (e.key === "Escape" && open) close();
-    });
-
-    function toggle() { open ? close() : showPanel(); }
-
-    function showPanel() {
-      open = true;
-      panel.classList.add("open");
-      btn.setAttribute("aria-expanded", "true");
-    }
-
-    function close() {
-      open = false;
-      panel.classList.remove("open");
-      btn.setAttribute("aria-expanded", "false");
-    }
-  })();
-
-  // ── 5. HOMEPAGE DYNAMIC SECTIONS (from data.js) ──────────
-  (function initHomepage() {
-    // Quick-view cards
-    renderQuickView();
-    // Skills matrix
-    renderSkills();
-    // Featured projects
-    renderFeaturedProjects();
-    // Certificates & achievements
-    renderProofSection();
-    // Testimonials
-    renderTestimonials();
-    // Contact cards
-    renderContactCards();
-    // Contact form behaviour
-    initContactForm();
-  })();
-
-  // ─── Quick View ─────────────────────────────────────────
-  function renderQuickView() {
-    if (typeof QUICK_VIEW === "undefined") return;
-    const map = { specializations: "qv-specs", tools: "qv-tools", strengths: "qv-strengths" };
-    Object.keys(map).forEach((key) => {
-      const container = doc.getElementById(map[key]);
-      if (!container) return;
-      QUICK_VIEW[key].forEach((item) => {
-        container.innerHTML += `<li><span class="icon">${item.icon}</span>${item.label}</li>`;
-      });
-    });
-  }
-
-  // ─── Skills Matrix ──────────────────────────────────────
-  function renderSkills() {
-    if (typeof SKILLS === "undefined") return;
-
-    // Tab switching
-    doc.querySelectorAll(".skill-tab").forEach((tab) => {
-      tab.addEventListener("click", () => {
-        doc.querySelectorAll(".skill-tab").forEach((t) => t.classList.remove("active"));
-        doc.querySelectorAll(".skill-panel").forEach((p) => p.classList.remove("active"));
-        tab.classList.add("active");
-        const target = doc.getElementById(tab.dataset.panel);
-        if (target) target.classList.add("active");
-      });
-    });
-
-    // Render skill cards
-    renderSkillGroup("skill-soft-grid", SKILLS.soft);
-    renderSkillGroup("skill-technical-grid", SKILLS.technical);
-  }
-
-  function renderSkillGroup(containerId, arr) {
-    const container = doc.getElementById(containerId);
-    if (!container) return;
-    const levelLabels = { 1: "Beginner", 2: "Intermediate", 3: "Advanced" };
-
-    arr.forEach((skill) => {
-      container.innerHTML += `
-        <div class="skill-card">
-          <div class="skill-card__header">
-            <span class="skill-card__name">${skill.name}</span>
-            <span class="skill-card__level skill-card__level--${levelLabels[skill.level].toLowerCase()}">${levelLabels[skill.level]}</span>
-          </div>
-          <div class="skill-meter" role="progressbar" aria-valuenow="${skill.level}" aria-valuemin="1" aria-valuemax="3" aria-label="${skill.name} proficiency">
-            <div class="skill-meter__fill skill-meter__fill--${skill.level}"></div>
-          </div>
-        </div>`;
-    });
-  }
-
-  // ─── Featured Projects ──────────────────────────────────
-  function renderFeaturedProjects() {
-    if (typeof PROJECTS === "undefined") return;
-    const container = doc.getElementById("featured-projects");
-    if (!container) return;
-
-    // Show top 3
-    PROJECTS.slice(0, 3).forEach((p) => {
-      container.innerHTML += `
-        <article class="project-preview">
-          <div class="project-preview__img">📁</div>
-          <div class="project-preview__body">
-            <div class="project-preview__tags">
-              ${p.category.map(c => `<span class="tag">${c}</span>`).join("")}
+                <!-- Leadership 3: Deputy Director -->
+                <div class="leadership-card">
+                    <div class="leadership-header">
+                        <div>
+                            <h3>Deputy Director - Dewan Eksekutif Mahasiswa KPPIM</h3>
+                            <div class="leadership-meta">UiTM Shah Alam • 2024-2025</div>
+                        </div>
+                    </div>
+                    <div class="leadership-content">
+                        <p><strong>Responsibilities:</strong></p>
+                        <ul>
+                            <li>Coordinated event branding across multiple student initiatives</li>
+                            <li>Supervised creation of promotional materials for faculty-wide events</li>
+                            <li>Ensured visual consistency across all student activities</li>
+                            <li>Mentored junior committee members in content creation</li>
+                        </ul>
+                    </div>
+                    <div class="leadership-gallery">
+                        <img src="picture/events/iv.jpg" alt="Deputy director role">
+                        <img src="picture/events/press.jpg" alt="Press coverage">
+                    </div>
+                </div>
             </div>
-            <h3 class="project-preview__title">${p.title}</h3>
-            <p class="project-preview__summary">${p.summary}</p>
-          </div>
-        </article>`;
-    });
-  }
+        </section>
 
-  // ─── Proof Section ──────────────────────────────────────
-  function renderProofSection() {
-    // Certificates
-    if (typeof CERTIFICATES !== "undefined") {
-      const certsEl = doc.getElementById("certs-grid");
-      if (certsEl) {
-        CERTIFICATES.forEach((c) => {
-          certsEl.innerHTML += `
-            <div class="cert-card">
-              <div class="cert-card__img">🏅</div>
-              <div class="cert-card__info">
-                <div class="cert-card__title">${c.title}</div>
-                <div class="cert-card__issuer">${c.issuer} · ${c.year}</div>
-              </div>
-            </div>`;
-        });
-      }
-    }
+        <!-- All Events -->
+        <section id="events">
+            <h2 class="section-title">Event Portfolio (14 Events)</h2>
+            
+            <div class="events-grid">
+                <!-- Event 1: Open Day 2024 -->
+                <div class="event-card">
+                    <div class="event-image">
+                        <div class="event-badge award">🏆 1ST PLACE</div>
+                        🎪
+                    </div>
+                    <div class="event-content">
+                        <h4>Open Day 2024 - Best Booth Award</h4>
+                        <div class="event-meta">2024 • Complete Booth Design & Branding</div>
+                        <p>Won First Place for outstanding booth design and visual presentation. Created complete branding system, promotional materials, and interactive display elements.</p>
+                    </div>
+                </div>
 
-    // Achievements
-    if (typeof ACHIEVEMENTS !== "undefined") {
-      const achEl = doc.getElementById("achievements-list");
-      if (achEl) {
-        ACHIEVEMENTS.forEach((a) => {
-          achEl.innerHTML += `
-            <div class="achievement-item">
-              <span class="achievement-item__year">${a.year}</span>
-              <div>
-                <div class="achievement-item__title">${a.title}</div>
-                <div class="achievement-item__detail">${a.detail}</div>
-              </div>
-            </div>`;
-        });
-      }
-    }
-  }
+                <!-- Event 2: MAGIM Mac 2025 -->
+                <div class="event-card">
+                    <div class="event-image">🎯</div>
+                    <div class="event-content">
+                        <h4>MAGIM Mac 2025</h4>
+                        <div class="event-meta">March 2025 • Event Content Creation</div>
+                        <p>Event content creation and social media coverage for major campus initiative. Designed promotional materials and documented event activities.</p>
+                    </div>
+                </div>
 
-  // ─── Testimonials ───────────────────────────────────────
-  function renderTestimonials() {
-    if (typeof TESTIMONIALS === "undefined") return;
-    const container = doc.getElementById("testimonials-grid");
-    if (!container) return;
+                <!-- Event 3: Watikah Ceremony -->
+                <div class="event-card">
+                    <div class="event-image">📜</div>
+                    <div class="event-content">
+                        <h4>Watikah Ceremony</h4>
+                        <div class="event-meta">2024 • Ceremony Graphics</div>
+                        <p>Created ceremony graphics and event documentation for official faculty recognition ceremony. Designed certificates and presentation materials.</p>
+                    </div>
+                </div>
 
-    TESTIMONIALS.forEach((t) => {
-      container.innerHTML += `
-        <div class="testimonial-card">
-          <p class="testimonial-card__quote">${t.quote}</p>
-          <div class="testimonial-card__author">
-            <div class="testimonial-card__avatar">🧑</div>
-            <div>
-              <div class="testimonial-card__name">${t.name}</div>
-              <div class="testimonial-card__role">${t.role}</div>
+                <!-- Event 4: TSUE Uzbekistan -->
+                <div class="event-card">
+                    <div class="event-image">🌍</div>
+                    <div class="event-content">
+                        <h4>TSUE Meet & Greet - Uzbekistan Delegates</h4>
+                        <div class="event-meta">2024 • International Event</div>
+                        <p>Designed welcome materials and event graphics for international delegation. Created bilingual promotional content and cultural showcase materials.</p>
+                    </div>
+                </div>
+
+                <!-- Event 5: INTERFAC UCS 2024 -->
+                <div class="event-card">
+                    <div class="event-image">🤝</div>
+                    <div class="event-content">
+                        <h4>INTERFAC UCS 2024</h4>
+                        <div class="event-meta">2024 • Visual Content Creation</div>
+                        <p>Created visual content for inter-faculty collaboration event. Designed promotional materials and event documentation.</p>
+                    </div>
+                </div>
+
+                <!-- Event 6: Drone Workshop -->
+                <div class="event-card">
+                    <div class="event-image">
+                        <div class="event-badge">VOLUNTEER</div>
+                        🚁
+                    </div>
+                    <div class="event-content">
+                        <h4>Drone Workshop</h4>
+                        <div class="event-meta">2024 • Educational Content</div>
+                        <p>Volunteered to create educational materials and activity graphics for technology workshop. Designed instructional guides for participants.</p>
+                    </div>
+                </div>
+
+                <!-- Event 7: SUPRO Champion -->
+                <div class="event-card">
+                    <div class="event-image">🏅</div>
+                    <div class="event-content">
+                        <h4>SUPRO Champion</h4>
+                        <div class="event-meta">2024 • Competition Materials</div>
+                        <p>Designed competition materials and presentation content. Created professional pitch deck and supporting visual materials.</p>
+                    </div>
+                </div>
+
+                <!-- Event 8: Zumba Neon Challenge -->
+                <div class="event-card">
+                    <div class="event-image">💃</div>
+                    <div class="event-content">
+                        <h4>Zumba FT Running Man Neon Challenge</h4>
+                        <div class="event-meta">2024 • Event Promotion</div>
+                        <p>Created vibrant event posters and promotional content for fitness challenge. Designed neon-themed graphics and social media content.</p>
+                    </div>
+                </div>
+
+                <!-- Event 9: IKS Industry Visit -->
+                <div class="event-card">
+                    <div class="event-image">🏭</div>
+                    <div class="event-content">
+                        <h4>Lawatan Industri Kecil dan Sederhana</h4>
+                        <div class="event-meta">2024 • Industry Visit</div>
+                        <p>Documented small and medium industry visit. Created event coverage and educational content about local businesses.</p>
+                    </div>
+                </div>
+
+                <!-- Event 10: Kraftopia -->
+                <div class="event-card">
+                    <div class="event-image">🎨</div>
+                    <div class="event-content">
+                        <h4>Kraftopia 2024 - Kraftangan Trip</h4>
+                        <div class="event-meta">2024 • Cultural Event</div>
+                        <p>Event branding and promotional design for traditional craft showcase. Created materials highlighting Malaysian heritage and craftsmanship.</p>
+                    </div>
+                </div>
+
+                <!-- Event 11: Karnival Keusahawanan 2023 -->
+                <div class="event-card">
+                    <div class="event-image">🎪</div>
+                    <div class="event-content">
+                        <h4>KPPIM Karnival Keusahawanan 2023</h4>
+                        <div class="event-meta">2023 • Entrepreneurship Carnival</div>
+                        <p>Designed event branding and booth materials for entrepreneurship carnival. Created promotional content and visual merchandising.</p>
+                    </div>
+                </div>
+
+                <!-- Event 12: Malam Penyucian Jiwa -->
+                <div class="event-card">
+                    <div class="event-image">🌙</div>
+                    <div class="event-content">
+                        <h4>Malam Penyucian Jiwa</h4>
+                        <div class="event-meta">2024 • Spiritual Event</div>
+                        <p>Created spiritual event graphics and materials. Designed thoughtful, respectful promotional content for religious gathering.</p>
+                    </div>
+                </div>
+
+                <!-- Event 13: MAGIM Online (Oct 2024) -->
+                <div class="event-card">
+                    <div class="event-image">💻</div>
+                    <div class="event-content">
+                        <h4>MAGIM Online Events (October 2024)</h4>
+                        <div class="event-meta">October 2024 • Digital Content</div>
+                        <p>Created digital content for virtual events. Designed social media graphics optimized for online engagement.</p>
+                    </div>
+                </div>
+
+                <!-- Event 14: MAGIM Online (March 2024) -->
+                <div class="event-card">
+                    <div class="event-image">🌐</div>
+                    <div class="event-content">
+                        <h4>MAGIM Online Events (March 2024)</h4>
+                        <div class="event-meta">March 2024 • Digital Content</div>
+                        <p>Designed promotional materials for series of online events. Created cohesive digital campaign across multiple platforms.</p>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>`;
-    });
-  }
+        </section>
 
-  // ─── Contact Cards ──────────────────────────────────────
-  function renderContactCards() {
-    if (typeof PERSON === "undefined") return;
-    const container = doc.getElementById("contact-cards");
-    if (!container) return;
+        <!-- Impact Stats -->
+        <div class="impact-stats">
+            <h3>Leadership Impact</h3>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">3</div>
+                    <div class="stat-label">Leadership Positions</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">14</div>
+                    <div class="stat-label">Major Events</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">100+</div>
+                    <div class="stat-label">Design Pieces Created</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">1st</div>
+                    <div class="stat-label">Best Booth Award</div>
+                </div>
+            </div>
+        </div>
+    </main>
 
-    const channels = [
-      { icon: "✉️", label: "Email", value: PERSON.email, href: `mailto:${PERSON.email}`, copyable: true },
-      { icon: "💼", label: "LinkedIn", value: "linkedin.com/in/alia-syafiqah", href: PERSON.linkedIn, copyable: false },
-      { icon: "🐙", label: "GitHub", value: "github.com/alia-syafiqah", href: PERSON.github, copyable: false }
-    ];
-
-    channels.forEach((ch) => {
-      container.innerHTML += `
-        <a href="${ch.href}" target="${ch.copyable ? '_self' : '_blank'}" rel="noopener" class="contact-card">
-          <div class="contact-card__icon">${ch.icon}</div>
-          <div>
-            <div class="contact-card__label">${ch.label}</div>
-            <div class="contact-card__value">${ch.value}</div>
-          </div>
-          ${ch.copyable ? `<button class="copy-btn" data-copy="${ch.value}" aria-label="Copy email">Copy</button>` : ""}
-        </a>`;
-    });
-
-    // Bind copy buttons
-    container.querySelectorAll(".copy-btn").forEach((btn) => {
-      btn.addEventListener("click", (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        navigator.clipboard.writeText(btn.dataset.copy).then(() => {
-          btn.textContent = "✓ Copied";
-          btn.classList.add("copied");
-          setTimeout(() => {
-            btn.textContent = "Copy";
-            btn.classList.remove("copied");
-          }, 1500);
-        });
-      });
-    });
-  }
-
-  // ─── Contact Form (no backend — just UX) ────────────────
-  function initContactForm() {
-    const form = doc.getElementById("contactForm");
-    const msg  = doc.getElementById("formMsg");
-    if (!form || !msg) return;
-
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
-      // Simulate sending
-      const btn = form.querySelector("button[type='submit']");
-      btn.textContent = "Sending…";
-      btn.disabled = true;
-
-      setTimeout(() => {
-        msg.textContent = "Thanks for reaching out! I'll get back to you soon. 🙌";
-        msg.classList.add("show");
-        form.reset();
-        btn.textContent = "Send Message";
-        btn.disabled = false;
-
-        // Hide msg after 5s
-        setTimeout(() => msg.classList.remove("show"), 5000);
-      }, 1200);
-    });
-  }
-
-  // ── 6. ACTIVE NAV LINK (smooth scroll pages) ─────────────
-  (function initActiveNav() {
-    // Highlight nav links based on scroll position (index only)
-    const sections = doc.querySelectorAll("section[id]");
-    if (!sections.length) return;
-
-    const navLinks = doc.querySelectorAll(".nav-links a[href^='#']");
-
-    window.addEventListener("scroll", () => {
-      let current = "";
-      sections.forEach((section) => {
-        const sectionTop = section.offsetTop - 100;
-        if (window.scrollY >= sectionTop) current = section.id;
-      });
-      navLinks.forEach((link) => {
-        link.classList.toggle("active", link.getAttribute("href") === `#${current}`);
-      });
-    });
-  })();
-
-})(); // end IIFE
-
-</script>
-
-<!-- Involvement page logic -->
-<script>
-(function () {
-  "use strict";
-
-
-  var lightboxState = {
-    modal: null,
-    modalImg: null,
-    images: [],
-    currentIndex: 0,
-    initialized: false
-  };
-
-  function initLightbox() {
-    if (lightboxState.initialized) return;
-    
-    lightboxState.modal = document.getElementById("lightbox-modal");
-    lightboxState.modalImg = document.getElementById("lightbox-img");
-    var close = document.querySelector(".lightbox-close");
-    var prev = document.querySelector(".lightbox-prev");
-    var next = document.querySelector(".lightbox-next");
-    
-    if (!lightboxState.modal) return;
-
-    function closeLightbox() {
-      lightboxState.modal.classList.remove("open");
-      document.body.style.overflow = "";
-    }
-
-    function showImage(index) {
-      if (lightboxState.images.length === 0) return;
-      if (index < 0) index = lightboxState.images.length - 1;
-      if (index >= lightboxState.images.length) index = 0;
-      lightboxState.currentIndex = index;
-      lightboxState.modalImg.src = lightboxState.images[index].src;
-      lightboxState.modalImg.alt = lightboxState.images[index].alt;
-    }
-
-    close.addEventListener("click", closeLightbox);
-    lightboxState.modal.addEventListener("click", function(e) {
-      if (e.target === lightboxState.modal) closeLightbox();
-    });
-    prev.addEventListener("click", function() { showImage(lightboxState.currentIndex - 1); });
-    next.addEventListener("click", function() { showImage(lightboxState.currentIndex + 1); });
-    
-    document.addEventListener("keydown", function(e) {
-      if (!lightboxState.modal.classList.contains("open")) return;
-      if (e.key === "Escape") closeLightbox();
-      if (e.key === "ArrowLeft") showImage(lightboxState.currentIndex - 1);
-      if (e.key === "ArrowRight") showImage(lightboxState.currentIndex + 1);
-    });
-
-    lightboxState.initialized = true;
-  }
-
-  function bindLightbox() {
-    console.log("bindLightbox() called");
-    initLightbox();
-    
-    // Collect all currently visible gallery images
-    lightboxState.images = Array.from(document.querySelectorAll(".accordion-gallery img"));
-    console.log("Found " + lightboxState.images.length + " gallery images");
-    
-    // Bind click to each image
-    lightboxState.images.forEach(function(img, idx) {
-      // Remove old listener by cloning
-      var newImg = img.cloneNode(true);
-      img.parentNode.replaceChild(newImg, img);
-      
-      newImg.addEventListener("click", function() {
-        console.log("Gallery image clicked! Index: " + idx);
-        lightboxState.images = Array.from(document.querySelectorAll(".accordion-gallery img"));
-        lightboxState.currentIndex = idx;
-        lightboxState.modal.classList.add("open");
-        lightboxState.modalImg.src = newImg.src;
-        lightboxState.modalImg.alt = newImg.alt;
-        document.body.style.overflow = "hidden";
-      });
-    });
-  }
-
-
-  const timeline      = document.getElementById("invTimeline");
-  const filterChips   = document.querySelectorAll("[data-inv-filter]");
-  let activeCategory  = "All";
-
-  // ── Render on load ──────────────────────────────────────
-  renderTimeline();
-    bindLightbox();
-
-  // ── Filter chip events ──────────────────────────────────
-  filterChips.forEach(function (chip) {
-    chip.addEventListener("click", function () {
-      filterChips.forEach(function (c) { c.classList.remove("active"); });
-      chip.classList.add("active");
-      activeCategory = chip.dataset.invFilter;
-      renderTimeline();
-      setTimeout(function() { bindLightbox(); }, 100);
-    });
-  });
-
-  // ── Render Timeline ─────────────────────────────────────
-  function renderTimeline() {
-    if (!timeline || typeof INVOLVEMENT === "undefined") return;
-    timeline.innerHTML = "";
-
-    // Filter
-    var items = INVOLVEMENT;
-    if (activeCategory !== "All") {
-      items = items.filter(function (item) { return item.category === activeCategory; });
-    }
-
-    // Group by year (descending)
-    var years = {};
-    items.forEach(function (item) {
-      if (!years[item.year]) years[item.year] = [];
-      years[item.year].push(item);
-    });
-
-    var sortedYears = Object.keys(years).sort(function (a, b) { return b - a; });
-
-    sortedYears.forEach(function (year) {
-      // Year marker
-      timeline.innerHTML += '<div class="timeline-year">' + year + '</div>';
-
-      // Items for this year
-      years[year].forEach(function (item) {
-        var catClass = item.category.toLowerCase();
-        var badgeClass = "cat-badge--" + catClass;
-
-        timeline.innerHTML += '\
-          <div class="accordion-item" id="inv-' + item.id + '">\
-            <button class="accordion-trigger" aria-expanded="false">\
-              <span class="cat-badge ' + badgeClass + '">' + item.category + '</span>\
-              <span class="accordion-trigger__title">' + item.title + '</span>\
-              <span class="accordion-trigger__period">' + item.period + '</span>\
-              <span class="accordion-trigger__icon">▼</span>\
-            </button>\
-            <div class="accordion-body">\
-              <div class="accordion-body__inner">\
-                <p>' + item.summary + '</p>\
-                <ul>' + item.responsibilities.map(function (r) { return '<li>' + r + '</li>'; }).join('') + '</ul>\
-                <span class="impact-badge">💡 ' + item.impact + '</span>\
-                ' + (item.gallery && item.gallery.length > 0 ? '<div class="accordion-gallery">' + item.gallery.map(function(img) { return '<img src="' + img + '" alt="' + item.title + '" loading="lazy">'; }).join('') + '</div>' : '') + '\
-              </div>\
-            </div>\
-          </div>';
-      });
-    });
-
-    // Re-trigger reveal observer
-    triggerReveal();
-
-    // Bind accordion toggles
-    bindAccordions();
-  }
-
-  // ── Bind Accordion Expand/Collapse ──────────────────────
-  function bindAccordions() {
-    document.querySelectorAll(".accordion-trigger").forEach(function (trigger) {
-      // Remove old listeners by cloning (simple approach)
-      var fresh = trigger.cloneNode(true);
-      trigger.parentNode.replaceChild(fresh, trigger);
-
-      fresh.addEventListener("click", function () {
-        var item   = fresh.closest(".accordion-item");
-        var body   = item.querySelector(".accordion-body");
-        var isOpen = item.classList.contains("open");
-
-        // Close all others
-        document.querySelectorAll(".accordion-item").forEach(function (el) {
-          if (el !== item) {
-            el.classList.remove("open");
-            var b = el.querySelector(".accordion-body");
-            if (b) b.style.maxHeight = "0";
-            el.querySelector(".accordion-trigger").setAttribute("aria-expanded", "false");
-          }
-        });
-
-        // Toggle current
-        if (isOpen) {
-          item.classList.remove("open");
-          body.style.maxHeight = "0";
-          fresh.setAttribute("aria-expanded", "false");
-        } else {
-          item.classList.add("open");
-          body.style.maxHeight = body.scrollHeight + "px";
-          fresh.setAttribute("aria-expanded", "true");
-          // Bind lightbox to newly visible gallery images
-          setTimeout(function() { bindLightbox(); }, 50);
-        }
-      });
-    });
-  }
-
-  // ── Trigger Reveal (IntersectionObserver) ──────────────
-  function triggerReveal() {
-    var observer = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.12 });
-
-    document.querySelectorAll(".reveal:not(.visible)").forEach(function (el) {
-      observer.observe(el);
-    });
-  }
-
-  // ── Footer + Favicon ────────────────────────────────────
-  if (typeof PERSON !== "undefined") {
-    var f = document.getElementById("footerText");
-    if (f) f.innerHTML = '&copy; ' + new Date().getFullYear() + ' ' + PERSON.name + ' &middot; Built with vanilla HTML, CSS &amp; JS';
-
-    var favicon = document.querySelector("[data-dynamic-favicon]");
-    if (favicon) {
-      var svg = "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23e8503a'/><text x='16' y='22' text-anchor='middle' font-family='sans-serif' font-size='18' font-weight='700' fill='white'>" + PERSON.initials + "</text></svg>";
-      favicon.href = "data:image/svg+xml," + svg;
-    }
-  }
-
-})();
-</script>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Alia Syafiqah. Blending technical precision with creative storytelling.</p>
+        <p style="margin-top: 8px; font-size: 14px;">Available for full-time opportunities starting April 2026</p>
+    </footer>
 </body>
 </html>
-  <!-- Image Lightbox Modal -->
-  <div id="lightbox-modal" class="lightbox-overlay">
-    <span class="lightbox-close">&times;</span>
-    <img class="lightbox-content" id="lightbox-img" alt="">
-    <span class="lightbox-prev">&#10094;</span>
-    <span class="lightbox-next">&#10095;</span>
-  </div>
-
-
-  // ── Lightbox for Gallery Images ─────────────────────────
