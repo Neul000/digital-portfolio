@@ -467,12 +467,64 @@
             color: rgba(255, 255, 255, 0.8);
         }
         
-        /* Responsive */
-        @media (max-width: 768px) {
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--primary);
+        }
+        
+        /* Mobile Navigation */
+        @media (max-width: 968px) {
             .nav-links {
-                display: none;
+                position: fixed;
+                top: 60px;
+                right: -100%;
+                width: 250px;
+                height: calc(100vh - 60px);
+                background: var(--white);
+                flex-direction: column;
+                padding: 40px 20px;
+                box-shadow: var(--shadow-lg);
+                transition: right 0.3s ease;
+                z-index: 998;
+                gap: 24px;
             }
             
+            .nav-links.active {
+                right: 0;
+            }
+            
+            .nav-links a {
+                font-size: 1.1rem;
+                padding: 12px 0;
+                border-bottom: 1px solid var(--bg-light);
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .mobile-menu-overlay {
+                display: none;
+                position: fixed;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                height: calc(100vh - 60px);
+                background: rgba(0, 0, 0, 0.5);
+                z-index: 997;
+            }
+            
+            .mobile-menu-overlay.active {
+                display: block;
+            }
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
             .education-header {
                 flex-direction: column;
             }
@@ -488,15 +540,17 @@
     <nav>
         <div class="nav-container">
             <a href="index.html" class="logo">Alia Syafiqah</a>
-            <ul class="nav-links">
+            <ul class="nav-links" id="navLinks">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="projects.html">Projects</a></li>
                 <li><a href="involvement.html">Involvement</a></li>
                 <li><a href="about.html" class="active">About</a></li>
                 <li><a href="index.html#contact">Contact</a></li>
             </ul>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
         </div>
     </nav>
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
 
     <!-- Page Header -->
     <div class="page-header">
@@ -977,6 +1031,31 @@
     </div>
 
     <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+        const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+        
+        mobileMenuBtn.addEventListener('click', function() {
+            navLinks.classList.toggle('active');
+            mobileMenuOverlay.classList.toggle('active');
+            this.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
+        });
+        
+        mobileMenuOverlay.addEventListener('click', function() {
+            navLinks.classList.remove('active');
+            mobileMenuOverlay.classList.remove('active');
+            mobileMenuBtn.textContent = '☰';
+        });
+        
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function() {
+                navLinks.classList.remove('active');
+                mobileMenuOverlay.classList.remove('active');
+                mobileMenuBtn.textContent = '☰';
+            });
+        });
+        
         // Lightbox functionality
         function openLightbox(imgSrc) {
             document.getElementById('lightbox').classList.add('active');

@@ -223,13 +223,16 @@
         .event-image {
             width: 100%;
             height: 220px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-            color: var(--white);
             position: relative;
+            overflow: hidden;
+            background: var(--bg-light);
+        }
+        
+        .event-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
         }
         
         .event-badge {
@@ -242,6 +245,7 @@
             border-radius: 20px;
             font-size: 11px;
             font-weight: 700;
+            z-index: 10;
         }
         
         .event-badge.award {
@@ -322,12 +326,64 @@
             color: rgba(255, 255, 255, 0.8);
         }
         
-        /* Responsive */
-        @media (max-width: 768px) {
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--primary);
+        }
+        
+        /* Mobile Navigation */
+        @media (max-width: 968px) {
             .nav-links {
-                display: none;
+                position: fixed;
+                top: 60px;
+                right: -100%;
+                width: 250px;
+                height: calc(100vh - 60px);
+                background: var(--white);
+                flex-direction: column;
+                padding: 40px 20px;
+                box-shadow: var(--shadow-lg);
+                transition: right 0.3s ease;
+                z-index: 998;
+                gap: 24px;
             }
             
+            .nav-links.active {
+                right: 0;
+            }
+            
+            .nav-links a {
+                font-size: 1.1rem;
+                padding: 12px 0;
+                border-bottom: 1px solid var(--bg-light);
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .mobile-menu-overlay {
+                display: none;
+                position: fixed;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                height: calc(100vh - 60px);
+                background: rgba(0, 0, 0, 0.5);
+                z-index: 997;
+            }
+            
+            .mobile-menu-overlay.active {
+                display: block;
+            }
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
             .events-grid {
                 grid-template-columns: 1fr;
             }
@@ -343,15 +399,17 @@
     <nav>
         <div class="nav-container">
             <a href="index.html" class="logo">Alia Syafiqah</a>
-            <ul class="nav-links">
+            <ul class="nav-links" id="navLinks">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="projects.html">Projects</a></li>
                 <li><a href="involvement.html" class="active">Involvement</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="index.html#contact">Contact</a></li>
             </ul>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
         </div>
     </nav>
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
 
     <!-- Page Header -->
     <div class="page-header">
@@ -377,18 +435,15 @@
                     <div class="leadership-content">
                         <p><strong>Content Creation Impact:</strong></p>
                         <ul>
-                            <li>Led complete club rebranding (new name, logo, visual identity system)</li>
-                            <li>Created all promotional materials and social media content strategy</li>
-                            <li>Designed marketing collateral for 10+ events throughout the year</li>
-                            <li>Developed content calendar and managed team of content creators</li>
-                            <li>Won "Best Booth - Open Day 2024" (First Place) for visual presentation excellence</li>
+                            <li>Reorganized club structure, handled documentation and compliance</li>
+                            <li>Led the rebranding initiative to establish the new identity of the Infopreneur Club</li>
+                            <li>Successfully revived member interest and rebuilt the committee</li>
+                            <li>Introduced new signature programs under the refreshed vision</li>
                         </ul>
-                        <p><strong>Leadership Results:</strong> Revived dormant club to active status, increased event participation through effective visual marketing, built sustainable content creation system for future committees.</p>
                     </div>
                     <div class="leadership-gallery">
-                        <img src="picture/events/dem.jpg" alt="Club leadership">
-                        <img src="picture/events/ig.jpg" alt="Event organization">
-                        <img src="picture/events/pres.jpg" alt="Presentation">
+                        <img src="picture/events/pres.jpg" alt="Club leadership">
+                        <img src="picture/events/press.jpg" alt="Event organization">
                     </div>
                 </div>
 
@@ -403,15 +458,11 @@
                     <div class="leadership-content">
                         <p><strong>Responsibilities:</strong></p>
                         <ul>
-                            <li>Created visual documentation and presentation materials for faculty</li>
-                            <li>Designed official documents and meeting materials</li>
-                            <li>Developed visual systems for faculty communications</li>
-                            <li>Managed information flow through clear visual formats</li>
-                            <li>Coordinated with multiple committees for unified branding</li>
-                        </ul>
+                            </li>Managed documentation and streamlined communication.</li>
+                            <li>Contributed to smoother administrative processes and improved information flow.</li>
                     </div>
                     <div class="leadership-gallery">
-                        <img src="picture/events/smf.jpg" alt="Secretary work">
+                        <img src="picture/events/iv.jpg" alt="Secretary work">
                         <img src="picture/events/meeting.jpg" alt="Meeting coordination">
                     </div>
                 </div>
@@ -427,15 +478,29 @@
                     <div class="leadership-content">
                         <p><strong>Responsibilities:</strong></p>
                         <ul>
-                            <li>Coordinated event branding across multiple student initiatives</li>
-                            <li>Supervised creation of promotional materials for faculty-wide events</li>
-                            <li>Ensured visual consistency across all student activities</li>
-                            <li>Mentored junior committee members in content creation</li>
+                            <li>Supervised event committees and drove strategic initiatives.</li>
+                            <li>Helped coordinate successful events and fostered collaboration among committees.</li>
                         </ul>
                     </div>
                     <div class="leadership-gallery">
-                        <img src="picture/events/iv.jpg" alt="Deputy director role">
-                        <img src="picture/events/press.jpg" alt="Press coverage">
+                        <img src="picture/events/dem.jpg" alt="Press coverage">
+                    </div>
+                </div>
+
+                <!-- Leadership 4: Head of External Relations & Career Development Committee -->
+                <div class="leadership-card">
+                    <div class="leadership-header">
+                        <div>
+                            <h3>Head of External Relations & Career Development Committee - Sekretariat Mahasiswa KPPIM</h3>
+                            <div class="leadership-meta">Sekretariat Mahasiswa KPPIM • 2024-2025</div>
+                        </div>
+                    </div>
+                    <div class="leadership-content">
+                        <p><strong>Responsibilities:</strong></p>
+                        <ul>
+                            <li>Shared updates and announcements on career opportunities, job fairs, and external programs.</li>
+                            <li>Helped students stay informed about career-related events and resources within and outside campus.</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -450,52 +515,60 @@
                 <div class="event-card">
                     <div class="event-image">
                         <div class="event-badge award">🏆 1ST PLACE</div>
-                        🎪
+                        <img src="picture/events/HBP 2024/boothmadam.jpg" alt="Open Day 2024 Best Booth">
                     </div>
                     <div class="event-content">
                         <h4>Open Day 2024 - Best Booth Award</h4>
-                        <div class="event-meta">2024 • Complete Booth Design & Branding</div>
-                        <p>Won First Place for outstanding booth design and visual presentation. Created complete branding system, promotional materials, and interactive display elements.</p>
+                        <div class="event-meta">16 December 2024 • Leader</div>
+                        <p>Engaged with new students, recruited new members, and managed merchandise sales. Successfully led a team of 10, ensuring smooth operations. Our booth was awarded First Place for Best Booth.</p>
                     </div>
                 </div>
 
                 <!-- Event 2: MAGIM Mac 2025 -->
                 <div class="event-card">
-                    <div class="event-image">🎯</div>
+                    <div class="event-image">
+                        <img src="picture/events/magimlast1.jpg" alt="MAGIM Mac 2025">
+                    </div>
                     <div class="event-content">
-                        <h4>MAGIM Mac 2025</h4>
-                        <div class="event-meta">March 2025 • Event Content Creation</div>
-                        <p>Event content creation and social media coverage for major campus initiative. Designed promotional materials and documented event activities.</p>
+                        <h4>MAGIM Mac 2025: Meet and Greet Information Management</h4>
+                        <div class="event-meta">7–10 April 2025 • Crew & Observer</div>
+                        <p>Assigned as event crew and observer for the Meet and Greet Information Management program. This was my final MAGIM — a little sad, but also proud and excited to see my juniors taking over and running the whole committee smoothly.</p>
                     </div>
                 </div>
 
                 <!-- Event 3: Watikah Ceremony -->
                 <div class="event-card">
-                    <div class="event-image">📜</div>
+                    <div class="event-image">
+                        <img src="picture/events/watikah.jpg" alt="Watikah Ceremony">
+                    </div>
                     <div class="event-content">
-                        <h4>Watikah Ceremony</h4>
-                        <div class="event-meta">2024 • Ceremony Graphics</div>
-                        <p>Created ceremony graphics and event documentation for official faculty recognition ceremony. Designed certificates and presentation materials.</p>
+                        <h4>Appointment Ceremony of KPPIM Student Secretariat (Session 24/25) & Meet and Greet with Student Affairs Division</h4>
+                        <div class="event-meta">19 April 2025 • Appointee (Setiausaha Kerja 1, SMKPPIM)</div>
+                        <p>The ceremony involved the official appointment of the new student secretariat and an appreciation for the 23/24 SMKPPIM session, followed by a session with the Student Affairs Division. This was actually my second appointment — I missed last year's ceremony due to class. I received the official appointment as Setiausaha Kerja 1 for SMKPPIM at UiTM Kampus Puncak Perdana. With this trust, I am determined to carry out my responsibilities with integrity and dedication.</p>
                     </div>
                 </div>
 
                 <!-- Event 4: TSUE Uzbekistan -->
                 <div class="event-card">
-                    <div class="event-image">🌍</div>
+                    <div class="event-image">
+                        <img src="picture/events/uzbek1.jpg" alt="TSUE Uzbekistan Delegates">
+                    </div>
                     <div class="event-content">
-                        <h4>TSUE Meet & Greet - Uzbekistan Delegates</h4>
-                        <div class="event-meta">2024 • International Event</div>
-                        <p>Designed welcome materials and event graphics for international delegation. Created bilingual promotional content and cultural showcase materials.</p>
+                        <h4>Meet & Greet with Tashkent State University of Economics (TSUE) Delegates</h4>
+                        <div class="event-meta">5 February 2025 • Student Representative (OKU)</div>
+                        <p>An insightful session between UiTM and TSUE (Uzbekistan) delegates focusing on disability empowerment initiatives. I represented students with disabilities (OKU) from UiTM. It was a casual and warm meet-and-greet, and I even learned some basic Uzbek words to converse with their university rector — such a unique and meaningful experience!</p>
                     </div>
                 </div>
 
                 <!-- Event 5: INTERFAC UCS 2024 -->
                 <div class="event-card">
-                    <div class="event-image">🤝</div>
+                    <div class="event-image">
+                        <img src="picture/events/interfac2.jpg" alt="INTERFAC UCS 2024">
+                    </div>
                     <div class="event-content">
                         <h4>INTERFAC UCS 2024</h4>
-                        <div class="event-meta">2024 • Visual Content Creation</div>
-                        <p>Created visual content for inter-faculty collaboration event. Designed promotional materials and event documentation.</p>
+                        <div class="event-meta">30 Nov – 1 Dec & 7 – 8 Dec 2024 • Registration Bureau</div>
+                        <p>Assisted in organizing faculty-level sports events at UiTM Puncak Alam. Managed student registration and coordinated logistics for athletes and team managers.</p>
                     </div>
                 </div>
 
@@ -503,92 +576,108 @@
                 <div class="event-card">
                     <div class="event-image">
                         <div class="event-badge">VOLUNTEER</div>
-                        🚁
+                        <img src="picture/events/volunteer2.jpg" alt="Drone Workshop">
                     </div>
                     <div class="event-content">
-                        <h4>Drone Workshop</h4>
-                        <div class="event-meta">2024 • Educational Content</div>
-                        <p>Volunteered to create educational materials and activity graphics for technology workshop. Designed instructional guides for participants.</p>
+                        <h4>Drone Handling Workshop</h4>
+                        <div class="event-meta">28 - 29 May & 1 June 2024 • Volunteering (Workshop Assistant)</div>
+                        <p>Volunteered in an external workshop at the National Science Centre. Learned drone handling and assisted visitors, including children, in using 3D pens.</p>
                     </div>
                 </div>
 
                 <!-- Event 7: SUPRO Champion -->
                 <div class="event-card">
-                    <div class="event-image">🏅</div>
+                    <div class="event-image">
+                        <img src="picture/events/supro3.png" alt="SUPRO Champion">
+                    </div>
                     <div class="event-content">
                         <h4>SUPRO Champion</h4>
-                        <div class="event-meta">2024 • Competition Materials</div>
-                        <p>Designed competition materials and presentation content. Created professional pitch deck and supporting visual materials.</p>
+                        <div class="event-meta">2 – 17 Dec 2023 & 14 - 17 Nov 2024 • Multimedia Bureau</div>
+                        <p>Designed promotional materials including posters, event photography, montages, slides, and digital backdrops to enhance event branding.</p>
                     </div>
                 </div>
 
                 <!-- Event 8: Zumba Neon Challenge -->
                 <div class="event-card">
-                    <div class="event-image">💃</div>
+                    <div class="event-image">
+                        <img src="picture/events/ZUMA FT Runningman Neon Challenge/zumba (2).jpg" alt="Zumba Neon Challenge">
+                    </div>
                     <div class="event-content">
                         <h4>Zumba FT Running Man Neon Challenge</h4>
-                        <div class="event-meta">2024 • Event Promotion</div>
-                        <p>Created vibrant event posters and promotional content for fitness challenge. Designed neon-themed graphics and social media content.</p>
+                        <div class="event-meta">25 Oct 2024 • Program Bureau & Emcee</div>
+                        <p>Unexpectedly took on the role of emcee less than an hour before the event started. Despite initial nervousness, successfully engaged the audience and contributed to a lively atmosphere.</p>
                     </div>
                 </div>
 
                 <!-- Event 9: IKS Industry Visit -->
                 <div class="event-card">
-                    <div class="event-image">🏭</div>
+                    <div class="event-image">
+                        <img src="picture/events/LAWATAN INDUSTRI KECIL DAN SEDERHANA/iks.jpg" alt="IKS Industry Visit">
+                    </div>
                     <div class="event-content">
-                        <h4>Lawatan Industri Kecil dan Sederhana</h4>
-                        <div class="event-meta">2024 • Industry Visit</div>
-                        <p>Documented small and medium industry visit. Created event coverage and educational content about local businesses.</p>
+                        <h4>IKS Trip 2024: Industrial Visit to Sabak Bernam</h4>
+                        <div class="event-meta">8 June 2024 • Logistics & Safety Bureau</div>
+                        <p>Managed transportation and safety for a group of 40 participants, including children and accompanying staff. Ensured smooth logistics and emergency preparedness.</p>
                     </div>
                 </div>
 
                 <!-- Event 10: Kraftopia -->
                 <div class="event-card">
-                    <div class="event-image">🎨</div>
+                    <div class="event-image">
+                        <img src="picture/events/Kraftangan Trip/ramai.jpg" alt="Kraftopia 2024">
+                    </div>
                     <div class="event-content">
                         <h4>Kraftopia 2024 - Kraftangan Trip</h4>
-                        <div class="event-meta">2024 • Cultural Event</div>
-                        <p>Event branding and promotional design for traditional craft showcase. Created materials highlighting Malaysian heritage and craftsmanship.</p>
+                        <div class="event-meta">28 June 2024 • Deputy Director</div>
+                        <p>Assisted the Program Director in event coordination, ensuring a smooth execution of activities throughout the field trip..</p>
                     </div>
                 </div>
 
                 <!-- Event 11: Karnival Keusahawanan 2023 -->
                 <div class="event-card">
-                    <div class="event-image">🎪</div>
+                    <div class="event-image">
+                        <img src="picture/events/HBP × KARNIVAL KEUSAHAWAN 2023/ajk.jpg" alt="Karnival Keusahawanan 2023">
+                    </div>
                     <div class="event-content">
-                        <h4>KPPIM Karnival Keusahawanan 2023</h4>
-                        <div class="event-meta">2023 • Entrepreneurship Carnival</div>
-                        <p>Designed event branding and booth materials for entrepreneurship carnival. Created promotional content and visual merchandising.</p>
+                        <h4>KPPIM Entrepreneurship Carnival 2023</h4>
+                        <div class="event-meta">13 – 14 Dec 2023 • Multimedia Bureau</div>
+                        <p>My first major event in my degree journey! Learned valuable skills in entrepreneurship, managed sales, and conducted interactive games to attract visitors to the booth.</p>
                     </div>
                 </div>
 
                 <!-- Event 12: Malam Penyucian Jiwa -->
                 <div class="event-card">
-                    <div class="event-image">🌙</div>
+                    <div class="event-image">
+                        <img src="picture/events/mpj.jpg" alt="Malam Penyucian Jiwa">
+                    </div>
                     <div class="event-content">
                         <h4>Malam Penyucian Jiwa</h4>
-                        <div class="event-meta">2024 • Spiritual Event</div>
-                        <p>Created spiritual event graphics and materials. Designed thoughtful, respectful promotional content for religious gathering.</p>
+                        <div class="event-meta">21 June 2024 • Secretary</div>
+                        <p>Organized a Yassin recitation session for students preparing for final exams. Managed official documentation and correspondence.</p>
                     </div>
                 </div>
 
                 <!-- Event 13: MAGIM Online (Oct 2024) -->
                 <div class="event-card">
-                    <div class="event-image">💻</div>
+                    <div class="event-image">
+                        <img src="picture/events/tugas magim.jpg" alt="MAGIM Online October 2024">
+                    </div>
                     <div class="event-content">
-                        <h4>MAGIM Online Events (October 2024)</h4>
-                        <div class="event-meta">October 2024 • Digital Content</div>
-                        <p>Created digital content for virtual events. Designed social media graphics optimized for online engagement.</p>
+                        <h4>MAGIM October 2024: Meet and Greet Information Management</h4>
+                        <div class="event-meta">7 – 10 October 2024 • Head of Relations Bureau</div>
+                        <p>Facilitated VIP arrangements by preparing official invitation letters, handling email communications, and ensuring a smooth welcoming process. Maintained professional communication throughout the event.</p>
                     </div>
                 </div>
 
                 <!-- Event 14: MAGIM Online (March 2024) -->
                 <div class="event-card">
-                    <div class="event-image">🌐</div>
+                    <div class="event-image">
+                        <img src="picture/events/onlinemagim2.jpg" alt="MAGIM Online March 2024">
+                    </div>
                     <div class="event-content">
-                        <h4>MAGIM Online Events (March 2024)</h4>
-                        <div class="event-meta">March 2024 • Digital Content</div>
-                        <p>Designed promotional materials for series of online events. Created cohesive digital campaign across multiple platforms.</p>
+                        <h4>MAGIM March 2024: Meet and Greet Information Management</h4>
+                        <div class="event-meta">18 – 21 March 2024 • Program & Protocol Bureau</div>
+                        <p>Wrote scripts for emcees and ensured all speakers adhered to the scheduled time slots. Oversaw program execution to maintain a seamless flow. The program was conducted 100% online due to Open and Distance Learning (ODL) mode during that period.</p>
                     </div>
                 </div>
             </div>
@@ -623,5 +712,32 @@
         <p>&copy; 2026 Alia Syafiqah. Blending technical precision with creative storytelling.</p>
         <p style="margin-top: 8px; font-size: 14px;">Available for full-time opportunities starting April 2026</p>
     </footer>
+    
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+        const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+        
+        mobileMenuBtn.addEventListener('click', function() {
+            navLinks.classList.toggle('active');
+            mobileMenuOverlay.classList.toggle('active');
+            this.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
+        });
+        
+        mobileMenuOverlay.addEventListener('click', function() {
+            navLinks.classList.remove('active');
+            mobileMenuOverlay.classList.remove('active');
+            mobileMenuBtn.textContent = '☰';
+        });
+        
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function() {
+                navLinks.classList.remove('active');
+                mobileMenuOverlay.classList.remove('active');
+                mobileMenuBtn.textContent = '☰';
+            });
+        });
+    </script>
 </body>
 </html>
