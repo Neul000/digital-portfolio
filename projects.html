@@ -1,3 +1,6 @@
+
+
+Projects · HTML
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -363,13 +366,13 @@
         </div>
     </nav>
     <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
-
+ 
     <!-- Page Header -->
     <div class="page-header">
         <h1>All Projects</h1>
         <p>10 projects spanning content design, development, and information organization</p>
     </div>
-
+ 
     <!-- Filter Buttons -->
     <div class="filter-container">
         <div class="filter-buttons">
@@ -380,7 +383,7 @@
             <button class="filter-btn" data-filter="game">Game Design</button>
         </div>
     </div>
-
+ 
     <!-- Projects Grid -->
     <main>
         <div class="projects-grid">
@@ -403,7 +406,7 @@
                     </div>
                 </div>
             </div>
-
+ 
             <!-- Project 2: Digital Literacy Courseware -->
             <div class="project-card" data-category="content web">
                 <div class="project-image">
@@ -426,7 +429,7 @@
                     </div>
                 </div>
             </div>
-
+ 
             <!-- Project 3: Infopreneur Club Rebranding -->
             <div class="project-card" data-category="content">
                 <div class="project-image">
@@ -446,7 +449,7 @@
                     </div>
                 </div>
             </div>
-
+ 
             <!-- Project 4: ICM LinkUp -->
             <div class="project-card" data-category="mobile web">
                 <div class="project-image">💼</div>
@@ -466,7 +469,7 @@
                     </div>
                 </div>
             </div>
-
+ 
             <!-- Project 5: UiTM Di Hatiku -->
             <div class="project-card" data-category="mobile">
                 <div class="project-image">📱</div>
@@ -482,7 +485,7 @@
                     </div>
                 </div>
             </div>
-
+ 
             <!-- Project 6: Club Website -->
             <div class="project-card" data-category="web">
                 <div class="project-image">🌐</div>
@@ -501,7 +504,7 @@
                     </div>
                 </div>
             </div>
-
+ 
             <!-- Project 7: Personal Portfolio WordPress -->
             <div class="project-card" data-category="web">
                 <div class="project-image">💻</div>
@@ -520,7 +523,7 @@
                     </div>
                 </div>
             </div>
-
+ 
             <!-- Project 8: 2D Platformer Game -->
             <div class="project-card" data-category="game">
                 <div class="project-image">🎮</div>
@@ -539,7 +542,7 @@
                     </div>
                 </div>
             </div>
-
+ 
             <!-- Project 9: E-Hailing System -->
             <div class="project-card" data-category="web">
                 <div class="project-image">🚗</div>
@@ -558,7 +561,7 @@
                     </div>
                 </div>
             </div>
-
+ 
             <!-- Project 10: Archive Repository -->
             <div class="project-card" data-category="web">
                 <div class="project-image">📚</div>
@@ -579,13 +582,18 @@
             </div>
         </div>
     </main>
-
+ 
     <!-- Footer -->
     <footer>
         <p>&copy; 2026 Alia Syafiqah. Connecting people with information, one project at a time.</p>
+        <p id="lastUpdated" style="margin-top: 4px; font-size: 12px; opacity: 0.7;"></p>
+        <script>
+          document.getElementById("lastUpdated").textContent =
+            "Last updated: " + new Date(document.lastModified).toLocaleDateString("en-MY", { year: "numeric", month: "long", day: "numeric" });
+        </script>
         <p style="margin-top: 8px; font-size: 14px;">Open to full-time opportunities</p>
     </footer>
-
+ 
     <script>
         // Mobile Menu Toggle
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
@@ -615,13 +623,13 @@
         // Filter functionality
         const filterButtons = document.querySelectorAll('.filter-btn');
         const projectCards = document.querySelectorAll('.project-card');
-
+ 
         filterButtons.forEach(button => {
             button.addEventListener('click', () => {
                 // Update active button
                 filterButtons.forEach(btn => btn.classList.remove('active'));
                 button.classList.add('active');
-
+ 
                 // Filter projects
                 const filter = button.getAttribute('data-filter');
                 
@@ -642,3 +650,24 @@
     </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
