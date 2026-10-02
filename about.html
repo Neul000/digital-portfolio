@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About | Alia Syafiqah</title>
-    
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
-    
+
     <style>
         :root {
             --primary: #1a2332;
@@ -23,13 +23,13 @@
             --shadow-md: 0 4px 20px rgba(0,0,0,0.12);
             --shadow-lg: 0 8px 40px rgba(0,0,0,0.16);
         }
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             font-family: 'DM Sans', sans-serif;
             color: var(--text-dark);
@@ -37,13 +37,13 @@
             overflow-x: hidden;
             background: var(--white);
         }
-        
+
         h1, h2, h3, h4 {
             font-family: 'Playfair Display', serif;
             font-weight: 900;
             line-height: 1.2;
         }
-        
+
         /* Navigation */
         nav {
             position: fixed;
@@ -55,7 +55,7 @@
             z-index: 999;
             padding: 16px 0;
         }
-        
+
         .nav-container {
             max-width: 1200px;
             margin: 0 auto;
@@ -64,7 +64,7 @@
             justify-content: space-between;
             align-items: center;
         }
-        
+
         .logo {
             font-family: 'Playfair Display', serif;
             font-size: 1.5rem;
@@ -72,29 +72,29 @@
             color: var(--primary);
             text-decoration: none;
         }
-        
+
         .nav-links {
             display: flex;
             gap: 32px;
             list-style: none;
         }
-        
+
         .nav-links a {
             color: var(--text-dark);
             text-decoration: none;
             font-weight: 500;
             transition: color 0.3s ease;
         }
-        
+
         .nav-links a:hover {
             color: var(--accent);
         }
-        
+
         .nav-links a.active {
             color: var(--accent);
             font-weight: 700;
         }
-        
+
         /* Page Header */
         .page-header {
             background: var(--primary);
@@ -103,35 +103,35 @@
             margin-top: 60px;
             text-align: center;
         }
-        
+
         .page-header h1 {
             font-size: clamp(2.5rem, 5vw, 3.5rem);
             margin-bottom: 16px;
         }
-        
+
         .page-header p {
             font-size: 1.2rem;
             color: rgba(255, 255, 255, 0.9);
         }
-        
+
         /* Main Content */
         main {
             max-width: 1200px;
             margin: 0 auto;
             padding: 60px 20px 80px;
         }
-        
+
         section {
             margin-bottom: 80px;
         }
-        
+
         .section-title {
             font-size: clamp(2rem, 4vw, 2.5rem);
             color: var(--primary);
             margin-bottom: 32px;
             text-align: center;
         }
-        
+
         /* Bio Section */
         .bio-content {
             max-width: 900px;
@@ -141,23 +141,23 @@
             border-radius: 16px;
             line-height: 1.8;
         }
-        
+
         .bio-content p {
             margin-bottom: 20px;
             color: var(--text-dark);
             font-size: 17px;
         }
-        
+
         .bio-content strong {
             color: var(--accent);
         }
-        
+
         /* Education */
         .education-grid {
             display: grid;
             gap: 32px;
         }
-        
+
         .education-card {
             background: var(--white);
             padding: 40px;
@@ -165,32 +165,32 @@
             box-shadow: var(--shadow-sm);
             border-left: 4px solid var(--accent);
         }
-        
+
         .education-header {
             display: flex;
             gap: 24px;
             align-items: start;
             margin-bottom: 24px;
         }
-        
+
         .education-logo {
             width: 80px;
             height: 80px;
             object-fit: contain;
         }
-        
+
         .education-info h3 {
             font-size: 1.6rem;
             margin-bottom: 8px;
             color: var(--primary);
         }
-        
+
         .education-meta {
             color: var(--text-light);
             font-size: 15px;
             margin-bottom: 4px;
         }
-        
+
         .cgpa-badge {
             display: inline-block;
             background: var(--accent);
@@ -201,25 +201,25 @@
             font-weight: 700;
             margin-top: 8px;
         }
-        
+
         .education-content p {
             color: var(--text-light);
             line-height: 1.7;
             margin-bottom: 16px;
         }
-        
+
         .education-content ul {
             list-style: none;
             margin-top: 16px;
         }
-        
+
         .education-content li {
             padding-left: 24px;
             position: relative;
             margin-bottom: 8px;
             color: var(--text-light);
         }
-        
+
         .education-content li::before {
             content: '▸';
             position: absolute;
@@ -227,21 +227,21 @@
             color: var(--accent);
             font-weight: bold;
         }
-        
+
         /* Skills Grid */
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 32px;
         }
-        
+
         .skill-category {
             background: var(--white);
             padding: 32px;
             border-radius: 12px;
             box-shadow: var(--shadow-sm);
         }
-        
+
         .skill-category h3 {
             font-size: 1.4rem;
             margin-bottom: 24px;
@@ -249,39 +249,39 @@
             padding-bottom: 12px;
             border-bottom: 2px solid var(--accent);
         }
-        
+
         .skill-item {
             margin-bottom: 20px;
         }
-        
+
         .skill-name {
             display: flex;
             justify-content: space-between;
             margin-bottom: 8px;
             font-weight: 500;
         }
-        
+
         .skill-level {
             height: 8px;
             background: var(--bg-light);
             border-radius: 10px;
             overflow: hidden;
         }
-        
+
         .skill-fill {
             height: 100%;
             background: linear-gradient(90deg, var(--accent) 0%, var(--accent-light) 100%);
             border-radius: 10px;
             transition: width 0.6s ease;
         }
-        
+
         /* Certificates Grid */
         .certificates-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 24px;
         }
-        
+
         .certificate-card {
             background: var(--white);
             border-radius: 12px;
@@ -290,16 +290,16 @@
             transition: all 0.3s ease;
             cursor: pointer;
         }
-        
+
         .certificate-card:hover {
             transform: translateY(-8px);
             box-shadow: var(--shadow-lg);
         }
-        
+
         .certificate-card:hover .certificate-image img {
             transform: scale(1.05);
         }
-        
+
         .certificate-image {
             width: 100%;
             height: 250px;
@@ -310,14 +310,14 @@
             position: relative;
             overflow: hidden;
         }
-        
+
         .certificate-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: transform 0.3s ease;
         }
-        
+
         .certificate-badge {
             position: absolute;
             top: 12px;
@@ -329,33 +329,33 @@
             font-size: 11px;
             font-weight: 700;
         }
-        
+
         .certificate-badge.major {
             background: #ffd700;
             color: var(--primary);
         }
-        
+
         .certificate-content {
             padding: 20px;
         }
-        
+
         .certificate-card h4 {
             font-size: 1.1rem;
             margin-bottom: 8px;
             color: var(--primary);
         }
-        
+
         .certificate-meta {
             font-size: 13px;
             color: var(--text-light);
             margin-bottom: 8px;
         }
-        
+
         .certificate-card p {
             font-size: 14px;
             color: var(--text-light);
         }
-        
+
         /* Lightbox Modal */
         .lightbox {
             display: none;
@@ -370,18 +370,18 @@
             align-items: center;
             padding: 20px;
         }
-        
+
         .lightbox.active {
             display: flex;
         }
-        
+
         .lightbox-content {
             max-width: 90%;
             max-height: 90%;
             position: relative;
             animation: fadeInUp 0.3s ease;
         }
-        
+
         .lightbox-content img {
             width: 100%;
             height: auto;
@@ -390,7 +390,7 @@
             border-radius: 8px;
             box-shadow: 0 0 50px rgba(255, 255, 255, 0.1);
         }
-        
+
         .lightbox-close {
             position: absolute;
             top: -40px;
@@ -408,12 +408,12 @@
             justify-content: center;
             transition: all 0.3s ease;
         }
-        
+
         .lightbox-close:hover {
             background: var(--accent-light);
             transform: rotate(90deg);
         }
-        
+
         .certificate-click-hint {
             position: absolute;
             bottom: 12px;
@@ -427,18 +427,18 @@
             transition: opacity 0.3s ease;
             pointer-events: none;
         }
-        
+
         .certificate-card:hover .certificate-click-hint {
             opacity: 1;
         }
-        
+
         /* Target Roles */
         .roles-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
         }
-        
+
         .role-tag {
             background: var(--bg-light);
             padding: 20px;
@@ -448,13 +448,13 @@
             color: var(--text-dark);
             transition: all 0.3s ease;
         }
-        
+
         .role-tag:hover {
             background: var(--accent);
             color: var(--white);
             transform: scale(1.05);
         }
-        
+
         /* Footer */
         footer {
             background: var(--primary);
@@ -462,11 +462,11 @@
             text-align: center;
             padding: 40px 20px;
         }
-        
+
         footer p {
             color: rgba(255, 255, 255, 0.8);
         }
-        
+
         .mobile-menu-btn {
             display: none;
             background: none;
@@ -475,7 +475,7 @@
             cursor: pointer;
             color: var(--primary);
         }
-        
+
         /* Mobile Navigation */
         @media (max-width: 968px) {
             .nav-links {
@@ -492,21 +492,21 @@
                 z-index: 998;
                 gap: 24px;
             }
-            
+
             .nav-links.active {
                 right: 0;
             }
-            
+
             .nav-links a {
                 font-size: 1.1rem;
                 padding: 12px 0;
                 border-bottom: 1px solid var(--bg-light);
             }
-            
+
             .mobile-menu-btn {
                 display: block;
             }
-            
+
             .mobile-menu-overlay {
                 display: none;
                 position: fixed;
@@ -517,18 +517,18 @@
                 background: rgba(0, 0, 0, 0.5);
                 z-index: 997;
             }
-            
+
             .mobile-menu-overlay.active {
                 display: block;
             }
         }
-        
+
         /* Responsive */
         @media (max-width: 768px) {
             .education-header {
                 flex-direction: column;
             }
-            
+
             .bio-content {
                 padding: 32px 24px;
             }
@@ -565,30 +565,30 @@
             <div class="bio-content">
                 <p><strong>Who I Am:</strong></p>
                 <p>I'm an Information Science graduate who genuinely enjoys helping people find and understand information — with a practical edge in visual design and content creation. What makes me different? I bring structure and clarity to work that's often treated as purely creative, or purely technical.</p>
-                
+
                 <p><strong>My Journey:</strong></p>
                 <p>My path started with International Business, where I learned about consumer behavior, market dynamics, and how organizations communicate with the people they serve. This foundation led me to Information Science, where I discovered how information architecture, digital asset management, and content organization could make information genuinely usable and accessible to the people who need it — whether inside a company, a community, or the public.</p>
-                
+
                 <p><strong>What Sets Me Apart:</strong></p>
                 <p>My degree specialization in Information Content Management gives me grounding that pure design or pure business graduates don't have. I understand digital asset management, information architecture, and how to structure content so people can actually find and understand it — not just visual appeal. I care as much about the person on the other end as I do about the system itself.</p>
-                
+
                 <p><strong>Current Status:</strong></p>
-                <p>I completed a System Support internship at Roche (MNC environment), where I learned how visual communication drives clarity in professional settings — translating complex technical processes into clear documentation, creating visual guides, and collaborating with cross-functional teams across APAC. I went on to serve as a Graduate Research Assistant at UiTM (April–September 2026), applying structured documentation and research methodology skills. Together, these experiences taught me how to thrive in structured, deadline-driven environments while bringing creative problem-solving to operational challenges.</p>
-                
+                <p>I completed a System Support internship at Roche (MNC environment) as Level 1 support for Invoice-to-Pay, where my daily work was investigating discrepancies down to their root cause — unauthorized suppliers, unrecognized users, accounts payable data-entry errors, or system bugs — and escalating complex cases to the Level 2 team in India when needed. I documented each case's analysis in the ticket and helped maintain a shared case-log so the team could reference rare or recurring issues going forward. I went on to serve as a Graduate Research Assistant at UiTM (April–September 2026), applying structured documentation and research methodology skills. Together, these experiences taught me how structured troubleshooting and knowledge-sharing turn individual learning into something a whole team can use — which is what draws me toward Learning & Development.</p>
+
                 <p><strong>My Approach:</strong></p>
                 <p>I combine strategic thinking with creative execution. Whether it's rebranding a student club, designing the booth decor that won us Best Booth Award at Hari Bertemu Pelanggan, designing educational courseware for children, or creating social media content that drives engagement — I always start with strategy. Who's the audience? What's the goal? How do we measure success? Then I execute with creativity.</p>
-                
+
                 <p><strong>What I'm Looking For:</strong></p>
                 <p>I'm exploring opportunities where I can put my Information Science background to real use — roles where I get to help people find, understand, and engage with information, whether that's through content, information literacy, community or student engagement, or user-facing information services. I'm also open to content and design-adjacent roles where structured thinking matters. Still figuring out the exact fit, but drawn to work where I get to guide and connect people with information, not just organize it behind the scenes.</p>
-                
-                <p><strong>Open now</strong> for full-time roles in Content Creation, Design, or Digital Marketing.</p>
+
+                <p><strong>Open now</strong> for full-time roles in Learning & Development, information services, and content/communications.</p>
             </div>
         </section>
 
         <!-- Education -->
         <section id="education">
             <h2 class="section-title">Education</h2>
-            
+
             <div class="education-grid">
                 <!-- Degree -->
                 <div class="education-card">
@@ -611,7 +611,7 @@
                             <li><strong>Web Archiving:</strong> Understand how information is preserved so it stays accessible over time</li>
                             <li><strong>Content Strategy:</strong> Learned systematic approaches to planning content people can actually use</li>
                         </ul>
-                        
+
                         <p><strong>Relevant Coursework:</strong></p>
                         <ul>
                             <li>Digital Asset Management</li>
@@ -652,7 +652,7 @@
         <!-- Skills -->
         <section id="skills">
             <h2 class="section-title">Skills Matrix</h2>
-            
+
             <div class="skills-grid">
                 <div class="skill-category">
                     <h3>Content Creation & Design</h3>
@@ -833,7 +833,7 @@
         <!-- Certificates -->
         <section id="certificates">
             <h2 class="section-title">Certificates & Awards (12 Total)</h2>
-            
+
             <div class="certificates-grid">
                 <!-- Major Awards -->
                 <div class="certificate-card">
@@ -1001,8 +1001,9 @@
         <!-- Target Roles -->
         <section id="target-roles">
             <h2 class="section-title">Ideal Roles I'm Targeting</h2>
-            
+
             <div class="roles-grid">
+                <div class="role-tag">Learning & Development Executive</div>
                 <div class="role-tag">Information Literacy Officer</div>
                 <div class="role-tag">Community Engagement Officer</div>
                 <div class="role-tag">Student Engagement & Career Development</div>
@@ -1015,7 +1016,7 @@
                 <div class="role-tag">People & Culture Executive</div>
                 <div class="role-tag">Instructional Designer</div>
                 <div class="role-tag">E-Learning Content Developer</div>
-                
+
             </div>
         </section>
     </main>
@@ -1030,7 +1031,7 @@
         </script>
         <p style="margin-top: 8px; font-size: 14px;">Open to full-time opportunities</p>
     </footer>
-    
+
     <!-- Lightbox Modal -->
     <div class="lightbox" id="lightbox">
         <div class="lightbox-content">
@@ -1044,19 +1045,19 @@
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const navLinks = document.getElementById('navLinks');
         const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
-        
+
         mobileMenuBtn.addEventListener('click', function() {
             navLinks.classList.toggle('active');
             mobileMenuOverlay.classList.toggle('active');
             this.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
         });
-        
+
         mobileMenuOverlay.addEventListener('click', function() {
             navLinks.classList.remove('active');
             mobileMenuOverlay.classList.remove('active');
             mobileMenuBtn.textContent = '☰';
         });
-        
+
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', function() {
                 navLinks.classList.remove('active');
@@ -1064,33 +1065,33 @@
                 mobileMenuBtn.textContent = '☰';
             });
         });
-        
+
         // Lightbox functionality
         function openLightbox(imgSrc) {
             document.getElementById('lightbox').classList.add('active');
             document.getElementById('lightbox-img').src = imgSrc;
             document.body.style.overflow = 'hidden';
         }
-        
+
         function closeLightbox() {
             document.getElementById('lightbox').classList.remove('active');
             document.body.style.overflow = 'auto';
         }
-        
+
         // Close lightbox on background click
         document.getElementById('lightbox').addEventListener('click', function(e) {
             if (e.target === this) {
                 closeLightbox();
             }
         });
-        
+
         // Close lightbox on ESC key
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') {
                 closeLightbox();
             }
         });
-        
+
         // Add click handlers to all certificate images
         document.querySelectorAll('.certificate-image img').forEach(img => {
             img.parentElement.style.cursor = 'pointer';
@@ -1098,7 +1099,7 @@
                 openLightbox(img.src);
             });
         });
-        
+
         // Skill bars animation
         const skillObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
