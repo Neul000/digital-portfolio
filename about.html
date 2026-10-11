@@ -206,10 +206,12 @@
         .card-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
+            grid-auto-rows: 1fr; /* every row, and so every card, matches the tallest */
             gap: 24px;
         }
 
         .story-card {
+            display: grid; /* lets .card-inner stretch to the full row height */
             perspective: 1200px;
             cursor: pointer;
         }
@@ -837,7 +839,7 @@
                             </div>
                             <div class="card-face card-back" aria-hidden="true">
                                 <h3>Current Status</h3>
-                                <p>I completed a System Support internship at Roche as Level 1 support for Invoice-to-Pay, tracing discrepancies to their root cause — unauthorized suppliers, unrecognized users, data-entry errors, or system bugs. I resolved what sat within Level 1, escalated to Level 2 only when a case needed it, and documented each case in the ticket and a shared case-log the team could reuse. I then served as a Graduate Research Assistant at UiTM (April–September 2026). These roles taught me how structured troubleshooting and knowledge-sharing turn individual learning into something a whole team can use — which is what draws me toward Learning &amp; Development.</p>
+                                <p>I completed a System Support internship at Roche as Level 1 support for Invoice-to-Pay, tracing discrepancies to their root cause. I resolved what sat within Level 1, escalated to Level 2 only when a case needed it, and documented each case in a shared case-log the team could reuse. I then served as a Graduate Research Assistant at UiTM (April–September 2026). These roles taught me how structured troubleshooting and knowledge-sharing turn individual learning into something a whole team can use — which is what draws me toward Learning &amp; Development.</p>
                                 <button type="button" class="flip-btn" aria-label="Flip back: Current Status">Flip back ↻</button>
                             </div>
                         </div>
