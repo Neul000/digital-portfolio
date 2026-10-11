@@ -132,24 +132,220 @@
             text-align: center;
         }
 
-        /* Bio Section */
-        .bio-content {
+        /* Bio Section: flip-card story deck */
+        .story-deck {
             max-width: 900px;
             margin: 0 auto;
-            background: var(--bg-light);
-            padding: 48px;
-            border-radius: 16px;
-            line-height: 1.8;
         }
 
-        .bio-content p {
+        .deck-intro {
+            text-align: center;
+            color: var(--text-light);
+            font-size: 15px;
             margin-bottom: 20px;
-            color: var(--text-dark);
-            font-size: 17px;
         }
 
-        .bio-content strong {
+        .deck-controls {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin-bottom: 28px;
+        }
+
+        .deck-progress {
+            flex: 1 1 220px;
+            max-width: 320px;
+        }
+
+        .deck-progress-text {
+            font-size: 14px;
+            color: var(--text-light);
+            text-align: center;
+            margin-bottom: 6px;
+        }
+
+        .deck-progress-bar {
+            height: 8px;
+            border-radius: 999px;
+            background: #e2e8f0;
+            overflow: hidden;
+        }
+
+        .deck-progress-fill {
+            height: 100%;
+            width: 0;
+            background: var(--accent);
+            transition: width 0.4s ease;
+        }
+
+        .deck-btn {
+            font: inherit;
+            font-size: 14px;
+            padding: 8px 16px;
+            border-radius: 999px;
+            border: 1px solid var(--primary);
+            background: var(--white);
+            color: var(--primary);
+            cursor: pointer;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        .deck-btn:hover {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .deck-btn:focus-visible,
+        .flip-btn:focus-visible {
+            outline: 3px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .story-card {
+            perspective: 1200px;
+            cursor: pointer;
+        }
+
+        /* Both faces share one grid cell, so the card is as tall as its longer face */
+        .card-inner {
+            display: grid;
+            transform-style: preserve-3d;
+            transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
+        }
+
+        .story-card.flipped .card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .card-face {
+            grid-area: 1 / 1;
+            display: flex;
+            flex-direction: column;
+            min-height: 220px;
+            padding: 28px;
+            border-radius: 16px;
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+        }
+
+        .card-front {
+            background: var(--white);
+            border: 2px solid #e2e8f0;
+            border-top: 6px solid var(--accent);
+            box-shadow: var(--shadow-sm);
+            transition: box-shadow 0.2s;
+        }
+
+        .story-card:hover .card-front {
+            box-shadow: var(--shadow-md);
+        }
+
+        .card-back {
+            background: var(--primary);
+            color: var(--white);
+            box-shadow: var(--shadow-md);
+            transform: rotateY(180deg);
+        }
+
+        .card-num {
+            font-size: 13px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--text-light);
+        }
+
+        .card-icon {
+            font-size: 34px;
+            line-height: 1;
+            margin: 10px 0 8px;
+        }
+
+        .card-face h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.35rem;
+            margin: 0 0 8px;
+        }
+
+        .card-front h3 {
+            color: var(--primary);
+        }
+
+        .card-back h3 {
+            color: var(--accent-light);
+        }
+
+        .card-teaser {
+            color: var(--text-dark);
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .card-back p {
+            color: #f1f5f9;
+            font-size: 15.5px;
+            line-height: 1.7;
+        }
+
+        .flip-btn {
+            align-self: flex-start;
+            margin-top: auto;
+            padding: 16px 0 0;
+            font: inherit;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--primary);
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .card-back .flip-btn {
+            color: var(--accent-light);
+        }
+
+        .deck-done {
+            margin-top: 28px;
+            padding: 20px 24px;
+            text-align: center;
+            background: var(--bg-light);
+            border-radius: 16px;
+            color: var(--text-dark);
+        }
+
+        .deck-done[hidden] {
+            display: none;
+        }
+
+        .deck-done a {
+            color: var(--primary);
+            font-weight: 600;
+            margin: 0 8px;
+        }
+
+        .open-now {
+            margin-top: 28px;
+            text-align: center;
+            font-size: 17px;
+            color: var(--text-dark);
+        }
+
+        .open-now strong {
             color: var(--accent);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .card-inner,
+            .deck-progress-fill {
+                transition: none;
+            }
         }
 
         /* Education */
@@ -529,8 +725,12 @@
                 flex-direction: column;
             }
 
-            .bio-content {
-                padding: 32px 24px;
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .card-face {
+                padding: 24px;
             }
         }
     </style>
@@ -562,26 +762,137 @@
     <main>
         <!-- Bio -->
         <section id="bio">
-            <div class="bio-content">
-                <p><strong>Who I Am:</strong></p>
-                <p>I'm an Information Science graduate who genuinely enjoys helping people find and understand information — with a practical edge in visual design and content creation. What makes me different? I bring structure and clarity to work that's often treated as purely creative, or purely technical.</p>
+            <div class="story-deck">
+                <p class="deck-intro">Six cards, one story. Tap a card to flip it.</p>
 
-                <p><strong>My Journey:</strong></p>
-                <p>My path started with International Business, where I learned about consumer behavior, market dynamics, and how organizations communicate with the people they serve. This foundation led me to Information Science, where I discovered how information architecture, digital asset management, and content organization could make information genuinely usable and accessible to the people who need it — whether inside a company, a community, or the public.</p>
+                <div class="deck-controls">
+                    <div class="deck-progress">
+                        <div class="deck-progress-text" id="deckProgressText" aria-live="polite">0 / 6 cards flipped</div>
+                        <div class="deck-progress-bar"><div class="deck-progress-fill" id="deckProgressFill"></div></div>
+                    </div>
+                    <button type="button" class="deck-btn" id="flipAllBtn">Flip all</button>
+                    <button type="button" class="deck-btn" id="resetDeckBtn">Reset</button>
+                </div>
 
-                <p><strong>What Sets Me Apart:</strong></p>
-                <p>My degree specialization in Information Content Management gives me grounding that pure design or pure business graduates don't have. I understand digital asset management, information architecture, and how to structure content so people can actually find and understand it — not just visual appeal. I care as much about the person on the other end as I do about the system itself.</p>
+                <div class="card-grid">
+                    <article class="story-card" data-id="who">
+                        <div class="card-inner">
+                            <div class="card-face card-front">
+                                <span class="card-num">Card 1 of 6</span>
+                                <span class="card-icon" aria-hidden="true">🧭</span>
+                                <h3>Who I Am</h3>
+                                <p class="card-teaser">Structure and clarity for work that's treated as purely creative, or purely technical.</p>
+                                <button type="button" class="flip-btn" aria-label="Flip card: Who I Am">Tap to flip ↻</button>
+                            </div>
+                            <div class="card-face card-back" aria-hidden="true">
+                                <h3>Who I Am</h3>
+                                <p>I'm an Information Science graduate who genuinely enjoys helping people find and understand information — with a practical edge in visual design and content creation. What makes me different? I bring structure and clarity to work that's often treated as purely creative, or purely technical.</p>
+                                <button type="button" class="flip-btn" aria-label="Flip back: Who I Am">Flip back ↻</button>
+                            </div>
+                        </div>
+                    </article>
 
-                <p><strong>Current Status:</strong></p>
-                <p>I completed a System Support internship at Roche (MNC environment) as Level 1 support for Invoice-to-Pay, where my daily work was investigating discrepancies down to their root cause — unauthorized suppliers, unrecognized users, accounts payable data-entry errors, or system bugs — and escalating complex cases to the Level 2 team in India when needed. I documented each case's analysis in the ticket and helped maintain a shared case-log so the team could reference rare or recurring issues going forward. I went on to serve as a Graduate Research Assistant at UiTM (April–September 2026), applying structured documentation and research methodology skills. Together, these experiences taught me how structured troubleshooting and knowledge-sharing turn individual learning into something a whole team can use — which is what draws me toward Learning & Development.</p>
+                    <article class="story-card" data-id="journey">
+                        <div class="card-inner">
+                            <div class="card-face card-front">
+                                <span class="card-num">Card 2 of 6</span>
+                                <span class="card-icon" aria-hidden="true">🛤️</span>
+                                <h3>My Journey</h3>
+                                <p class="card-teaser">From International Business to Information Science.</p>
+                                <button type="button" class="flip-btn" aria-label="Flip card: My Journey">Tap to flip ↻</button>
+                            </div>
+                            <div class="card-face card-back" aria-hidden="true">
+                                <h3>My Journey</h3>
+                                <p>My path started with International Business, where I learned about consumer behavior, market dynamics, and how organizations communicate with the people they serve. This foundation led me to Information Science, where I discovered how information architecture, digital asset management, and content organization could make information genuinely usable and accessible to the people who need it — whether inside a company, a community, or the public.</p>
+                                <button type="button" class="flip-btn" aria-label="Flip back: My Journey">Flip back ↻</button>
+                            </div>
+                        </div>
+                    </article>
 
-                <p><strong>My Approach:</strong></p>
-                <p>I combine strategic thinking with creative execution. Whether it's rebranding a student club, designing the booth decor that won us Best Booth Award at Hari Bertemu Pelanggan, designing educational courseware for children, or creating social media content that drives engagement — I always start with strategy. Who's the audience? What's the goal? How do we measure success? Then I execute with creativity.</p>
+                    <article class="story-card" data-id="apart">
+                        <div class="card-inner">
+                            <div class="card-face card-front">
+                                <span class="card-num">Card 3 of 6</span>
+                                <span class="card-icon" aria-hidden="true">⭐</span>
+                                <h3>What Sets Me Apart</h3>
+                                <p class="card-teaser">Grounding in how content is organized, not just how it looks.</p>
+                                <button type="button" class="flip-btn" aria-label="Flip card: What Sets Me Apart">Tap to flip ↻</button>
+                            </div>
+                            <div class="card-face card-back" aria-hidden="true">
+                                <h3>What Sets Me Apart</h3>
+                                <p>My degree specialization in Information Content Management gives me grounding that pure design or pure business graduates don't have. I understand digital asset management, information architecture, and how to structure content so people can actually find and understand it — not just visual appeal. I care as much about the person on the other end as I do about the system itself.</p>
+                                <button type="button" class="flip-btn" aria-label="Flip back: What Sets Me Apart">Flip back ↻</button>
+                            </div>
+                        </div>
+                    </article>
 
-                <p><strong>What I'm Looking For:</strong></p>
-                <p>I'm exploring opportunities where I can put my Information Science background to real use — roles where I get to help people find, understand, and engage with information, whether that's through content, information literacy, community or student engagement, or user-facing information services. I'm also open to content and design-adjacent roles where structured thinking matters. Still figuring out the exact fit, but drawn to work where I get to guide and connect people with information, not just organize it behind the scenes.</p>
+                    <article class="story-card" data-id="status">
+                        <div class="card-inner">
+                            <div class="card-face card-front">
+                                <span class="card-num">Card 4 of 6</span>
+                                <span class="card-icon" aria-hidden="true">💼</span>
+                                <h3>Current Status</h3>
+                                <p class="card-teaser">System support at Roche, then Graduate Research Assistant at UiTM.</p>
+                                <button type="button" class="flip-btn" aria-label="Flip card: Current Status">Tap to flip ↻</button>
+                            </div>
+                            <div class="card-face card-back" aria-hidden="true">
+                                <h3>Current Status</h3>
+                                <p>I completed a System Support internship at Roche as Level 1 support for Invoice-to-Pay, tracing discrepancies to their root cause — unauthorized suppliers, unrecognized users, data-entry errors, or system bugs. I resolved what sat within Level 1, escalated to Level 2 only when a case needed it, and documented each case in the ticket and a shared case-log the team could reuse. I then served as a Graduate Research Assistant at UiTM (April–September 2026). These roles taught me how structured troubleshooting and knowledge-sharing turn individual learning into something a whole team can use — which is what draws me toward Learning &amp; Development.</p>
+                                <button type="button" class="flip-btn" aria-label="Flip back: Current Status">Flip back ↻</button>
+                            </div>
+                        </div>
+                    </article>
 
-                <p><strong>Open now</strong> for full-time roles in information/data analysis, Learning & Development, information services, and content/communications.</p>
+                    <article class="story-card" data-id="approach">
+                        <div class="card-inner">
+                            <div class="card-face card-front">
+                                <span class="card-num">Card 5 of 6</span>
+                                <span class="card-icon" aria-hidden="true">🧩</span>
+                                <h3>My Approach</h3>
+                                <p class="card-teaser">Strategy first, then creativity. Who's the audience? What's the goal?</p>
+                                <button type="button" class="flip-btn" aria-label="Flip card: My Approach">Tap to flip ↻</button>
+                            </div>
+                            <div class="card-face card-back" aria-hidden="true">
+                                <h3>My Approach</h3>
+                                <p>I combine strategic thinking with creative execution. Whether it's leading a student club's rebrand, directing the team behind the booth that won Best Booth Award at Hari Bertemu Pelanggan, designing learning material for children, or creating social media content that drives engagement — I always start with strategy. Who's the audience? What's the goal? How do we measure success? Then I execute with creativity.</p>
+                                <button type="button" class="flip-btn" aria-label="Flip back: My Approach">Flip back ↻</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="story-card" data-id="looking">
+                        <div class="card-inner">
+                            <div class="card-face card-front">
+                                <span class="card-num">Card 6 of 6</span>
+                                <span class="card-icon" aria-hidden="true">🔎</span>
+                                <h3>What I'm Looking For</h3>
+                                <p class="card-teaser">Analyst, web and digital content, or Learning &amp; Development roles.</p>
+                                <button type="button" class="flip-btn" aria-label="Flip card: What I'm Looking For">Tap to flip ↻</button>
+                            </div>
+                            <div class="card-face card-back" aria-hidden="true">
+                                <h3>What I'm Looking For</h3>
+                                <p>I'm exploring roles where I can put my Information Science background to real use — information and data analysis, web and digital content, and Learning &amp; Development. What ties them together is turning information into something people can find, understand, and use. I'm also open to content and design-adjacent roles where structured thinking matters.</p>
+                                <button type="button" class="flip-btn" aria-label="Flip back: What I'm Looking For">Flip back ↻</button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="deck-done" id="deckDone" hidden>
+                    🎉 All six cards flipped — that's the full story. Want to see the work behind it?
+                    <a href="projects.html">Projects →</a>
+                    <a href="involvement.html">Involvement →</a>
+                </div>
+
+                <noscript>
+                    <style>
+                        .card-inner { transform: none !important; }
+                        .card-front, .flip-btn, .deck-controls { display: none !important; }
+                        .card-back { transform: none; margin-bottom: 16px; }
+                    </style>
+                </noscript>
+
+                <p class="open-now"><strong>Open now</strong> for full-time roles in information/data analysis, web &amp; digital content, Learning &amp; Development, and content/communications.</p>
             </div>
         </section>
 
@@ -1168,6 +1479,54 @@
                 openLightbox(img.src);
             });
         });
+
+        // Story deck: flip cards + progress
+        (function () {
+            const cards = Array.from(document.querySelectorAll('.story-card'));
+            if (!cards.length) return;
+            const seen = new Set();
+            const progressText = document.getElementById('deckProgressText');
+            const progressFill = document.getElementById('deckProgressFill');
+            const done = document.getElementById('deckDone');
+
+            function updateProgress() {
+                progressText.textContent = seen.size + ' / ' + cards.length + ' cards flipped';
+                progressFill.style.width = (seen.size / cards.length * 100) + '%';
+                done.hidden = seen.size !== cards.length;
+            }
+
+            function setFlipped(card, on, moveFocus) {
+                const front = card.querySelector('.card-front');
+                const back = card.querySelector('.card-back');
+                card.classList.toggle('flipped', on);
+                front.toggleAttribute('inert', on);
+                back.toggleAttribute('inert', !on);
+                front.setAttribute('aria-hidden', on ? 'true' : 'false');
+                back.setAttribute('aria-hidden', on ? 'false' : 'true');
+                if (on) seen.add(card.dataset.id);
+                if (moveFocus) {
+                    (on ? back : front).querySelector('.flip-btn').focus({ preventScroll: true });
+                }
+                updateProgress();
+            }
+
+            cards.forEach(function (card) {
+                card.querySelector('.card-back').setAttribute('inert', '');
+                card.addEventListener('click', function () {
+                    const hadFocus = card.contains(document.activeElement);
+                    setFlipped(card, !card.classList.contains('flipped'), hadFocus);
+                });
+            });
+
+            document.getElementById('flipAllBtn').addEventListener('click', function () {
+                cards.forEach(function (c) { setFlipped(c, true, false); });
+            });
+
+            document.getElementById('resetDeckBtn').addEventListener('click', function () {
+                seen.clear();
+                cards.forEach(function (c) { setFlipped(c, false, false); });
+            });
+        })();
 
         // Skill bars animation
         const skillObserver = new IntersectionObserver((entries) => {
